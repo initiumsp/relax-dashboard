@@ -44,19 +44,72 @@
 </head>
 <body class="tc">
   <h1>12格遇上天藍</h1>
-  <div id="game_wrapper">
-    <div class="g" id="g1"></div>
-    <div class="g" id="g2"></div>
-    <div class="g" id="g3"></div>
-    <div class="g" id="g4"></div>
-    <div class="g" id="g5"></div><!-- g5 expandable  -->
-    <div class="g videog" id="g6"></div><!-- g6 video expandable  -->
-    <div class="g" id="g7"></div>
-    <div class="g videog" id="g8"></div><!-- g8 video expandable  -->
-    <div class="g" id="g9"></div>
-    <div class="g videog" id="g10"></div><!-- g10 video expandable  -->
-    <div class="g" id="g11"></div>
-    <div class="g" id="g12"></div>
+  <div id="game_wrapper" class="cf">
+    <div class="g" id="g1">
+      <div class="g-inner">
+
+      </div>
+    </div>
+    <div class="g" id="g2">
+      <div class="g-inner">
+
+      </div>
+    </div>
+    <div class="g" id="g3">
+      <div class="g-inner">
+
+      </div>
+    </div>
+    <div class="g" id="g4">
+      <div class="g-inner">
+
+      </div>
+    </div>
+    <div class="g" id="g5">
+      <div class="g-inner">
+
+      </div>
+    </div><!-- g5 expandable  -->
+    <div class="g videog" id="g6" data-vid="">
+      <div class="g-inner">
+
+      </div>
+      <div class="expandable hidden">
+        <div class="m-slider">
+
+        </div>
+      </div>
+    </div><!-- g6 video expandable  -->
+    <div class="g" id="g7">
+      <div class="g-inner slider">
+
+      </div>
+    </div>
+    <div class="g videog" id="g8" data-vid="">
+      <div class="g-inner">
+
+      </div>
+    </div><!-- g8 video expandable  -->
+    <div class="g" id="g9">
+      <div class="g-inner">
+
+      </div>
+    </div>
+    <div class="g videog" id="g10 data-vid=""">
+      <div class="g-inner">
+
+      </div>
+    </div><!-- g10 video expandable  -->
+    <div class="g" id="g11">
+      <div class="g-inner slider">
+
+      </div>
+    </div>
+    <div class="g" id="g12">
+      <div class="g-inner">
+
+      </div>
+    </div>
   </div>
 </body>
 </html>

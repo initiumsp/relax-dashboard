@@ -38,3 +38,35 @@ body{
   letter-spacing: 1px;
   background: #a6d0e9;
 }
+h1 {
+  text-align: center;
+  margin-top: 90px;
+}
+#game_wrapper {
+  max-width: 1675px;
+  margin: 0 auto 90px;
+  // padding: 0 90px;
+  border: 2px solid #000;
+  .g {
+    width: 25%;
+    float: left;
+    height: 0;
+    padding-top: 25*0.7349%;
+    position: relative;
+  }
+  .g-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 2px solid #000;
+  }
+}
+
+@media (min-width: 768px) {
+  body {
+    padding-left: 90px;
+    padding-right: 90px;
+  }
+}
