@@ -18,7 +18,6 @@ define(["jquery", "md", "jquery.scrollTo.min"], function($, MobileDetect) {
         		mode = 'm';
         	}
         });
-        console.log( breakpoints )
         $(this).trigger('resize');
 
                 g4();
