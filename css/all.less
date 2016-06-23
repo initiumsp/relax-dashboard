@@ -32,15 +32,102 @@ body{
   -moz-osx-font-smoothing: grayscale;
   outline: none;
   word-wrap: break-word;
-  color: #3a3e48;
-  font-size: 16px;
+  color: #9bc9e5;
+  // font-size: 16px;
+  font-size: 14px;
   line-height: 1.6em;
   letter-spacing: 1px;
   background: #a6d0e9;
+  color: #fff;
+  font-weight: bold;
 }
+a {
+  color: #fff;
+}
+
+h1, h2, h3 {
+  letter-spacing: 10px;
+}
+
+h4, h5, h6 {
+  letter-spacing: 5px;
+}
+
 h1 {
   text-align: center;
   margin-top: 90px;
+}
+
+@grey: #7599db;
+@yellow: #eeab31;
+@blue-d: #14447d;
+@blue-l:#3bb6dd;
+
+@g3_b:#48c2ea;
+@g5_b1: #6bd6ed; @g5_b2: #69cdea; @g5_b3: #6bc3ec; @g5_b4: #69b5ed; @g5_b5: #69a8ed;
+
+.title-red {
+  font-size: 39px;
+  text-shadow: 2px 2px 0 #e05f6e;
+}
+.btn {
+  display: inline-block;
+  text-align: center;
+  border: 3px solid #000;
+  border-radius: 5px;
+  position: relative;
+  letter-spacing: 2px;
+  &:before {
+    content: '';
+    position: absolute;
+    border-radius: 6px;
+    top: 3px;
+    left: 3px;
+    right: -8px;
+    bottom: -8px;
+    z-index: -1;
+  }
+
+  &.btn-blue:before {
+    background: @blue-d;
+  }
+  &.btn-yellow:before {
+    background: @yellow;
+  }
+  &.btn-yellow2:before {
+    background: #ebc148;
+  }
+  &.btn-sm {
+    line-height: 84px;
+    font-size: 23px;
+    padding: 0 50px;
+  }
+  &.btn-lg {
+    font-size: 25px;
+    line-height: 105px;
+    padding: 0 100px;
+  }
+}
+.panel {
+  display: inline-block;
+  min-width: 377px;
+  padding: 45px 45px 15px;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  box-sizing: border-box;
+  margin: 0 7px 35px;
+  h4 {
+    font-size: 20px;
+  }
+  &.panel-bd, &.panel-bl {
+    border: 3px solid #000;
+  }
+  &.panel-bd {
+    background: @blue-d;
+  }
+  &.panel-bl {
+    background: @blue-l;
+  }
 }
 #game_wrapper {
   max-width: 1675px;
@@ -53,6 +140,7 @@ h1 {
     height: 0;
     padding-top: 25*0.7349%;
     position: relative;
+    overflow: hidden;
   }
   .g-inner {
     position: absolute;
@@ -63,10 +151,125 @@ h1 {
     border: 2px solid #000;
   }
 }
-
+#g4 {
+  .center {
+    display: table;
+    width: 100%;
+    height: 100%;
+  }
+  .centered {
+    width: 100%;
+    height: 100%;
+    padding: 5% 10%;
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  div {
+    font-size: 0;
+  }
+  span {
+    display: inline-block;
+    width: 100/8%;
+    height: 0;
+    padding-top: 10.055%;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .b {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: 0px 4px;
+    cursor: pointer;
+    border: 1px solid #fff;
+    border-radius: 100%;
+  }
+  .filled {
+    background: pink;
+  }
+}
+#g5_expandable {
+  width: 100%;
+  float: left;
+  border: 3px solid #000;
+  box-sizing: border-box;
+  .item {
+    box-sizing: border-box;
+    padding: 50px 55px 40px;
+    text-align: center;
+  }
+  p {
+    text-align: left;
+  }
+}
+.btn-wrapper {
+  text-align: center;
+  margin-bottom: 180px;
+  .btn {
+    margin: 0 50px;
+  }
+}
+.panel-wrapper {
+  margin-bottom: 670px;
+}
+@media (max-width: 1400px) {
+  #game_wrapper {
+    .g {
+      width: 100/3%;
+      padding-top: 100/3*0.7349%;
+    }
+  }
+}
+@media (max-width: 1024px) {
+  #game_wrapper {
+    .g {
+      width: 100/2%;
+      padding-top: 100/2*0.7349%;
+    }
+  }
+}
 @media (min-width: 768px) {
   body {
-    padding-left: 90px;
-    padding-right: 90px;
+    padding-bottom: 130px;
   }
+  #g5_expandable {
+    background: linear-gradient(to right, @g5_b1 0%, @g5_b1 20%, @g5_b2 20%, @g5_b2 40%, @g5_b3 40%, @g5_b3 60%, @g5_b4 60%, @g5_b4 80%, @g5_b5 80%, @g5_b5 100%);
+    .item {
+      float: left;
+      width: 20%;
+    }
+
+  }
+}
+@media (max-width: 767px) {
+
+  #game_wrapper {
+    max-width: 500px;
+    .g {
+      width: 100%;
+      padding-top: 73.49%;
+    }
+  }
+  #g5_expandable {
+    .item:nth-child(1) {
+      background: @g5_b1;
+    }
+    .item:nth-child(2) {
+      background: @g5_b2;
+    }
+    .item:nth-child(3) {
+      background: @g5_b3;
+    }
+    .item:nth-child(4) {
+      background: @g5_b4;
+    }
+    .item:nth-child(5) {
+      background: @g5_b5;
+    }
+  }
+
 }
