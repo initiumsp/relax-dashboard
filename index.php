@@ -300,6 +300,6 @@
     <a href="#" class="btn btn-yellow btn-sm">心理評估</a>
     <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
   </div>
-  <div class="hidden"><img src="./images/pen-on.png"/></div>
+  <div class="hidden"><img src="./images/pen-on.png"/><img src="./images/bubble1-on.png"/><img src="./images/bubble2-on.png"/><img src="./images/bubble-deco1.png"/><img src="./images/bubble-deco2.png"/><img src="./images/bubble-deco3.png"/></div>
 </body>
 </html>

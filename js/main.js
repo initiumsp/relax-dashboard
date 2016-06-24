@@ -1,4 +1,4 @@
-define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileDetect) {
+define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
     var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet());
     var breakpoints = {
             1400: 3,
@@ -21,6 +21,21 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
             handleResponsive(mode);
         });
         $(this).trigger('resize');
+        memory.requestUUID(function() {
+            memory.sendMessage('render', '')
+            memory.sendMessage('url', window.location.href);
+            
+            if(window.navigator.userAgent) {
+                memory.sendMessage('userAgent', window.navigator.userAgent);
+            }
+            if(window.document.referrer) {
+                memory.sendMessage('referrer', window.document.referrer);
+            }
+            memory.getStats('option',function(response){
+                var total = 0, array = response.values;
+                console.log(response);
+            });
+        });
         g1.init();
         g4();
         g5();
@@ -76,13 +91,19 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
                 g1.refill.left = 0, g1.refill.bottom = 0;
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
+            memory.sendMessage('option', 'g1');
         }
     },
     g4 = function() {
             var $g = $('#g4'), $b = $('#g4 .b');
-            $b.click(function(e){
+            $b.bind('click',function(e){
                     e.preventDefault();
-                    $(this).addClass('filled');
+                    var $this = $(this);
+                    if($this.hasClass('filled')) return;
+                    $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled');
+                    setTimeout(function(){
+                        $this.html('');
+                    }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 )
                             $('.b').removeClass('filled')
             })
@@ -175,5 +196,88 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
             arrows: true
         });
     };
+    xdomain.slaves({
+        'http://s.initiumlab.com:8081': '/proxy.html'
+    });
+    var apiPrefix = 'http://s.initiumlab.com:8081/';
+    var urlRemember = apiPrefix + 'remember/';
+    var urlRecall = apiPrefix + 'recall/';
+    var urlUUID = apiPrefix + 'utility/uuid/';
+    var getUUID = function(){
+        return $("#uuid").val(); 
+    };
+
+    var setUUID = function(uuid) {
+        $("#uuid").val(uuid); 
+    };
+
+    var memory = {
+        eventname: 'depression-dashboard-test',
+        getApiPrefix: function(callback){
+          callback(apiPrefix);
+        },
+        requestUUID: function(callback){
+          $.get(urlUUID).then(function(response){
+            if (!getUUID()) {
+              setUUID(response.data.uuid);
+            }
+            if (callback) {
+              callback(response);
+            }
+          }, function(response){
+            console.log('Error:' + response);
+          });
+        },
+        getUUID: function(callback){
+          if (!getUUID()) {
+            memory.requestUUID(function(){
+              callback(getUUID());
+            });
+          } else {
+            callback(getUUID());
+          }
+        },
+        sendMessage: function(key, value, raw, callback){
+          var sendMessageFunction = function(){
+            $.ajax(
+                {
+                    url: urlRemember + eventname + '/',
+                    type: 'POST',
+                    //dataType: 'JSON',
+                    contentType: 'application/json;charset=UTF-8',
+                    async: true,
+                    data: JSON.stringify({
+                        username: getUUID(),
+                        key: key,
+                        value: value,
+                        raw: raw
+                    }),
+                    success: function(response){
+                        //console.log(response);
+                        if (callback) {
+                            callback(response);
+                        }
+                    }
+                }
+            );
+        };
+        if (getUUID()) {
+            sendMessageFunction();
+        } else {
+            memory.requestUUID(sendMessageFunction);
+        }
+    },
+    getStats: function(key, callback){
+      $.get(urlRecall + eventname + '/' + key + '/').then(function(response){
+        //console.log(response);
+        //console.log('Success:');
+        callback(response)
+      }, function(response){
+        //console.log('Error:');
+        //console.log(response);
+      })
+    }
+    };
+    // ---- End of Initium Memory Api Setup ----
     init();
 });
