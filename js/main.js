@@ -38,7 +38,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             });
         });
         g1.init();
-        g4();
+        g4.init();
         g5();
         g12();
         sliderg();
@@ -63,6 +63,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         clicks: 0,
         times: 10,
         refill: {left: 0, bottom: 0, w: 0, h: 0},
+        timer: null, 
         init: function(){
         $('body').delegate('#g1', this.e, function(e){
             g1.penClick();
@@ -71,6 +72,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         this.refill.h = this.$refill.height();
         },
         penClick: function(){
+            if(this.timer!=null){
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
             this.clicks++;
             this.pen.addClass('on');
             setTimeout(function(){
@@ -83,13 +88,15 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.refill.bottom = this.refill.bottom - (this.refill.h / this.times);
             this.refill.left = this.refill.left - (this.refill.w / this.times);
             this.$refill.css({left: this.refill.left, bottom: this.refill.bottom});
+            this.timer = setTimeout(function(){
+                share('#g1');
+            }, 3000);
         },
         displayText: function(el, num){
             var length=(num+'').length;
             console.log(num, length);
             for(var n=0; n < (4-length); n++){
                 num = '0'+num;
-                console.log(num);
             }
             el.text(num);
         },
@@ -151,7 +158,13 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             }, 3000);
         }
     },
-    g4 = function() {
+    g4 = {
+        timer: null,
+        init: function(){
+            if(this.timer!=null){
+                clearTimeout(this.timer);
+                this.timer = null;
+            }
             var $g = $('#g4'), $b = $('#g4 .b');
             $b.bind('click',function(e){
                     e.preventDefault();
@@ -163,7 +176,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 )
                             $('.b').removeClass('filled')
-            })
+            });
+            this.timer = setTimeout(function(){
+                share('#g4');
+            }, 3000);
+        }
     },
     g5 = function() {
         var $g = $('#g5'), html =  $('#g5 .expandable').html();
