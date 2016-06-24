@@ -47,7 +47,12 @@
   <div id="game_wrapper" class="cf">
     <div class="g" id="g1">
       <div class="g-inner">
-
+        <span class="count">Pens refilled:<br/><span class="val">0000</span></span>
+        <div class="clicks hidden">Pens clicks:<div class="val">0000</div></div>
+        <div id="pen">
+          <div class="refill"></div>
+          <div class="body"></div>
+        </div>
       </div>
     </div>
     <div class="g" id="g2">
@@ -300,5 +305,6 @@
     <a href="#" class="btn btn-yellow2 btn-lg">情緒健康量表</a>
     <a href="#" class="btn btn-blue btn-lg">??????</a>
   </div>
+  <div class="hidden"><img src="./images/pen-on.png"/></div>
 </body>
 </html>
