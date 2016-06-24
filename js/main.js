@@ -41,7 +41,7 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         g5();
         g12();
         sliderg();
-        videog(mode);
+        videog();
     },
     g1 = {
         wrapper: $('#g1'),
@@ -146,7 +146,7 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
             $('.videog').each(function(){
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
-                $(this).find('.expandableContent').removeClass('expandableContent').addClass('g-inner');
+                $(this).find('.expandableContent').removeClass('expandableContent').removeClass('iframe').addClass('g-inner');
             })
         }
     },
@@ -155,33 +155,45 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         var w = $(window).width(),
             col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
             index = $('#game_wrapper .g').index( $g )+1,
-            insert_pos = Math.ceil(index/col)*col-1;
-            $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
-            $(html).hide();
-            $(html).slideDown();
+            insert_pos = Math.ceil(index/col)*col-1,
+            closeButton = '<a href="#" class="round-btn close">Close</a>';
+
+        $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
+        $('.g + .expandableContent').hide().slideDown().append( closeButton );
+
+        $('.expandableContent .close').click(function(e){
+            e.preventDefault();
+            $(this).parent().slideUp()
+        })
     },
     getIframe = function( $g ) {
         var vid = $g.data('vid'),
         url='https://www.youtube.com/embed/' + vid + '?autoplay=1',
-        html = '<div class="expandableContent iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
+        html = '<div class="iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
         return html;
     },
+    appendShareCover = function( $g ) {
+        html = '<div class="cover">分享<div class="share"></div><a href="#" class="round-btn close">Close</a></div>';
+    },
     videog = function() {
-        // $('.videog').each(function() {
         $('.videog .play').click(function(e){
             e.preventDefault();
 
             var $g = $(this).parents('.g'),
-            html = getIframe( $g );
+            title = $g.data('title').split('|'),
+            desc = $g.data('desc'),
+            html = '';
+
+            html += '<div class="expandableContent video"><div class="wrapper"><h2>';
+            html += title[0] + '</h2><h1>' + title[1] + '</h1><p>' + desc + '</p><div class="share"></div>';
+            html += getIframe( $g ) + '</div></div>';
             expandHiddenContent($g, html)
-            // $('.videog .play').click(function(e){
-            // })
         });
     },
     sliderg = function() {
         $('.sliderg .slider').slick({
             fade: true,
-            arrows: false
+            arrows: true
         });
     };
     xdomain.slaves({

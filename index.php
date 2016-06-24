@@ -85,7 +85,7 @@
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
-        <a href="#" class="expand">Expand hidden content</a>
+        <a href="#" class="expand round-btn">Expand hidden content</a>
       </div>
       <div class="expandable hidden">
       <div class=" expandableContent " id="g5_expandable">
@@ -125,7 +125,7 @@
         </div>
       </div>
     </div><!-- g5 expandable  -->
-    <div class="g videog" id="g6" data-vid="LJVUjmNMF8c">
+    <div class="g videog" id="g6" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
       <a href="#" class="play">Play video</a>
       </div>
@@ -138,7 +138,7 @@
       </div>
       </div>
     </div>
-    <div class="g videog" id="g8" data-vid="LJVUjmNMF8c">
+    <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
       <a href="#" class="play">Play video</a>
       </div>
@@ -150,9 +150,8 @@
 
       </div>
     </div>
-    <div class="g videog" id="g10" data-vid="LJVUjmNMF8c"">
+    <div class="g" id="g10">
       <div class="g-inner">
-      <a href="#" class="play">Play video</a>
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
@@ -180,7 +179,7 @@
     <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
   </div>
   <div class="panel-wrapper">
-    <h3 class="title-red">機構資料</h3>
+    <h3 class="title-red"><span>機構資料</span></h3>
     <div class="panel panel-bd">
       <h4>學友社</h4>
       <p>25033399</p>
