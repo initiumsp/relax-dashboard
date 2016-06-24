@@ -44,6 +44,14 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         sliderg();
         videog(mode);
         audio.init();
+        emoji();
+    },
+    emoji = function() {
+        $('.emoji').click(function(e){
+            e.preventDefault();
+            $(this).parent().find('.emoji').removeClass('active')
+            $(this).addClass('active')
+        })
     },
     g1 = {
         wrapper: $('#g1'),
@@ -97,7 +105,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
     },
     share = function(gid){
-        $(gid).find('.share').fadeIn();
+        $(gid).find('.share-cover').fadeIn();
     },
     audio = {
         isready: false,
@@ -165,18 +173,19 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $(this).removeClass('expand');
             if ($(window).width() <= 767)
                 $('.sliderm').slick({arrows: false})
+            $('#g5 .expand').fadeOut();
         })
     },
     g12 = function() {
         var $g = $('#g12'),
-        $emoji = $('#g12 .emoji'),
-            bg = ['#23b8a7', '#d00', 'pink', '#eee', '#555'];
+        $emoji = $('#g12 .emoji');
 
         $emoji.click(function(e) {
             e.preventDefault();
             index = $(this).data('index');
-            $g.css('background', bg[index-1]);
+            $g.css('background', 'url("./images/emoji/bg' + index + '.jpg")');
         })
+        $emoji.last().click();
     },
     handleResponsive = function(mode){
         if ( mode == 'd' || mode == 't') {
@@ -205,7 +214,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
             index = $('#game_wrapper .g').index( $g )+1,
             insert_pos = Math.ceil(index/col)*col-1,
-            closeButton = '<a href="#" class="round-btn close">Close</a>';
+            closeButton = '<a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>';
 
         $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
         $('.g + .expandableContent').hide().slideDown().append( closeButton );

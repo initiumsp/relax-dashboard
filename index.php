@@ -44,17 +44,18 @@
 </head>
 <body class="tc">
   <header>
-    <h1 class="title-blued">12格遇上天藍</h1>
-    <h2 class="en">dashboard</h2>
+    <h1 class="title-blue">12格遇上天藍</h1>
+    <p><?php echo $tc_desc?><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></p>
     <div class="decor">
       <p>你的心情如何？</p>
-      <span class="emoji emoji1 active"></span>
-      <span class="emoji emoji2"></span>
-      <span class="emoji emoji3"></span>
-      <span class="emoji emoji4"></span>
-      <span class="emoji emoji5"></span>
+      <div class="emoji-wrapper cf">
+      <a href="#" class="emoji emoji1"></a>
+      <a href="#" class="emoji emoji2"></a>
+      <a href="#" class="emoji emoji3"></a>
+      <a href="#" class="emoji emoji4"></a>
+      <a href="#" class="emoji emoji5"></a>
+      </div>
     </div>
-    <div class="emoji"></div>
   </header>
   <div id="game_wrapper" class="cf">
     <div class="g" id="g1">
@@ -65,9 +66,9 @@
           <div class="refill"></div>
           <div class="body"></div>
         </div>
-        <div class="share" style="display:block">
-          <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb">Share to facebook</span></a>
-          <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt">Share to twitter</span></a>
+        <div class="share-cover">
+          <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
     </div>
@@ -94,7 +95,7 @@
       </div>
       </div>
       </div>
-      <div class="share"></div>
+      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
@@ -146,9 +147,12 @@
     <div class="g sliderg" id="g7">
       <div class="g-inner">
       <div class="slider">
-        <img src="//placehold.it/500x368/eeab31/eee">
-        <img src="//placehold.it/500x368/14447d/eee">
+        <div class="slide"><img src="./images/illustration/slide1.jpg"></div>
+        <div class="slide"><img src="./images/illustration/slide2.jpg"></div>
+        <div class="slide"><img src="./images/illustration/slide3.jpg"></div>
       </div>
+      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
+
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
@@ -160,38 +164,44 @@
 
     <div class="g" id="g9">
       <div class="g-inner">
+        <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
 
       </div>
     </div>
     <div class="g audiog" id="g10" data-vid="yoga">
       <div class="g-inner">
-        <div class="share"></div>
-
+        <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
+        <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
       <div class="g-inner">
       <div class="slider">
-        <img src="//placehold.it/500x368/eeab31/eee">
-        <img src="//placehold.it/500x368/14447d/eee">
+        <div class="slide"><img src="./images/lanterns/slide1.jpg"></div>
+        <div class="slide"><img src="./images/lanterns/slide2.jpg"></div>
+        <div class="slide"><img src="./images/lanterns/slide3.jpg"></div>
+        <div class="slide"><img src="./images/lanterns/slide4.jpg"></div>
       </div>
+      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
       </div>
     </div>
     <div class="g" id="g12">
       <div class="g-inner">
         <div>
-          <a href="#" class="emoji" data-index="1">e1</a>
-          <a href="#" class="emoji" data-index="2">e2</a>
-          <a href="#" class="emoji" data-index="3">e3</a>
-          <a href="#" class="emoji" data-index="4">e4</a>
-          <a href="#" class="emoji" data-index="5">e5</a>
+        <div class="emoji-wrapper cf">
+          <span class="emoji emoji1a" data-index="1"></span>
+          <span class="emoji emoji2a" data-index="2"></span>
+          <span class="emoji emoji3a" data-index="3"></span>
+          <span class="emoji emoji4a" data-index="4"></span>
+          <span class="emoji emoji5a" data-index="5"></span>
+        </div>
         </div>
       </div>
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="#" class="btn btn-yellow btn-sm">心理評估</a>
-    <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
+    <a href="#" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
+    <a href="#" class="btn btn-blue btn-sm">主辦機構<span class="sp sp-arrow2"></span></a>
   </div>
   <div class="panel-wrapper">
     <h3 class="title-red"><span>機構資料</span></h3>
@@ -312,8 +322,8 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="#" class="btn btn-yellow btn-sm">心理評估</a>
-    <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
+    <a href="#" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
+    <a href="#" class="btn btn-blue btn-sm">主辦機構<span class="sp sp-arrow2"></span></a>
   </div>
   <div class="hidden"><img src="./images/pen-on.png"/><img src="./images/bubble1-on.png"/><img src="./images/bubble2-on.png"/><img src="./images/bubble-deco1.png"/><img src="./images/bubble-deco2.png"/><img src="./images/bubble-deco3.png"/></div>
 </body>
