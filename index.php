@@ -43,11 +43,19 @@
   <link href="./css/all.css" rel="stylesheet" media="screen">
 </head>
 <body class="tc">
-  <div class="page-title">
-    <h1>12格遇上天藍</h1>
+  <header>
+    <h1 class="title-blued">12格遇上天藍</h1>
     <h2 class="en">dashboard</h2>
+    <div class="decor">
+      <p>你的心情如何？</p>
+      <span class="emoji emoji1 active"></span>
+      <span class="emoji emoji2"></span>
+      <span class="emoji emoji3"></span>
+      <span class="emoji emoji4"></span>
+      <span class="emoji emoji5"></span>
+    </div>
     <div class="emoji"></div>
-  </div>
+  </header>
   <div id="game_wrapper" class="cf">
     <div class="g" id="g1">
       <div class="g-inner">
@@ -57,8 +65,9 @@
           <div class="refill"></div>
           <div class="body"></div>
         </div>
-        <div class="share">
-
+        <div class="share" style="display:block">
+          <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb">Share to facebook</span></a>
+          <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt">Share to twitter</span></a>
         </div>
       </div>
     </div>
@@ -89,7 +98,7 @@
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
-        <a href="#" class="expand round-btn">Expand hidden content</a>
+        <a href="#" class="expand round-btn"><span class="sp sp-down">Expand hidden content</span></a>
       </div>
       <div class="expandable hidden">
       <div class=" expandableContent " id="g5_expandable">
@@ -131,7 +140,7 @@
     </div><!-- g5 expandable  -->
     <div class="g videog" id="g6" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
-      <a href="#" class="play">Play video</a>
+      <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
       </div>
     </div><!-- g6 video expandable  -->
     <div class="g sliderg" id="g7">
@@ -144,7 +153,7 @@
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
-      <a href="#" class="play">Play video</a>
+      <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
       </div>
     </div><!-- g8 video expandable  -->
 
@@ -157,7 +166,7 @@
     <div class="g audiog" id="g10" data-vid="yoga">
       <div class="g-inner">
         <div class="share"></div>
-    
+
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
