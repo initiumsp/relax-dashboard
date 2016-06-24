@@ -125,7 +125,7 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
             $('.videog').each(function(){
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
-                $(this).find('.expandableContent').removeClass('expandableContent').addClass('g-inner');
+                $(this).find('.expandableContent').removeClass('expandableContent').removeClass('iframe').addClass('g-inner');
             })
         }
     },
@@ -134,10 +134,16 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
         var w = $(window).width(),
             col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
             index = $('#game_wrapper .g').index( $g )+1,
-            insert_pos = Math.ceil(index/col)*col-1;
-            $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
-            $(html).hide();
-            $(html).slideDown();
+            insert_pos = Math.ceil(index/col)*col-1,
+            closeButton = '<a href="#" class="close">Close</a>';
+
+        $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
+        $('.g + .expandableContent').hide().slideDown().append( closeButton );
+
+        $('.expandableContent .close').click(function(e){
+            e.preventDefault();
+            $(this).parent().slideUp()
+        })
     },
     getIframe = function( $g ) {
         var vid = $g.data('vid'),

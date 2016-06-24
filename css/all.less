@@ -312,8 +312,39 @@ h1 {
   float: left;
   border: 3px solid #000;
   box-sizing: border-box;
+  position: relative;
+  .close {
+    display: block;
+    position: absolute;
+    z-index: 2;
+    width: 40px;
+    height: 40px;
+    text-indent: -9999px;
+    top: 15px;
+    right: 20px;
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      border-radius: 100%;
+    }
+    &:before {
+      background: #fff;
+      width: 41px;
+      height: 41px;
+      top: 4px;
+      right: -1px;
+    }
+    &:after {
+      border: 2px solid #000;
+      width: 40px;
+      height: 40px;
+      top: 0;
+      right: 0;
+    }
+  }
+
 }
-.iframe, #game_wrapper .videog .iframe {
+.iframe, #game_wrapper .videog.iframe {
   position: relative;
   height: 0;
   padding-top: 56.25%;
@@ -411,6 +442,28 @@ h1 {
   // }
   margin-bottom: 65px;
   text-align: center;
+  .title-red {
+    max-width: 1605px;
+    text-align: left;
+    margin: 0 auto 40px;
+    padding: 0 140px;
+    position: relative;
+    span {
+      background: #a6d0e9;
+      display: inline-block;
+      padding: 0 10px;
+      position: relative;
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      border-top: 3px solid #134481;
+      top: 50%;
+      margin-top: -1.5px;
+      left: 150px;
+      right: 150px;
+    }
+  }
   .panel {
     vertical-align: bottom;
   }

@@ -125,7 +125,7 @@
         </div>
       </div>
     </div><!-- g5 expandable  -->
-    <div class="g videog" id="g6" data-vid="LJVUjmNMF8c">
+    <div class="g videog" id="g6" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
       <a href="#" class="play">Play video</a>
       </div>
@@ -138,7 +138,7 @@
       </div>
       </div>
     </div>
-    <div class="g videog" id="g8" data-vid="LJVUjmNMF8c">
+    <div class="g videog" id="g8" data-vid="3O1_3zBUKM8">
       <div class="g-inner">
       <a href="#" class="play">Play video</a>
       </div>
@@ -150,7 +150,7 @@
 
       </div>
     </div>
-    <div class="g videog" id="g10" data-vid="LJVUjmNMF8c"">
+    <div class="g videog" id="g10" data-vid="3O1_3zBUKM8"">
       <div class="g-inner">
       <a href="#" class="play">Play video</a>
       </div>
@@ -180,7 +180,7 @@
     <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
   </div>
   <div class="panel-wrapper">
-    <h3 class="title-red">機構資料</h3>
+    <h3 class="title-red"><span>機構資料</span></h3>
     <div class="panel panel-bd">
       <h4>學友社</h4>
       <p>25033399</p>
