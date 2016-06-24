@@ -1,4 +1,5 @@
-define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
+
+define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
     var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet());
     var breakpoints = {
             1400: 3,
@@ -24,7 +25,7 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         memory.requestUUID(function() {
             memory.sendMessage('render', '')
             memory.sendMessage('url', window.location.href);
-            
+
             if(window.navigator.userAgent) {
                 memory.sendMessage('userAgent', window.navigator.userAgent);
             }
@@ -41,7 +42,8 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         g5();
         g12();
         sliderg();
-        videog();
+        videog(mode);
+        audio.init();
     },
     g1 = {
         wrapper: $('#g1'),
@@ -94,6 +96,53 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
             memory.sendMessage('option', 'g1');
         }
     },
+    share = function(gid){
+        $(gid).find('.share').fadeIn();
+    },
+    audio = {
+        isready: false,
+        playing: '',
+        init: function(){
+            soundManager.setup({
+              url: './swf/',
+              flashVersion: 9,
+              onready: function() {
+                audio.isready = true;
+                soundManager.createSound({
+                  id: 'yoga',
+                  url: './yoga.mp3',
+                  autoLoad: true,
+                  autoPlay: false,
+                  onload: function() {
+                    $('.g[data-vid="'+this.id+'"]').addClass('ready');
+                  },
+                  volume: 50
+                });
+              }
+            });
+            $('.g.audiog').bind('click', function(e){
+                e.preventDefault();
+                if(!$(this).hasClass('ready')) return;
+                $(this).toggleClass('playing')
+                if($(this).hasClass('playing'))
+                    audio.play($(this).data('vid'));
+                else
+                    audio.pause($(this).data('vid'));
+            });
+        },
+        play: function(id){
+            soundManager.play(id,{volume:50,onfinish:function(){
+                audio.showShare();
+            }});
+            this.playing = id;
+        },
+        pause: function(id){
+            soundManager.pause(id);
+            setTimeout(function(){
+                share('#g10');
+            }, 3000);
+        }
+    },
     g4 = function() {
             var $g = $('#g4'), $b = $('#g4 .b');
             $b.bind('click',function(e){
@@ -135,7 +184,7 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
             $('.sliderm.slick-slider').slick('unslick')
             // reset video
             $('.videog').each(function(){
-                $(this).html('<div class="g-inner"><a href="#" class="play">Play video</a></div>')
+                $(this).html('<div class="g-inner"><a href="#" class="play"><span class="sp sp-play">Play video</span></a></div>')
             })
         }
         else {
@@ -172,9 +221,6 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         html = '<div class="iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
         return html;
     },
-    appendShareCover = function( $g ) {
-        html = '<div class="cover">分享<div class="share"></div><a href="#" class="round-btn close">Close</a></div>';
-    },
     videog = function() {
         $('.videog .play').click(function(e){
             e.preventDefault();
@@ -184,8 +230,8 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
             desc = $g.data('desc'),
             html = '';
 
-            html += '<div class="expandableContent video"><div class="wrapper"><h2>';
-            html += title[0] + '</h2><h1>' + title[1] + '</h1><p>' + desc + '</p><div class="share"></div>';
+            html += '<div class="expandableContent video"><div class="wrapper cf"><div class="desc"><h3>';
+            html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
             html += getIframe( $g ) + '</div></div>';
             expandHiddenContent($g, html)
         });
@@ -193,7 +239,9 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
     sliderg = function() {
         $('.sliderg .slider').slick({
             fade: true,
-            arrows: true
+            arrows: true,
+            prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
+            nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
         });
     };
     xdomain.slaves({
@@ -204,11 +252,11 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
     var urlRecall = apiPrefix + 'recall/';
     var urlUUID = apiPrefix + 'utility/uuid/';
     var getUUID = function(){
-        return $("#uuid").val(); 
+        return $("#uuid").val();
     };
 
     var setUUID = function(uuid) {
-        $("#uuid").val(uuid); 
+        $("#uuid").val(uuid);
     };
 
     var memory = {
