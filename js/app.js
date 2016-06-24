@@ -4,6 +4,7 @@ require.config({
   },
   "shim": {
     "jquery.scrollTo.min": ["jquery"],
+    "slick.min": ["jquery"],
   },
   waitSeconds: 40
 });
