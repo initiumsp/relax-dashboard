@@ -43,7 +43,11 @@
   <link href="./css/all.css" rel="stylesheet" media="screen">
 </head>
 <body class="tc">
-  <h1>12格遇上天藍</h1>
+  <div class="page-title">
+    <h1>12格遇上天藍</h1>
+    <h2 class="en">dashboard</h2>
+    <div class="emoji"></div>
+  </div>
   <div id="game_wrapper" class="cf">
     <div class="g" id="g1">
       <div class="g-inner">
@@ -76,56 +80,59 @@
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
-
+        <a href="#" class="expand">Expand hidden content</a>
       </div>
       <div class="expandable hidden">
-      <div class="cf" id="g5_expandable">
+      <div class="cf expandableContent" id="g5_expandable">
         <div class="item">
           <h6>MONDAY</h6>
           <div class="date">17/6</div>
-          <img src="//placehold.it/105x105/eee">
+          <img class="icon" src="//placehold.it/105x105/eee">
           <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
         <div class="item">
           <h6>MONDAY</h6>
           <div class="date">17/6</div>
-          <img src="//placehold.it/105x105/eee">
+          <img class="icon" src="//placehold.it/105x105/eee">
           <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
         <div class="item">
           <h6>MONDAY</h6>
           <div class="date">17/6</div>
-          <img src="//placehold.it/105x105/eee">
+          <img class="icon" src="//placehold.it/105x105/eee">
           <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
         <div class="item">
           <h6>MONDAY</h6>
           <div class="date">17/6</div>
-          <img src="//placehold.it/105x105/eee">
+          <img class="icon" src="//placehold.it/105x105/eee">
           <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
         <div class="item">
           <h6>MONDAY</h6>
           <div class="date">17/6</div>
-          <img src="//placehold.it/105x105/eee">
+          <img class="icon" src="//placehold.it/105x105/eee">
           <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
       </div>
       </div>
     </div><!-- g5 expandable  -->
-    <div class="g videog" id="g6" data-vid="">
+    <div class="g videog" id="g6" data-vid="LJVUjmNMF8c">
       <div class="g-inner">
-
+      <a href="#" class="play">Play video</a>
       </div>
     </div><!-- g6 video expandable  -->
     <div class="g sliderg" id="g7">
       <div class="g-inner">
-
+      <div class="slider">
+        <img src="//placehold.it/500x368/eeab31/eee">
+        <img src="//placehold.it/500x368/14447d/eee">
+      </div>
       </div>
     </div>
-    <div class="g videog" id="g8" data-vid="">
+    <div class="g videog" id="g8" data-vid="LJVUjmNMF8c">
       <div class="g-inner">
-
+      <a href="#" class="play">Play video</a>
       </div>
     </div><!-- g8 video expandable  -->
 
@@ -135,19 +142,28 @@
 
       </div>
     </div>
-    <div class="g videog" id="g10 data-vid=""">
+    <div class="g videog" id="g10" data-vid="LJVUjmNMF8c"">
       <div class="g-inner">
-
+      <a href="#" class="play">Play video</a>
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
       <div class="g-inner">
-
+      <div class="slider">
+        <img src="//placehold.it/500x368/eeab31/eee">
+        <img src="//placehold.it/500x368/14447d/eee">
+      </div>
       </div>
     </div>
     <div class="g" id="g12">
       <div class="g-inner">
-
+        <div>
+          <a href="#" class="emoji" data-index="1">e1</a>
+          <a href="#" class="emoji" data-index="2">e2</a>
+          <a href="#" class="emoji" data-index="3">e3</a>
+          <a href="#" class="emoji" data-index="4">e4</a>
+          <a href="#" class="emoji" data-index="5">e5</a>
+        </div>
       </div>
     </div>
   </div>
@@ -160,140 +176,117 @@
     <div class="panel panel-bd">
       <h4>學友社</h4>
       <p>25033399</p>
-      <p>星期一、三、五:7am-9pm</p>
-      <p>學生</p>
+      <p>星期一、三、五:7am-9pm<br>服務對象:學生</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港青年協會</h4>
       <p>27771112</p>
-      <p>星期一至六:2pm-2am</p>
-      <p>學生</p>
+      <p>星期一至六:2pm-2am<br>服務對象:學生</p>
     </div>
     <div class="panel panel-bd">
       <h4>香港聖公會福利協會</h4>
       <p>82039070</p>
-      <p>星期一至六:2pm-10pm</p>
-      <p>學生</p>
+      <p>星期一至六:2pm-10pm<br>服務對象:學生</p>
     </div>
     <div class="panel panel-bl">
-      <h4>Infinity Teens 連線teen地</h4>
-      <p>25802626 / (WhatsApp 93773666)</p>
-      <p>先預約</p>
-      <p>青少年</p>
+      <h4><span class="en">Infinity Teens</span>連線<span class="en">teen</span>地</h4>
+      <p>25802626/(WhatsApp 93773666)</p>
+      <p>先預約<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bd">
-      <h4>uTouch網上外展輔導服務</h4>
+      <h4><span class="en">uTouch</span>網上外展輔導服務</h4>
       <p>27778899/ (WhatsApp 62778899)</p>
-      <p>星期一至五:2pm-12am</p>
-      <p>青少年</p>
+      <p>星期一至五:2pm-12am<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bl">
-      <h4>夜貓Online</h4>
-      <p>97268159 / 98528625</p>
-      <p>星期一、三、五及六(公眾假期除外):3pm-3am</p>
-      <p>青少年</p>
+      <h4>夜貓<span class="en">Online</span></h4>
+      <p>97268159/98528625</p>
+      <p>星期一、三、五及六(公眾假期除外):3pm-3am<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bd">
       <h4>香港青年協會</h4>
       <p>27778899</p>
-      <p>星期一至六:2pm-2am</p>
-      <p>青少年</p>
+      <p>星期一至六:2pm-2am<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港神託會</h4>
       <p>26357709</p>
-      <p>星期一至五(公眾假期休息):10am-5pm</p>
-      <p>青少年</p>
+      <p>星期一至五(公眾假期休息):10am-5pm<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bd">
       <h4>自殺自療互助舍</h4>
       <p>23417227</p>
-      <p>8pm-2am</p>
-      <p>所有</p>
+      <p>8pm-2am<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港明愛</h4>
       <p>18288</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>生命熱線</h4>
       <p>23820000</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港撒瑪利亞防止自殺會</h4>
       <p>23892222</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>撒瑪利亞會</h4>
       <p>28960000</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>社會福利署</h4>
       <p>23432255</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>香港基督教女青年會</h4>
       <p>27116622</p>
-      <p>星期一至五:7pm-10pm</p>
-      <p>所有</p>
+      <p>星期一至五:7pm-10pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>影音使團</h4>
       <p>81008012</p>
-      <p>星期一至六:10am-10pm；星期日:4pm-10pm</p>
-      <p>所有</p>
+      <p>星期一至六:10am-10pm；星期日:4pm-10pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>基督教靈實協會</h4>
       <p>27023321</p>
-      <p>星期一至六:9:30am-12pm，2pm-5pm ；星期二:7pm-9pm</p>
-      <p>所有</p>
+      <p>星期一至六:9:30am-12pm，2pm-5pm ；星期二:7pm-9pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>心晴行動慈善基金</h4>
       <p>23012303</p>
-      <p>星期一至五:10am-1pm，2pm-5pm；星期六:10m-1pm</p>
-      <p>所有</p>
+      <p>星期一至五:10am-1pm，2pm-5pm；星期六:10m-1pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>扶康會</h4>
       <p>81005555</p>
-      <p>星期一、三、五:10am-1pm，2pm-5pm；星期二:2pm-5pm</p>
-      <p>所有</p>
+      <p>星期一、三、五:10am-1pm，2pm-5pm；星期二:2pm-5pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港心理衛生會</h4>
       <p>27720047</p>
-      <p>星期一至五:2pm-10pm</p>
-      <p>所有</p>
+      <p>星期一至五:2pm-10pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>香港健康情緒中心</h4>
       <p>21446004</p>
-      <p>星期一至六:9am-6pm</p>
-      <p>所有</p>
+      <p>星期一至六:9am-6pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>浸信會愛羣社會服務處</h4>
       <p>25354135</p>
-      <p>星期一至五:10am-12:30pm，2pm-5pm；星期二:7pm-9pm</p>
-      <p>所有</p>
+      <p>星期一至五:10am-12:30pm，2pm-5pm；星期二:7pm-9pm<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>醫院管理局</h4>
       <p>24667350</p>
-      <p>24小時</p>
-      <p>所有</p>
+      <p>24小時<br>服務對象:所有</p>
     </div>
   </div>
   <div class="btn-wrapper">
