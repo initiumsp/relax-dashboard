@@ -88,38 +88,41 @@
         <a href="#" class="expand">Expand hidden content</a>
       </div>
       <div class="expandable hidden">
-      <div class="cf expandableContent" id="g5_expandable">
-        <div class="item">
-          <h6>MONDAY</h6>
-          <div class="date">17/6</div>
-          <img class="icon" src="//placehold.it/105x105/eee">
-          <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+      <div class=" expandableContent " id="g5_expandable">
+        <div class="cf sliderm">
+          <div class="item">
+            <h6>MONDAY</h6>
+            <div class="date">17/6</div>
+            <img class="icon" src="//placehold.it/105x105/eee">
+            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+          </div>
+          <div class="item">
+            <h6>MONDAY</h6>
+            <div class="date">17/6</div>
+            <img class="icon" src="//placehold.it/105x105/eee">
+            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+          </div>
+          <div class="item">
+            <h6>MONDAY</h6>
+            <div class="date">17/6</div>
+            <img class="icon" src="//placehold.it/105x105/eee">
+            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+          </div>
+          <div class="item">
+            <h6>MONDAY</h6>
+            <div class="date">17/6</div>
+            <img class="icon" src="//placehold.it/105x105/eee">
+            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+          </div>
+          <div class="item">
+            <h6>MONDAY</h6>
+            <div class="date">17/6</div>
+            <img class="icon" src="//placehold.it/105x105/eee">
+            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+          </div>
+
         </div>
-        <div class="item">
-          <h6>MONDAY</h6>
-          <div class="date">17/6</div>
-          <img class="icon" src="//placehold.it/105x105/eee">
-          <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
         </div>
-        <div class="item">
-          <h6>MONDAY</h6>
-          <div class="date">17/6</div>
-          <img class="icon" src="//placehold.it/105x105/eee">
-          <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
-        </div>
-        <div class="item">
-          <h6>MONDAY</h6>
-          <div class="date">17/6</div>
-          <img class="icon" src="//placehold.it/105x105/eee">
-          <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
-        </div>
-        <div class="item">
-          <h6>MONDAY</h6>
-          <div class="date">17/6</div>
-          <img class="icon" src="//placehold.it/105x105/eee">
-          <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
-        </div>
-      </div>
       </div>
     </div><!-- g5 expandable  -->
     <div class="g videog" id="g6" data-vid="LJVUjmNMF8c">
@@ -174,7 +177,7 @@
   </div>
   <div class="btn-wrapper">
     <a href="#" class="btn btn-yellow btn-sm">心理評估</a>
-    <a href="#" class="btn btn-blue btn-lg">主辦機構</a>
+    <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
   </div>
   <div class="panel-wrapper">
     <h3 class="title-red">機構資料</h3>
@@ -295,8 +298,8 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="#" class="btn btn-yellow2 btn-lg">情緒健康量表</a>
-    <a href="#" class="btn btn-blue btn-lg">??????</a>
+    <a href="#" class="btn btn-yellow btn-sm">心理評估</a>
+    <a href="#" class="btn btn-blue btn-sm">主辦機構</a>
   </div>
   <div class="hidden"><img src="./images/pen-on.png"/></div>
 </body>

@@ -18,7 +18,7 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
             else{
                 mode = 'm';
             }
-            videog(mode);
+            handleResponsive(mode);
         });
         $(this).trigger('resize');
         g1.init();
@@ -26,14 +26,7 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
         g5();
         g12();
         sliderg();
-        // $('.videog').each(function(){
-        //         // console.log( $(this) )
-        //          videog( $(this) );
-        // });
-        // $('.sliderg').each( function(){
-        //         // console.log( $(this) )
-        //         sliderg( $(this) );
-        // });
+        videog(mode);
     },
     g1 = {
         wrapper: $('#g1'),
@@ -99,18 +92,10 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
         $('#g5 .expand').click(function(e){
             e.preventDefault();
             expandHiddenContent($g, html);
-            $(this).removeClass('expand')
+            $(this).removeClass('expand');
+            if ($(window).width() <= 767)
+                $('.sliderm').slick({arrows: false})
         })
-    },
-    expandHiddenContent = function($g, html) {
-        $('.g + .expandableContent').remove()
-        var w = $(window).width(),
-            col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
-            index = $('#game_wrapper .g').index( $g )+1,
-            insert_pos = Math.ceil(index/col)*col-1;
-            $(html).hide();
-            $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
-            $(html).slideDown();
     },
     g12 = function() {
         var $g = $('#g12'),
@@ -123,14 +108,50 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
             $g.css('background', bg[index-1]);
         })
     },
+    handleResponsive = function(mode){
+        if ( mode == 'd' || mode == 't') {
+            // reset slider
+            $('.sliderm.slick-slider').slick('unslick')
+            // reset video
+            $('.videog').each(function(){
+                $(this).html('<div class="g-inner"><a href="#" class="play">Play video</a></div>')
+            })
+        }
+        else {
+            // reset slider
+            // $('.sliderm').slick({arrows: false})
+
+            // reset video
+            $('.videog').each(function(){
+                html = getIframe( $(this) ).replace('?autoplay=1','');
+                $(this).html( html ).addClass('iframe')
+                $(this).find('.expandableContent').removeClass('expandableContent').addClass('g-inner');
+            })
+        }
+    },
+    expandHiddenContent = function($g, html) {
+        $('.g + .expandableContent').remove()
+        var w = $(window).width(),
+            col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
+            index = $('#game_wrapper .g').index( $g )+1,
+            insert_pos = Math.ceil(index/col)*col-1;
+            $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
+            $(html).hide();
+            $(html).slideDown();
+    },
+    getIframe = function( $g ) {
+        var vid = $g.data('vid'),
+        url='https://www.youtube.com/embed/' + vid + '?autoplay=1',
+        html = '<div class="expandableContent iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
+        return html;
+    },
     videog = function() {
         // $('.videog').each(function() {
         $('.videog .play').click(function(e){
-            var vid = $(this).data('vid'),
-            url='https://www.youtube.com/embed/' + vid + '?autoplay=1',
-            html = '<div class="expandableContent iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
+            e.preventDefault();
 
-            $g = $(this).parents('.g');
+            var $g = $(this).parents('.g'),
+            html = getIframe( $g );
             expandHiddenContent($g, html)
             // $('.videog .play').click(function(e){
             // })
