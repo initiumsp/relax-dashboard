@@ -57,6 +57,9 @@
           <div class="refill"></div>
           <div class="body"></div>
         </div>
+        <div class="share">
+
+        </div>
       </div>
     </div>
     <div class="g" id="g2">
@@ -150,9 +153,9 @@
 
       </div>
     </div>
-    <div class="g videog" id="g10" data-vid="LJVUjmNMF8c"">
+    <div class="g audiog" id="g10" data-vid="yoga">
       <div class="g-inner">
-      <a href="#" class="play">Play video</a>
+        <div class="share"></div>
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">

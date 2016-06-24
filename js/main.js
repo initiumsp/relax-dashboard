@@ -1,4 +1,4 @@
-define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileDetect) {
+define(["jquery", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min"], function($, MobileDetect) {
     var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet());
     var breakpoints = {
             1400: 3,
@@ -27,6 +27,7 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
         g12();
         sliderg();
         videog(mode);
+        audio.init();
     },
     g1 = {
         wrapper: $('#g1'),
@@ -76,6 +77,53 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
                 g1.refill.left = 0, g1.refill.bottom = 0;
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
+        }
+    },
+    share = function(gid){
+        $(gid).find('.share').fadeIn();
+    },
+    audio = {
+        isready: false,
+        playing: '',
+        init: function(){
+            soundManager.setup({
+              url: './swf/',
+              flashVersion: 9,
+              onready: function() {
+                audio.isready = true;
+                soundManager.createSound({
+                  id: 'yoga',
+                  url: './yoga.mp3',
+                  autoLoad: true,
+                  autoPlay: false,
+                  onload: function() {
+                    $('.g[data-vid="'+this.id+'"]').addClass('ready');
+                  },
+                  volume: 50
+                });
+              }
+            });
+            $('.g.audiog').bind('click', function(e){
+                e.preventDefault();
+                if(!$(this).hasClass('ready')) return;
+                $(this).toggleClass('playing')
+                if($(this).hasClass('playing'))
+                    audio.play($(this).data('vid'));
+                else
+                    audio.pause($(this).data('vid'));
+            });
+        },
+        play: function(id){
+            soundManager.play(id,{volume:50,onfinish:function(){
+                audio.showShare();
+            }});
+            this.playing = id;
+        },
+        pause: function(id){
+            soundManager.pause(id);
+            setTimeout(function(){
+                share('#g10');
+            }, 3000);
         }
     },
     g4 = function() {
