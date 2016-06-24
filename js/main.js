@@ -84,9 +84,9 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
                     e.preventDefault();
                     var $this = $(this);
                     if($this.hasClass('filled')) return;
-                    $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled on');
+                    $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled');
                     setTimeout(function(){
-                        $this.removeClass('on').html('');
+                        $this.html('');
                     }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 )
                             $('.b').removeClass('filled')
