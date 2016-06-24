@@ -80,9 +80,14 @@ define(["jquery", "md", "jquery.scrollTo.min", "slick.min"], function($, MobileD
     },
     g4 = function() {
             var $g = $('#g4'), $b = $('#g4 .b');
-            $b.click(function(e){
+            $b.bind('click',function(e){
                     e.preventDefault();
-                    $(this).addClass('filled');
+                    var $this = $(this);
+                    if($this.hasClass('filled')) return;
+                    $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled on');
+                    setTimeout(function(){
+                        $this.removeClass('on').html('');
+                    }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 )
                             $('.b').removeClass('filled')
             })
