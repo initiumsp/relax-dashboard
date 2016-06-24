@@ -99,7 +99,14 @@
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
-        <a href="#" class="expand round-btn"><span class="sp sp-down">Expand hidden content</span></a>
+        <div class="center">
+          <div class="centered">
+            <h3>Weather Forcast <br>Monday</h3>
+            <p>17/6</p>
+            <span class="icon icon1"></span>
+            <a href="#" class="expand round-btn"><span class="sp sp-down">Expand hidden content</span></a>
+          </div>
+        </div>
       </div>
       <div class="expandable hidden">
       <div class=" expandableContent " id="g5_expandable">
@@ -107,32 +114,34 @@
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon" src="//placehold.it/105x105/eee">
+            <img class="icon icon1" src="//placehold.it/105x105/eee">
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon" src="//placehold.it/105x105/eee">
+            <img class="icon icon2" src="//placehold.it/105x105/eee">
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon" src="//placehold.it/105x105/eee">
+            <img class="icon icon3" src="//placehold.it/105x105/eee">
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon" src="//placehold.it/105x105/eee">
+            <img class="icon icon4" src="//placehold.it/105x105/eee">
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
-            <div class="date">17/6</div>
-            <img class="icon" src="//placehold.it/105x105/eee">
-            <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+            <div class="center">
+              <div class="centered">
+                <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
+                <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+              </div>
+            </div>
           </div>
 
         </div>
@@ -187,14 +196,17 @@
     </div>
     <div class="g" id="g12">
       <div class="g-inner">
-        <div>
-        <div class="emoji-wrapper cf">
-          <span class="emoji emoji1a" data-index="1"></span>
-          <span class="emoji emoji2a" data-index="2"></span>
-          <span class="emoji emoji3a" data-index="3"></span>
-          <span class="emoji emoji4a" data-index="4"></span>
-          <span class="emoji emoji5a" data-index="5"></span>
-        </div>
+        <div class="center">
+          <div class="centered">
+            <p>你的心情如何？</p>
+            <div class="emoji-wrapper cf">
+              <span class="emoji emoji1a" data-index="1"></span>
+              <span class="emoji emoji2a" data-index="2"></span>
+              <span class="emoji emoji3a" data-index="3"></span>
+              <span class="emoji emoji4a" data-index="4"></span>
+              <span class="emoji emoji5a" data-index="5"></span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
