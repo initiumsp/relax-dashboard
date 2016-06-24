@@ -85,6 +85,7 @@
       </div>
       </div>
       </div>
+      <div class="share"></div>
     </div>
     <div class="g" id="g5">
       <div class="g-inner">
