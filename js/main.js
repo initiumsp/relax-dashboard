@@ -254,9 +254,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
     };
     xdomain.slaves({
-        'http://s.initiumlab.com:8081': '/proxy.html'
+        'https://ss.initiumlab.com/': '/proxy.html'
     });
-    var apiPrefix = 'http://s.initiumlab.com:8081/';
+    var apiPrefix = 'https://ss.initiumlab.com/';
     var urlRemember = apiPrefix + 'remember/';
     var urlRecall = apiPrefix + 'recall/';
     var urlUUID = apiPrefix + 'utility/uuid/';
