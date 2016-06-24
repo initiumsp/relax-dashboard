@@ -76,12 +76,10 @@ button {
 @g3_b:#48c2ea;
 @g5_b1: #6bd6ed; @g5_b2: #69cdea; @g5_b3: #6bc3ec; @g5_b4: #69b5ed; @g5_b5: #69a8ed;
 
-.page-title {
+header {
   text-align: center;
   h1 {
-    color: #7798ae;
     font-size: 45px;
-    text-shadow: 3px 3px 0px #000;
     margin-bottom: 0;
   }
   h2 {
@@ -92,23 +90,34 @@ button {
 }
 
 .title-red {
-  font-size: 39px;
   text-shadow: 2px 2px 0 #e05f6e;
+}
+.title-blue {
+  color: @blue-d;
+  text-shadow: 2px 2px 0 #fff;
+}
+.title-yellow {
+  color: #fff;
+  text-shadow: 2px 2px 0 #e9c047;
+}
+.title-black {
+  color: #000;
+  text-shadow: 2px 2px 0 @yellow;
 }
 .btn {
   display: inline-block;
   text-align: center;
   border: 3px solid #000;
-  border-radius: 5px;
+  border-radius: 10px;
   position: relative;
   letter-spacing: 2px;
   &:before {
     content: '';
     position: absolute;
-    border-radius: 6px;
+    border-radius: 10px;
     top: 3px;
     left: 3px;
-    right: -8px;
+    right: -5px;
     bottom: -8px;
     z-index: -1;
   }
@@ -408,6 +417,8 @@ button {
     top: 50%;
     margin-top: -20px;
     z-index: 1;
+    margin-left: 18px;
+    margin-right: 18px;
   }
   .slick-prev {
     left: 0;
@@ -435,27 +446,43 @@ button {
   }
   &:before {
     background: #de5f6b;
-    width: 85+3px;
-    height: 56+3px;
-    margin-left: -88/2px;
-    margin-top: -59/2px;
+    width: 64px;
+    height: 45px;
+    margin-left: -29px;
+    margin-top: -19.5px;
   }
   &:after {
     border: 3px solid #000;
-    border: 3px solid #000;
-    margin-left: -50px;
-    margin-top: -34.5px;
     border-radius: 10px;
-    width: 91px;
-    height: 61px;
+    width: 66px;
+    height: 47px;
+    margin-left: -33px;
+    margin-top: -23.5px;
+  }
+  .sp {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -13px;
+    margin-left: -13px;
   }
 }
 .round-btn {
   z-index: 2;
-  width: 40px;
-  height: 40px;
-  text-indent: -9999px;
+  width: 43px;
+  height: 43px;
+  box-sizing: border-box;
+  line-height: 40px;
+  display: block;
   font-size: 0;
+  padding: 0;
+  position: relative;
+  .sp {
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+  }
   &:before, &:after {
     content: '';
     position: absolute;
@@ -469,13 +496,53 @@ button {
     right: -1px;
   }
   &:after {
-    border: 2px solid #000;
+    border: 3px solid #000;
     width: 40px;
     height: 40px;
     top: 0;
     right: 0;
   }
+  .sp-down {
+    margin-top: -7.5px;
+    margin-left: -13.5px;
+  }
+  .sp-prev {
+    margin-top: -23/2px;
+    margin-left: -29/2px;
+  }
+  .sp-next {
+    margin-top: -24/2px;
+    margin-left: -11.5px;
+  }
+  .sp-fb {
+    margin-top: -13px;
+    margin-left: -10px;
+  }
+  .sp-tt {
+    margin-top: -10.5px;
+    margin-left: -17px;
+  }
+  &.blue-d:before {
+    background: @blue-d;
+  }
+  &.blue-l:before {
+    background: @blue-l;
+  }
 }
+// .slick-prev {
+//   .sp {
+//     display: block;
+//     margin-top: 8px;
+//     margin-left: 4px;
+//   }
+// }
+// .slick-next {
+//   .sp {
+//     display: block;
+//     margin-top: 8px;
+//     margin-left: 8px;
+//   }
+// }
 #g5 {
   background: @blue-d;
 }
@@ -505,6 +572,11 @@ button {
     font-size: 18px;
     line-height: 1.4;
     letter-spacing: 3px;
+  }
+}
+#g7 {
+  .round-btn:before {
+    background: @blue-d;
   }
 }
 #g12 {
@@ -552,6 +624,7 @@ button {
     margin: 0 auto 40px;
     padding: 0 140px;
     position: relative;
+    font-size: 39px;
     span {
       background: #a6d0e9;
       display: inline-block;
@@ -571,6 +644,88 @@ button {
   .panel {
     vertical-align: bottom;
   }
+}
+
+.sp {
+  background: url(../images/sp.png);
+  background-size: 51px 267px;
+  display: inline-block;
+  vertical-align: middle;
+}
+/* Copy me */
+.sp-down {
+  width: 27px;
+  height: 23px;
+  background-position: 0 -0px;
+}
+
+.sp-fb {
+  width: 16px;
+  height: 30px;
+  background-position: 0 -23px;
+}
+
+.sp-next {
+  width: 24px;
+  height: 29px;
+  background-position: 0 -53px;
+}
+
+.sp-play {
+  width: 27px;
+  height: 24px;
+  background-position: 0 -82px;
+}
+
+.sp-prev {
+  width: 23px;
+  height: 29px;
+  background-position: 0 -106px;
+}
+
+.sp-sound-on {
+  width: 51px;
+  height: 53px;
+  background-position: 0 -135px;
+}
+
+.sp-sound {
+  width: 51px;
+  height: 53px;
+  background-position: 0 -188px;
+}
+
+.sp-tt {
+  width: 33px;
+  height: 26px;
+  background-position: 0 -241px;
+}
+
+.emoji {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-size: 100% 100%;
+  transition: all ease .4s;
+  &.active {
+    width: 50*1.25px;
+    height: 50*1.25px;
+  }
+}
+.emoji1 {
+  background-image: url(../images/header/emoji1.png)
+}
+.emoji2 {
+  background-image: url(../images/header/emoji2.png)
+}
+.emoji3 {
+  background-image: url(../images/header/emoji3.png)
+}
+.emoji4 {
+  background-image: url(../images/header/emoji4.png)
+}
+.emoji5 {
+  background-image: url(../images/header/emoji5.png)
 }
 @media (max-width: 1400px) {
   #game_wrapper {
@@ -631,4 +786,15 @@ button {
     width: auto;
     display: block;
   }
+
+  .emoji {
+    display: block;
+    width: 40px;
+    height: 40px;
+    &.active {
+      width: 50px;
+      height: 50px;
+    }
+  }
+
 }

@@ -184,7 +184,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('.sliderm.slick-slider').slick('unslick')
             // reset video
             $('.videog').each(function(){
-                $(this).html('<div class="g-inner"><a href="#" class="play">Play video</a></div>')
+                $(this).html('<div class="g-inner"><a href="#" class="play"><span class="sp sp-play">Play video</span></a></div>')
             })
         }
         else {
@@ -221,9 +221,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         html = '<div class="iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
         return html;
     },
-    appendShareCover = function( $g ) {
-        html = '<div class="cover">分享<div class="share"></div><a href="#" class="round-btn close">Close</a></div>';
-    },
     videog = function() {
         $('.videog .play').click(function(e){
             e.preventDefault();
@@ -234,7 +231,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             html = '';
 
             html += '<div class="expandableContent video"><div class="wrapper cf"><div class="desc"><h3>';
-            html += title[0] + '</h3><h2>' + title[1] + '</h2><p>' + desc + '</p><div class="share"></div></div>';
+            html += title[0] + '</h3><h2>' + title[1] + '</h2><p>' + desc + '</p>        <div class="share" style="display:block"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
             html += getIframe( $g ) + '</div></div>';
             expandHiddenContent($g, html)
         });
@@ -243,8 +240,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('.sliderg .slider').slick({
             fade: true,
             arrows: true,
-            prevArrow: '<button type="button" class="round-btn slick-prev">Prev</button>',
-            nextArrow: '<button type="button" class="round-btn slick-next">Next</button>'
+            prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
+            nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
         });
     };
     xdomain.slaves({
