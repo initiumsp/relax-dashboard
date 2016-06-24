@@ -24,7 +24,7 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         memory.requestUUID(function() {
             memory.sendMessage('render', '')
             memory.sendMessage('url', window.location.href);
-            
+
             if(window.navigator.userAgent) {
                 memory.sendMessage('userAgent', window.navigator.userAgent);
             }
@@ -184,8 +184,8 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
             desc = $g.data('desc'),
             html = '';
 
-            html += '<div class="expandableContent video"><div class="wrapper"><h2>';
-            html += title[0] + '</h2><h1>' + title[1] + '</h1><p>' + desc + '</p><div class="share"></div>';
+            html += '<div class="expandableContent video"><div class="wrapper cf"><div class="desc"><h3>';
+            html += title[0] + '</h3><h2>' + title[1] + '</h2><p>' + desc + '</p><div class="share"></div></div>';
             html += getIframe( $g ) + '</div></div>';
             expandHiddenContent($g, html)
         });
@@ -193,7 +193,9 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
     sliderg = function() {
         $('.sliderg .slider').slick({
             fade: true,
-            arrows: true
+            arrows: true,
+            prevArrow: '<button type="button" class="round-btn slick-prev">Prev</button>',
+            nextArrow: '<button type="button" class="round-btn slick-next">Next</button>'
         });
     };
     xdomain.slaves({
@@ -204,11 +206,11 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
     var urlRecall = apiPrefix + 'recall/';
     var urlUUID = apiPrefix + 'utility/uuid/';
     var getUUID = function(){
-        return $("#uuid").val(); 
+        return $("#uuid").val();
     };
 
     var setUUID = function(uuid) {
-        $("#uuid").val(uuid); 
+        $("#uuid").val(uuid);
     };
 
     var memory = {
