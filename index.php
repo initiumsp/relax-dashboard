@@ -36,8 +36,8 @@
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-    // ga('create', 'UA-65642613-1', 'auto');
-    // ga('send', 'pageview');
+    ga('create', 'UA-66625644-23', 'auto');
+    ga('send', 'pageview');
 
   </script>
   <link href="./css/all.css" rel="stylesheet" media="screen">
@@ -56,6 +56,9 @@
         <div id="pen">
           <div class="refill"></div>
           <div class="body"></div>
+        </div>
+        <div class="share">
+
         </div>
       </div>
     </div>
@@ -150,8 +153,10 @@
 
       </div>
     </div>
-    <div class="g" id="g10">
+    <div class="g audiog" id="g10" data-vid="yoga">
       <div class="g-inner">
+        <div class="share"></div>
+    
       </div>
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">

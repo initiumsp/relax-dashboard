@@ -1,4 +1,5 @@
-define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
+
+define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
     var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet());
     var breakpoints = {
             1400: 3,
@@ -41,7 +42,8 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
         g5();
         g12();
         sliderg();
-        videog();
+        videog(mode);
+        audio.init();
     },
     g1 = {
         wrapper: $('#g1'),
@@ -92,6 +94,53 @@ define(["jquery", "xdomain", "md", "jquery.scrollTo.min", "slick.min"], function
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
             memory.sendMessage('option', 'g1');
+        }
+    },
+    share = function(gid){
+        $(gid).find('.share').fadeIn();
+    },
+    audio = {
+        isready: false,
+        playing: '',
+        init: function(){
+            soundManager.setup({
+              url: './swf/',
+              flashVersion: 9,
+              onready: function() {
+                audio.isready = true;
+                soundManager.createSound({
+                  id: 'yoga',
+                  url: './yoga.mp3',
+                  autoLoad: true,
+                  autoPlay: false,
+                  onload: function() {
+                    $('.g[data-vid="'+this.id+'"]').addClass('ready');
+                  },
+                  volume: 50
+                });
+              }
+            });
+            $('.g.audiog').bind('click', function(e){
+                e.preventDefault();
+                if(!$(this).hasClass('ready')) return;
+                $(this).toggleClass('playing')
+                if($(this).hasClass('playing'))
+                    audio.play($(this).data('vid'));
+                else
+                    audio.pause($(this).data('vid'));
+            });
+        },
+        play: function(id){
+            soundManager.play(id,{volume:50,onfinish:function(){
+                audio.showShare();
+            }});
+            this.playing = id;
+        },
+        pause: function(id){
+            soundManager.pause(id);
+            setTimeout(function(){
+                share('#g10');
+            }, 3000);
         }
     },
     g4 = function() {
