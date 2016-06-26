@@ -74,7 +74,12 @@
     </div>
     <div class="g" id="g2">
       <div class="g-inner">
-
+        <div id="mirror"></div>
+        <div id="smoke"></div>
+      </div>
+      <div class="share-cover">
+        <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+        <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
       </div>
     </div>
     <div class="g" id="g3">
@@ -157,8 +162,8 @@
       <div class="g-inner">
       <div class="slider">
         <div class="slide"><img src="./images/illustration/slide1.jpg"></div>
-        <div class="slide"><img src="./images/illustration/slide2.jpg"></div>
-        <div class="slide"><img src="./images/illustration/slide3.jpg"></div>
+        <div class="slide"><img data-lazy="./images/illustration/slide2.jpg"></div>
+        <div class="slide"><img data-lazy="./images/illustration/slide3.jpg"></div>
       </div>
       <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
 
@@ -171,25 +176,69 @@
     </div><!-- g8 video expandable  -->
 
 
-    <div class="g" id="g9">
+    <div class="g audiog" id="g9"  data-vid="yoga">
       <div class="g-inner">
         <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
 
       </div>
+      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
     </div>
-    <div class="g audiog" id="g10" data-vid="yoga">
+    <div class="g audiog" id="g10">
       <div class="g-inner">
+        <div class="sm2-bar-ui compact full-width">
+          <div class="bd sm2-main-controls">
+            <div class="sm2-inline-element sm2-button-element">
+              <div class="sm2-button-bd">
+                <a href="#play" class="sm2-inline-button play-pause">Play / pause</a>
+              </div>
+            </div>
+            <div class="sm2-inline-element sm2-inline-status">
+              <div class="sm2-playlist">
+                <div class="sm2-playlist-target">
+                  <ul  class="sm2-playlist-bd">
+                    <!-- <li><a href="./yoga.mp3">YogA</a></li> -->
+                  </ul>
+                </div>
+              </div>
+              <div class="sm2-progress">
+                <div class="sm2-row">
+                  <div class="sm2-inline-time">0:00</div>
+                  <div class="sm2-progress-bd">
+                   <div class="sm2-progress-track">
+                     <div class="sm2-progress-bar"></div>
+                     <div class="sm2-progress-ball">
+                       <div class="icon-overlay"></div>
+                     </div>
+                   </div>
+                  </div>
+                  <div class="sm2-inline-duration">0:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="bd sm2-playlist-drawer sm2-element" style="background-color: rgb(205, 158, 31);">
+            <!-- playlist content is mirrored here -->
+            <div class="sm2-playlist-wrapper">
+              <ul class="sm2-playlist-bd">
+                <!-- Enter all sound clips as list items, per the example code below -->
+                <li>
+                  <a href="./yoga.mp3">Some sort of description here</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
         <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
         <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
-      </div>
+      </div><!-- g-inner -->
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
       <div class="g-inner">
       <div class="slider">
         <div class="slide"><img src="./images/lanterns/slide1.jpg"></div>
-        <div class="slide"><img src="./images/lanterns/slide2.jpg"></div>
-        <div class="slide"><img src="./images/lanterns/slide3.jpg"></div>
-        <div class="slide"><img src="./images/lanterns/slide4.jpg"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide2.jpg"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide3.jpg"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
       </div>
       <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
       </div>

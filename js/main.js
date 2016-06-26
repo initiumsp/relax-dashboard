@@ -1,6 +1,6 @@
 
-define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min"], function($, xdomain, MobileDetect) {
-    var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet());
+define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min", "bar-ui"], function($, xdomain, MobileDetect) {
+    var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet()), ev = (t)? 'touchstart' : 'click', hold = (t)? 'touchstart' : 'mousedown', release = (t)? 'touchend' : 'mouseup';
     var breakpoints = {
             1400: 3,
             1024: 2,
@@ -38,13 +38,20 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             });
         });
         g1.init();
+        g2.init();
         g4.init();
         g5();
         g12();
         sliderg();
         videog(mode);
-        audio.init();
+        g9.init();
+        g10.init();
         emoji();
+        $('.share-cover').bind('click', function(e){
+            e.preventDefault();
+            e.stopPropagation();
+            $(this).fadeOut();
+        });
     },
     emoji = function() {
         $('.emoji').click(function(e){
@@ -56,7 +63,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     g1 = {
         wrapper: $('#g1'),
         pen: $('#pen'),
-        e: (t)? 'touchstart' : 'click',
         $count: $('#g1 .count .val'),
         $refill: $('#pen .refill'),
         count: 0,
@@ -65,7 +71,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         refill: {left: 0, bottom: 0, w: 0, h: 0},
         timer: null, 
         init: function(){
-        $('body').delegate('#g1', this.e, function(e){
+        $('body').delegate('#g1', ev, function(e){
             g1.penClick();
         });
         this.refill.w = this.$refill.width();
@@ -111,18 +117,126 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             memory.sendMessage('option', 'g1');
         }
     },
+    g2 = {
+        imgi: 0,
+        imgi2: 0,
+        smokes_uri: './images/mirror/smoke/',
+        bg_uri: './images/mirror/bg/',
+        playsmoke: true,
+        playbg: false,
+        timer: null,
+        timer2: null,
+        init: function(){
+            this.imgi = 0;
+            console.log(this.smokes_uri+this.imgi+'.png');
+            $("#smoke").css('backgroundImage', 'url('+this.smokes_uri+this.imgi+'.png'+')').show();
+            if(g2.playsmoke)
+                setTimeout(g2.setImage, 300);
+            $('#g2').bind(hold, function (e) {
+                if($(e.toElement).is('.share-cover')) return;
+                g2.playbg = true;
+                setTimeout(function(){g2.setImage2(false)}, 300);
+                if(g2.timer2!=null){
+                    clearTimeout(g2.timer2);
+                    g2.timer2 = null;
+                }
+            }).bind(release, function(e){
+                if($(e.toElement).is('.share-cover')) return;
+                g2.playbg = true;
+                setTimeout(function(){g2.setImage2(true)}, 300);
+                g2.timer2 = setTimeout(function(){
+                    share('#g2');
+                }, 3000);
+            });
+        },
+        setImage: function(){
+            g2.imgi++;
+            if(g2.imgi>17)
+                g2.imgi = 0;
+            var next=new Image();
+            next.onload=function(){
+                $("#smoke").css("backgroundImage",  'url('+this.src+')');
+            }
+            next.src= g2.smokes_uri+g2.imgi+'.png';
+            if(g2.playsmoke)
+                setTimeout(g2.setImage, 300);
+        },
+        setImage2: function(revert){
+            if(revert)
+                g2.imgi2--;
+            else
+                g2.imgi2++;
+            if(g2.imgi2>23){
+                g2.playbg = false;
+                return;
+            }
+            if(g2.imgi2 < 0){
+                g2.playbg = false;
+                g2.imgi2 = 0;
+                return;
+            }
+            var next=new Image();
+            next.onload=function(){
+                $("#mirror").css("backgroundImage",  'url('+this.src+')');
+            }
+            next.src= g2.bg_uri+g2.imgi2+'.jpg';
+            if(g2.timer!=null){
+                clearTimeout(g2.timer);
+                g2.timer = null;
+            }
+            if(g2.playbg)
+                g2.timer = setTimeout(function(){g2.setImage2(revert)}, 100);
+        }
+
+    },
     share = function(gid){
         $(gid).find('.share-cover').fadeIn();
     },
-    audio = {
+    g10 = {
+        ready: false,
+        timer: null,
+        init: function(){
+            if(window.sm2BarPlayers[0]!='undefined'){
+                g10.ready  = true;
+            }
+            $('#g10 .audio-play').bind('click', function(e){
+                e.preventDefault();
+                if(!g10.ready)
+                    return;
+                if($('#g9').hasClass('playing')){
+                    $('#g9 .audio-play').trigger('click');
+                }
+                var $parent = $('#g10');
+                $parent.toggleClass('playing')
+                if($parent.hasClass('playing')){
+                    if(g10.timer!=null){
+                        clearTimeout(g10.timer);
+                        g10.timer = null;
+                    }
+                    window.sm2BarPlayers[0].actions.play();
+                }
+                else{
+                    window.sm2BarPlayers[0].actions.pause();
+                    g10.timer = setTimeout(function(){
+                        share('#g10');
+                    }, 3000);
+                }
+            });
+            window.sm2BarPlayers.on['end'] = function(){
+                $('#g10').removeClass('playing');share('#g10');
+            };
+        }
+    },
+    g9 = {
         isready: false,
+        timer: null,
         playing: '',
         init: function(){
             soundManager.setup({
               url: './swf/',
               flashVersion: 9,
               onready: function() {
-                audio.isready = true;
+                g9.isready = true;
                 soundManager.createSound({
                   id: 'yoga',
                   url: './yoga.mp3',
@@ -135,38 +249,47 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 });
               }
             });
-            $('.g.audiog').bind('click', function(e){
+            $('#g9 .audio-play').bind('click', function(e){
                 e.preventDefault();
-                if(!$(this).hasClass('ready')) return;
-                $(this).toggleClass('playing')
-                if($(this).hasClass('playing'))
-                    audio.play($(this).data('vid'));
+                if($('#g10').hasClass('playing')){
+                    $('#g10 .audio-play').trigger('click');
+                }
+                var $parent = $('#g9');
+                //if(!$parent.hasClass('ready')) return;
+                $parent.toggleClass('playing')
+                if($parent.hasClass('playing'))
+                    g9.play($parent.data('vid'));
                 else
-                    audio.pause($(this).data('vid'));
+                    g9.pause($parent.data('vid'));
             });
         },
         play: function(id){
+            if(g9.timer!=null){
+                clearTimeout(g9.timer);
+                g9.timer = null;
+            }
             soundManager.play(id,{volume:50,onfinish:function(){
-                audio.showShare();
+                share('#g9');
+                $('.g[data-vid="'+id+'"]').removeClass('playing');
             }});
             this.playing = id;
         },
         pause: function(id){
             soundManager.pause(id);
-            setTimeout(function(){
-                share('#g10');
+            g9.timer = setTimeout(function(){
+                share('#g9');
             }, 3000);
         }
     },
     g4 = {
         timer: null,
         init: function(){
-            if(this.timer!=null){
-                clearTimeout(this.timer);
-                this.timer = null;
-            }
             var $g = $('#g4'), $b = $('#g4 .b');
             $b.bind('click',function(e){
+                if(g4.timer!=null){
+                    clearTimeout(g4.timer);
+                    g4.timer = null;
+                }
                     e.preventDefault();
                     var $this = $(this);
                     if($this.hasClass('filled')) return;
@@ -176,10 +299,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 )
                             $('.b').removeClass('filled')
+                    g4.timer = setTimeout(function(){
+                        share('#g4');
+                    }, 3000);
             });
-            this.timer = setTimeout(function(){
-                share('#g4');
-            }, 3000);
         }
     },
     g5 = function() {
@@ -196,7 +319,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     g12 = function() {
         var $g = $('#g12'),
         $emoji = $('#g12 .emoji');
-
+        for(var i = 1; i <5; i++){
+            var img = new Image();
+            img.src = "./images/emoji/bg"+i+".jpg";
+        }
         $emoji.click(function(e) {
             e.preventDefault();
             index = $(this).data('index');
@@ -266,6 +392,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('.sliderg .slider').slick({
             fade: true,
             arrows: true,
+            lazyLoad: 'progressive',
             prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
             nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
         });

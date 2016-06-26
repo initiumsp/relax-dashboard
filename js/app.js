@@ -6,6 +6,7 @@ require.config({
   "shim": {
     "jquery.scrollTo.min": ["jquery"],
     "slick.min": ["jquery"],
+    "bar-ui": ["soundmanager.min"],
   },
   waitSeconds: 40
 });
