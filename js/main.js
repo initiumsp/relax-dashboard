@@ -51,6 +51,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             e.stopPropagation();
             $(this).fadeOut();
+            if($(this).parents('#g2:first').length ==1){
+                g2.playsmoke= true;
+                setTimeout(g2.setImage, 300);
+            }
         });
     },
     emoji = function() {
@@ -128,12 +132,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         timer2: null,
         init: function(){
             this.imgi = 0;
-            console.log(this.smokes_uri+this.imgi+'.png');
             $("#smoke").css('backgroundImage', 'url('+this.smokes_uri+this.imgi+'.png'+')').show();
             if(g2.playsmoke)
                 setTimeout(g2.setImage, 300);
             $('#g2').bind(hold, function (e) {
-                if($(e.toElement).is('.share-cover')) return;
+                if($(e.target).hasClass('share-cover')) return;
                 g2.playbg = true;
                 setTimeout(function(){g2.setImage2(false)}, 300);
                 if(g2.timer2!=null){
@@ -141,11 +144,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     g2.timer2 = null;
                 }
             }).bind(release, function(e){
-                if($(e.toElement).is('.share-cover')) return;
+                if($(e.target).hasClass('share-cover')) return;
                 g2.playbg = true;
                 setTimeout(function(){g2.setImage2(true)}, 300);
                 g2.timer2 = setTimeout(function(){
                     share('#g2');
+                    g2.playsmoke = false;
                 }, 3000);
             });
         },
@@ -191,6 +195,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     },
     share = function(gid){
         $(gid).find('.share-cover').fadeIn();
+
     },
     g10 = {
         ready: false,
