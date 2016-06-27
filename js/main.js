@@ -61,6 +61,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g2.setImage, 300);
             }
         });
+        $('.share-cover .close').on('click', function(e) {
+            e.preventDefault();
+            $(this).parents('.share-cover').fadeOut();
+        })
         $('body').delegate('.fb-share', ev, function(e){
             var url = $(this).data('share-href');
             window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
@@ -689,6 +693,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
       })
     }
     };
+
     // ---- End of Initium Memory Api Setup ----
-    init();
+    $(document).ready(function(){
+        console.log('document is ready')
+        init();
+
+    });
 });

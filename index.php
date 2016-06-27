@@ -42,6 +42,9 @@
 
   </script>
   <link href="./css/all.css" rel="stylesheet" media="screen">
+<!--[if IE]>
+  <link rel="stylesheet" type="text/css" href="./css/ie.css" />
+<![endif]-->
 </head>
 <body class="tc">
   <header>
