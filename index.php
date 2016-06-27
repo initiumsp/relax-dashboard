@@ -24,6 +24,7 @@
   <meta property="og:site_name" content=""/>
   <meta property="og:type" content="website"/>
   <meta property="og:image" content="<?php echo $base_url;?>images/share.jpg"/>
+  <link href='https://fonts.googleapis.com/css?family=Advent+Pro:700' rel='stylesheet' type='text/css'>
   <script type="text/javascript">
     var base_url = './';
     var lang = 'tc';
