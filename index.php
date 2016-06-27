@@ -139,10 +139,12 @@
         <div class="g-inner">
           <div class="center">
             <div class="centered">
-              <h3>Weather Forcast <br>Monday</h3>
-              <p>17/6</p>
-              <span class="icon icon1"></span>
-              <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
+              <div class="content">
+                <h3>Weather Forcast <br><span>MONDAY</span></h3>
+                <p>17/6</p>
+                <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
+                <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
+              </div>
             </div>
           </div>
         </div>
@@ -153,33 +155,35 @@
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon icon1" src="//placehold.it/105x105/eee">
+            <div class="icon icon1 center"><div class="centered"><img src="./images/weather/sunny.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon icon2" src="//placehold.it/105x105/eee">
+            <div class="icon icon2 center"><div class="centered"><img src="./images/weather/cloudy.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon icon3" src="//placehold.it/105x105/eee">
+            <div class="icon icon3 center"><div class="centered"><img src="./images/weather/raining.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <h6>MONDAY</h6>
             <div class="date">17/6</div>
-            <img class="icon icon4" src="//placehold.it/105x105/eee">
+            <div class="icon icon4 center"><div class="centered"><img src="./images/weather/mostly-sunny.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
             <div class="center">
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
-                <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-                <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                <span class="share">
+                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                </span>
               </div>
             </div>
           </div>
@@ -202,8 +206,8 @@
         </div>
       </div>
       <div class="slider-share">
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
+        <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
@@ -296,8 +300,8 @@
           <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
         </div>
         <div class="slider-share">
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+          <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
         </div>
       </div>
     </div>
