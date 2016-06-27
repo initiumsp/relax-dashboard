@@ -73,6 +73,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             $(this).parent().find('.emoji').removeClass('active')
             $(this).addClass('active')
+            ga('send', 'event', 'emoji', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
     g1 = {
@@ -130,6 +131,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
             memory.sendMessage('option', 'g1');
+            ga('send', 'event', 'g1', 'dropped');
         }
     },
     g2 = {
@@ -428,6 +430,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             setTimeout(function(){
                 share('#g12');
             },1000)
+            ga('send', 'event', 'g12', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
     handleResponsive = function(mode){
