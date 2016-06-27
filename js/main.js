@@ -430,7 +430,17 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 return './images/weather/cloudy.png';
             } else {
                 return './images/weather/raining.png';
-                return './images/weather/sunny.png';
+            }
+        };
+        var yahoo_id_text = function(id) {
+            if(id>=31 && id<=34 || id==36) {
+                return '大熱天時，最適合行山、去沙灘同野餐，齊齊同陽光玩遊戲～';
+            } else if(id>=27 && id<=30 || id==44) {
+                return '天氣好，快啲出去玩啦﹗溜冰、放風箏、打羽毛球，心情靚晒～';
+            } else if(id>17 && id<=26 || id==35 || id>37 && id<=40 || id==4 || id==45) {
+                return '約埋朋友一齊睇戲、玩Boardgame、參加工作坊，陰天一樣好心情！';
+            } else {
+                return '去Cafe、睇書做文青，再唔係咪旅行出走，落雨又有咩好怕﹖';
             }
         };
         var date = new Date();
@@ -455,7 +465,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 var forecast = data.query.results.channel.item.forecast;
                 $('#g5 .content img').attr('src', yahoo_id_icon(forecast[0].code));
                 for (var i = 1; i <= 4; i++) {
-                    $('.g5_expandable .item:eq('+(i-1)+') p').text(forecast[i].text);
+                    $('.g5_expandable .item:eq('+(i-1)+') p').text(yahoo_id_text(forecast[i].code));
                     $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', yahoo_id_icon(forecast[i].code));
                 }
 
