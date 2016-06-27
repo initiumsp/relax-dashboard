@@ -1,9 +1,9 @@
 <?php include '../config.php';
-$tc_title = '';?>
+//$tc_title = '';?>
 <meta name="description" content="<?php echo $tc_desc;?>">
 <meta property="og:title" content="<?php echo $tc_title;?> | 端傳媒 Initium Media">
 <meta property="og:type" content="article">
-<meta property="og:image" content="<?php echo $base_url;?>share/share4.html">
+<meta property="og:image" content="<?php echo $base_url;?>images/share/share4.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="<?php echo $base_url;?>share/share4.html">
 <meta name="twitter:title" content="<?php echo $tc_title;?> | 端傳媒 Initium Media">
@@ -11,7 +11,7 @@ $tc_title = '';?>
 <meta name="twitter:domain" content="theinitium.com">
 <meta name="twitter:site" content="@initiumnews">
 <meta name="twitter:creator" content="@initiumnews">
-<meta name="twitter:image:src" content="<?php echo $base_url;?>share/share4.html">
+<meta name="twitter:image:src" content="<?php echo $base_url;?>images/share/share4.jpg">
 <title><?php echo $tc_title;?> | 端傳媒 Initium Media</title>
 <script type="text/javascript">
   var shop_name = window.location.pathname.split('/').pop();
