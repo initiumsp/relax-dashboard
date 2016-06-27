@@ -19,7 +19,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             else{
                 mode = 'm';
             }
-            handleResponsive(mode);
+            if ( ! $('body').hasClass(mode) ) {
+                $('body').removeClass('d t m').addClass(mode)
+                handleResponsive(mode);
+            }
         });
         $(this).trigger('resize');
         memory.requestUUID(function() {
@@ -44,7 +47,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g7();
         g12();
         sliderg();
-        videog(mode);
+        videog();
         g9.init();
         g10.init();
         emoji();
@@ -421,13 +424,15 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         })
     },
     handleResponsive = function(mode){
+            $('.g+expandableContent').remove();
         if ( mode == 'd' || mode == 't') {
             // reset slider
             $('.sliderm.slick-slider').slick('unslick')
             // reset video
             $('.videog').each(function(){
                 $(this).removeClass('iframe')
-                $(this).html('<div class="g-inner"><a href="#" class="play"><span class="sp sp-play">Play video</span></a></div>')
+                $(this).html('<div class="g-inner"><a href="#" class="play"><span class="sp sp-play">Play video</span></a></div>');
+                videog()
             })
         }
         else {

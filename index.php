@@ -182,8 +182,8 @@
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
                 <span class="share">
-                  <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-                  <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                  <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb desktop-only">Share to facebook</span><span class="sp sp-fb3 mobile-only">Share to facebook</span></a>
+                  <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt desktop-only">Share to twitter</span><span class="sp sp-tt3 mobile-only">Share to twitter</span></a>
                 </span>
               </div>
             </div>
