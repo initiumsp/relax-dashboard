@@ -72,8 +72,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -88,8 +88,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -103,8 +103,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -127,8 +127,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -182,8 +182,8 @@
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
                 <span class="share">
-                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                  <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+                  <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
                 </span>
               </div>
             </div>
@@ -207,8 +207,8 @@
         </div>
       </div>
       <div class="slider-share">
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+        <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
@@ -227,8 +227,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -283,8 +283,8 @@
           <div class="center">
             <div class="centered share">
               <p class="title-yellow">分享</p>
-              <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-              <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+              <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+              <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
             </div>
           </div>
           <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -301,8 +301,8 @@
           <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
         </div>
         <div class="slider-share">
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+          <a href="#" data-share-href="" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+          <a href="#" data-share-href="" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
         </div>
       </div>
     </div>
@@ -325,8 +325,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="" target="_blank" class="blue-d fb-share round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="" target="_blank" class="blue-l tw-share round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
