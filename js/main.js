@@ -364,7 +364,29 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     g5 = function() {
         var $g = $('#g5'), html;
 
-
+        var yahoo_id_icon = function(id) {
+            //https://developer.yahoo.com/weather/documentation.html
+            if(id>=31 && id<=34 || id==36) {
+                return './images/weather/sunny.png';
+            } else if(id>=27 && id<=30 || id==44) {
+                return './images/weather/mostly-sunny.png';
+            } else if(id>17 && id<=26 || id==35 || id>37 && id<=40 || id==4 || id==45) {
+                return './images/weather/cloudy.png';
+            } else {
+                return './images/weather/raining.png';
+            }
+        };
+        var yahoo_id_text = function(id) {
+            if(id>=31 && id<=34 || id==36) {
+                return '大熱天時，最適合行山、去沙灘同野餐，齊齊同陽光玩遊戲～';
+            } else if(id>=27 && id<=30 || id==44) {
+                return '天氣好，快啲出去玩啦﹗溜冰、放風箏、打羽毛球，心情靚晒～';
+            } else if(id>17 && id<=26 || id==35 || id>37 && id<=40 || id==4 || id==45) {
+                return '約埋朋友一齊睇戲、玩Boardgame、參加工作坊，陰天一樣好心情！';
+            } else {
+                return '去Cafe、睇書做文青，再唔係咪旅行出走，落雨又有咩好怕﹖';
+            }
+        };
         var date = new Date();
         var day = date.getDate();
         var month = date.getMonth();
@@ -380,23 +402,15 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('.g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
         };
         $.ajax({
-            url: './SeveralDaysWeatherForecast_uc.xml',
-            dataType: 'text',
+            url: 'https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22Hong%20Kong%2C%20hk%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys',
+            jsonp: "callback",
+            dataType: 'jsonp',
             success: function(data) {
-                var start_pos = data.indexOf('<description><![CDATA[');
-                var end_pos = data.indexOf(']]></description>');
-                var str = data.substr(start_pos+'<description><![CDATA['.length, end_pos-start_pos-'<description><![CDATA['.length).trim().split('\n');
-                //line 4 is today
-                var desc = str[4].substr(0,str[4].length-6).trim();
-                // $('#g5 .content p').text(desc);
-                $('#g5 .content img').attr('src', convert_str_to_icon(desc));
+                var forecast = data.query.results.channel.item.forecast;
+                $('#g5 .content img').attr('src', yahoo_id_icon(forecast[0].code));
                 for (var i = 1; i <= 4; i++) {
-                    //line 14 is tmr
-                    //line 24
-                    var k = i*10+4;
-                    var desc = str[k].substr(0,str[k].length-6).trim();
-                    $('.g5_expandable .item:eq('+(i-1)+') p').text(desc);
-                    $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
+                    $('.g5_expandable .item:eq('+(i-1)+') p').text(yahoo_id_text(forecast[i].code));
+                    $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', yahoo_id_icon(forecast[i].code));
                 }
 
                 html =  $('#g5 .expandable').html();
