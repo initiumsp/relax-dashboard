@@ -57,6 +57,16 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g2.setImage, 300);
             }
         });
+        $('body').delegate('.fb-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
+            return false;
+        });
+        $('body').delegate('.tw-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600');
+            return false;
+        });
     },
     emoji = function() {
         $('.emoji').click(function(e){

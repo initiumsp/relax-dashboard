@@ -1,6 +1,6 @@
 <?php
 
-$base_url = 'http://dev.documentonready.com/brexit_map/';
+$base_url = 'http://dev.documentonready.com/dashboard/';
 // $base_url = 'http://project.initiumlab.com/relax-dashboard/';
 if(!isset($tc_title)) $tc_title = '12格遇上天藍';
 if(!isset($sc_title)) $sc_title = '12格遇上天藍';

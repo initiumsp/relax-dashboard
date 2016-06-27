@@ -46,7 +46,12 @@
 <body class="tc">
   <header>
     <h1 class="title-blue">12格遇上天藍</h1>
-    <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖<span class="share"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></span></p>
+    <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖
+      <span class="share">
+        <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+      </span>
+    </p>
   </header>
   <div id="game_wrapper" class="cf">
     <div class="decor">
@@ -72,8 +77,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" data-share-href="" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" data-share-href="" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
