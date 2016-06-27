@@ -41,6 +41,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g2.init();
         g4.init();
         g5();
+        g7();
         g12();
         sliderg();
         videog(mode);
@@ -73,7 +74,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         clicks: 0,
         times: 10,
         refill: {left: 0, bottom: 0, w: 0, h: 0},
-        timer: null, 
+        timer: null,
         init: function(){
         $('body').delegate('#g1', ev, function(e){
             g1.penClick();
@@ -321,6 +322,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('#g5 .expand').fadeOut();
         })
     },
+    g7 = function() {
+        $('img').click(function(){
+            $('#g7').find('.slider-share').fadeToggle();
+        })
+    },
     g12 = function() {
         var $g = $('#g12'),
         $emoji = $('#g12 .emoji');
@@ -332,8 +338,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             index = $(this).data('index');
             $g.css('background', 'url("./images/emoji/bg' + index + '.jpg")');
+            setTimeout(function(){
+                share('#g12');
+            },1000)
         })
-        $emoji.last().click();
     },
     handleResponsive = function(mode){
         if ( mode == 'd' || mode == 't') {
@@ -394,13 +402,14 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
     },
     sliderg = function() {
-        $('.sliderg .slider').slick({
+        config = {
             fade: true,
             arrows: true,
             lazyLoad: 'progressive',
             prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
             nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
-        });
+        };
+        $('.sliderg .slider').slick(config);
     };
     xdomain.slaves({
         'https://ss.initiumlab.com/': '/proxy.html'

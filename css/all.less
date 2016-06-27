@@ -101,17 +101,6 @@ header {
     letter-spacing: 8px;
     padding: 12px 0 27px;
   }
-  .decor {
-    background: #fff;
-    text-align: center;
-    padding: 0 36px 5px;
-    p {
-      font-size: 20px;
-      color: @blue-d;
-      padding: 11px 0px;
-      letter-spacing: 6px;
-    }
-  }
   .round-btn {
     display: inline-block;
     vertical-align: middle;
@@ -209,6 +198,21 @@ header {
   margin: 0 auto 90px;
   // padding: 0 90px;
   border: 2px solid #000;
+  .decor {
+    // background: #fff;
+    background: url('../images/emoji-bg.svg');
+    background-size: cover;
+    text-align: center;
+    padding: 0 0 13px;
+    box-sizing: border-box;
+    p {
+      margin: 0;
+      font-size: 20px;
+      color: @blue-d;
+      padding: 18px 0 11px;
+      letter-spacing: 6px;
+    }
+  }
   .g {
     width: 25%;
     float: left;
@@ -694,11 +698,8 @@ header {
 }
 #g5, #g5_expandable {
   .icon img {
-    max-width: 113px;
+    max-width: 156px;
   }
-  // .icon img {
-  //   display: block;
-  // }
 }
 #g5 {
   background: @blue-d;
@@ -709,11 +710,11 @@ header {
   }
   .centered {
     text-align: left;
-    padding-left: 15%;
-    padding-right: 15%;
   }
   .content {
     position: relative;
+    max-width: 290px;
+    margin: 0 auto;
   }
   .icon {
     position: absolute;
@@ -746,7 +747,7 @@ header {
     .advent;
   }
   .icon {
-    margin-bottom: 20px;
+    margin-bottom: -8px;
   }
   .item {
     box-sizing: border-box;
@@ -761,7 +762,7 @@ header {
   }
   .date {
     font-size: 42px;
-    margin-bottom: 15px;
+    margin-bottom: 0;
     line-height: 100%;
   }
   p {
@@ -769,6 +770,14 @@ header {
     font-size: 18px;
     line-height: 1.4;
     letter-spacing: 3px;
+  }
+  .share {
+    text-align: center;
+    font-size: 0;
+    .round-btn {
+      display: inline-block;
+      margin: 0 35/2px;
+    }
   }
   // .icon {
   //   min-height: 145px;
@@ -795,6 +804,9 @@ header {
   .slick-next {
     margin-right: -35px;
   }
+  .slider-share {
+    display: none;
+  }
   .g-inner {
     padding-left: 26.51/2%;
     padding-right: 26.51/2%;
@@ -802,24 +814,6 @@ header {
 }
 #g11 {
   .g-inner {
-    margin-left: -6.17%;
-    margin-right: -6.17%;
-    &:before, &:after {
-      content: '';
-      position: absolute;
-      border: 1px solid #000;
-      top: 0;
-      bottom: 0;
-      z-index: 1;
-    }
-    &:before {
-      // left: 6.17%;
-      left: 5%;
-    }
-    &:after {
-      // right: 6.17%;
-      right: 5%;
-    }
     .slick-prev {
       margin-left: 43px;
     }
@@ -829,6 +823,7 @@ header {
   }
 }
 #g12 {
+  background: url("../images/emoji/bg5.jpg");
   transition: .4s background ease;
   p {
     font-size: 20px;
@@ -1067,18 +1062,27 @@ header {
   background-image: url(../images/emoji/emoji5.png)
 }
 
+@media (min-width: 1401px) {
+  #game_wrapper .decor {
+    width: 25%;
+  }
+}
 @media (max-width: 1400px) {
   #game_wrapper {
-    .g {
+    .decor, .g {
       width: 100/3%;
+    }
+    .g {
       padding-top: 100/3*0.7349%;
     }
   }
 }
 @media (max-width: 1024px) {
   #game_wrapper {
-    .g {
+    .decor, .g {
       width: 100/2%;
+    }
+    .g {
       padding-top: 100/2*0.7349%;
     }
   }
@@ -1087,11 +1091,13 @@ header {
   body {
     padding-bottom: 130px;
   }
-  header {
+  #game_wrapper {
+    position: relative;
     .decor {
       position: absolute;
-      right: 50px;
-      bottom: 0;
+      bottom: 100%;
+      right: 0;
+      // margin-bottom: -1px;
     }
   }
   #g5_expandable {
@@ -1103,6 +1109,11 @@ header {
 
   }
 
+}
+@media (max-width: 1250px) and (min-width: 1025px) {
+  #game_wrapper .emoji {
+    margin: 0 4px;
+  }
 }
 @media (max-width: 767px) {
   .sp {
@@ -1197,6 +1208,11 @@ header {
 
   #game_wrapper {
     max-width: 500px;
+    .decor {
+      width: auto;
+      margin: -2px;
+      background-color: #a6d0e9;
+    }
     .g {
       width: 100%;
       padding-top: 73.49%;
