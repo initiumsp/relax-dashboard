@@ -562,6 +562,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
                 $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
+                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
     },
