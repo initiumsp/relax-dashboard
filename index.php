@@ -159,32 +159,32 @@
       <div class="expandable">
       <!-- <div class="expandable hidden"> -->
       <div class=" expandableContent g5_expandable">
-        <div class="cf sliderm">
-          <div class="item">
+        <div class="list view-table sliderm">
+          <div class="item item1">
             <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
-          <div class="item">
+          <div class="item item2">
             <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon2"><img src="./images/weather/cloudy.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
-          <div class="item">
+          <div class="item item3">
             <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon3"><img src="./images/weather/raining.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
-          <div class="item">
+          <div class="item item4">
             <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon4"><img src="./images/weather/mostly-sunny.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
-          <div class="item">
+          <div class="item item5">
             <div class="center">
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
