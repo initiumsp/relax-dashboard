@@ -60,12 +60,23 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g2.setImage, 300);
             }
         });
+        $('body').delegate('.fb-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
+            return false;
+        });
+        $('body').delegate('.tw-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600');
+            return false;
+        });
     },
     emoji = function() {
         $('.emoji').click(function(e){
             e.preventDefault();
             $(this).parent().find('.emoji').removeClass('active')
             $(this).addClass('active')
+            ga('send', 'event', 'emoji', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
     g1 = {
@@ -123,6 +134,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
             memory.sendMessage('option', 'g1');
+            ga('send', 'event', 'g1', 'dropped');
         }
     },
     g2 = {
@@ -350,7 +362,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         return weekday;
     },
     g5 = function() {
-        var $g = $('#g5'), html =  $('#g5 .expandable').html();
+        var $g = $('#g5'), html;
 
 
         var date = new Date();
@@ -364,8 +376,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             var day = date.getDate();
             var month = date.getMonth();
             var weekday = date.getDay();
-            $('#g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
-            $('#g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
+            $('.g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
+            $('.g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
         };
         $.ajax({
             url: './SeveralDaysWeatherForecast_uc.xml',
@@ -383,8 +395,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     //line 24
                     var k = i*10+4;
                     var desc = str[k].substr(0,str[k].length-6).trim();
-                    $('#g5_expandable .item:eq('+(i-1)+') p').text(desc);
-                    $('#g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
+                    $('.g5_expandable .item:eq('+(i-1)+') p').text(desc);
+                    $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
                 }
 
                 html =  $('#g5 .expandable').html();
@@ -421,6 +433,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             setTimeout(function(){
                 share('#g12');
             },1000)
+            ga('send', 'event', 'g12', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
     handleResponsive = function(mode){
