@@ -46,7 +46,14 @@
 <body class="tc">
   <header>
     <h1 class="title-blue">12格遇上天藍</h1>
-    <p><?php echo $tc_desc?><span class="share"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></span></p>
+    <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖
+      <span class="share">
+        <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+      </span>
+    </p>
+  </header>
+  <div id="game_wrapper" class="cf">
     <div class="decor">
       <p>你的心情如何？</p>
       <div class="emoji-wrapper cf">
@@ -57,8 +64,6 @@
       <a href="#" class="emoji emoji5"></a>
       </div>
     </div>
-  </header>
-  <div id="game_wrapper" class="cf">
     <div class="g" id="g1">
       <div class="g-inner">
         <span class="count">Pens refilled:<br/><span class="val">0000</span></span>
@@ -72,8 +77,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share1.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share1.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -88,8 +93,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -103,8 +108,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share3.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share3.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -127,8 +132,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share4.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share4.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -140,8 +145,8 @@
           <div class="center">
             <div class="centered">
               <div class="content">
-                <h3>Weather Forcast <br><span>MONDAY</span></h3>
-                <p>17/6</p>
+                <h3>Weather Forcast <br><span class="weekday">MONDAY</span></h3>
+                <p class="date">17/6</p>
                 <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
                 <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
               </div>
@@ -149,31 +154,32 @@
           </div>
         </div>
       </a>
-      <div class="expandable hidden">
-      <div class=" expandableContent " id="g5_expandable">
+      <div class="expandable">
+      <!-- <div class="expandable hidden"> -->
+      <div class=" expandableContent g5_expandable">
         <div class="cf sliderm">
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
-            <div class="icon icon1 center"><div class="centered"><img src="./images/weather/sunny.png"></div></div>
+            <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
-            <div class="icon icon2 center"><div class="centered"><img src="./images/weather/cloudy.png"></div></div>
+            <div class="icon icon2"><img src="./images/weather/cloudy.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
-            <div class="icon icon3 center"><div class="centered"><img src="./images/weather/raining.png"></div></div>
+            <div class="icon icon3"><img src="./images/weather/raining.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
-            <div class="icon icon4 center"><div class="centered"><img src="./images/weather/mostly-sunny.png"></div></div>
+            <div class="icon icon4"><img src="./images/weather/mostly-sunny.png"></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
@@ -181,8 +187,8 @@
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
                 <span class="share">
-                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-                  <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                  <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share5.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+                  <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share5.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
                 </span>
               </div>
             </div>
@@ -206,8 +212,8 @@
         </div>
       </div>
       <div class="slider-share">
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-        <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+        <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share6.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share6.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
@@ -226,8 +232,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share9.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share9.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -282,8 +288,8 @@
           <div class="center">
             <div class="centered share">
               <p class="title-yellow">分享</p>
-              <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-              <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+              <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share10.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+              <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share10.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
             </div>
           </div>
           <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -300,8 +306,8 @@
           <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
         </div>
         <div class="slider-share">
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-          <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share11.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
         </div>
       </div>
     </div>
@@ -319,6 +325,16 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-d fb-share round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-l tw-share round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
       </div>
     </div>
   </div>

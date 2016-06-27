@@ -41,6 +41,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g2.init();
         g4.init();
         g5();
+        g7();
         g12();
         sliderg();
         videog(mode);
@@ -56,12 +57,23 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g2.setImage, 300);
             }
         });
+        $('body').delegate('.fb-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
+            return false;
+        });
+        $('body').delegate('.tw-share', ev, function(e){
+            var url = $(this).data('share-href');
+            window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600');
+            return false;
+        });
     },
     emoji = function() {
         $('.emoji').click(function(e){
             e.preventDefault();
             $(this).parent().find('.emoji').removeClass('active')
             $(this).addClass('active')
+            ga('send', 'event', 'emoji', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
     g1 = {
@@ -73,7 +85,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         clicks: 0,
         times: 10,
         refill: {left: 0, bottom: 0, w: 0, h: 0},
-        timer: null, 
+        timer: null,
         init: function(){
         $('body').delegate('#g1', ev, function(e){
             g1.penClick();
@@ -119,6 +131,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g1.$refill.removeAttr('style').removeClass('fall');
             }, 400);
             memory.sendMessage('option', 'g1');
+            ga('send', 'event', 'g1', 'dropped');
         }
     },
     g2 = {
@@ -310,15 +323,97 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             });
         }
     },
+    convert_str_to_icon = function (str) {
+        // 1: sunny
+        // 2: partly sunny
+        // 3: cloudy
+        // 4: rain
+        if(str.indexOf('大 致 天 晴') != -1) {
+            return './images/weather/sunny.png';
+        } else if(str.indexOf('時 間 有 陽 光') != -1) {
+            return './images/weather/mostly-sunny.png';
+        } else if(str.indexOf('大 致 多 雲') != -1) {
+            return './images/weather/cloudy.png';
+        } else if(str.indexOf('雨') != -1) {
+            return './images/weather/raining.png';
+        } else {
+            return './images/weather/sunny.png';
+        }
+    },
+    convert_weekday = function(weekday) {
+        if(weekday == 0) {
+            weekday = 'Sunday';
+        } else if(weekday == 1) {
+            weekday = 'Monday';
+        } else if(weekday == 2) {
+            weekday = 'Tuesday';
+        } else if(weekday == 3) {
+            weekday = 'Wednesday';
+        } else if(weekday == 4) {
+            weekday = 'Thursday';
+        } else if(weekday == 5) {
+            weekday = 'Friday';
+        } else if(weekday == 6) {
+            weekday = 'Saturday';
+        }
+        return weekday;
+    },
     g5 = function() {
         var $g = $('#g5'), html =  $('#g5 .expandable').html();
+
+        
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth();
+        var weekday = date.getDay();
+        $('#g5 .content .weekday').text(convert_weekday(weekday));
+        $('#g5 .content .date').text(day+'/'+(month+1));
+        for (var i = 1; i <= 4; i++) {
+            var date = new Date(new Date().getTime() + 24 * 60 * 60 * 1000*i);
+            var day = date.getDate();
+            var month = date.getMonth();
+            var weekday = date.getDay();
+            $('#g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
+            $('#g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
+        };
+        $.ajax({
+            url: './SeveralDaysWeatherForecast_uc.xml',
+            dataType: 'text',
+            success: function(data) {
+                var start_pos = data.indexOf('<description><![CDATA[');
+                var end_pos = data.indexOf(']]></description>');
+                var str = data.substr(start_pos+'<description><![CDATA['.length, end_pos-start_pos-'<description><![CDATA['.length).trim().split('\n');
+                //line 4 is today
+                var desc = str[4].substr(0,str[4].length-6).trim();
+                // $('#g5 .content p').text(desc);
+                $('#g5 .content img').attr('src', convert_str_to_icon(desc));
+                for (var i = 1; i <= 4; i++) {
+                    //line 14 is tmr
+                    //line 24 
+                    var k = i*10+4;
+                    var desc = str[k].substr(0,str[k].length-6).trim();
+                    $('#g5_expandable .item:eq('+(i-1)+') p').text(desc);
+                    $('#g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
+                }
+
+                html =  $('#g5 .expandable').html();
+            }
+        });
         $('#g5 .expand').click(function(e){
             e.preventDefault();
             expandHiddenContent($g, html);
             $(this).removeClass('expand');
-            if ($(window).width() <= 767)
-                $('.sliderm').slick({arrows: false})
-            $('#g5 .expand').fadeOut();
+            if ($(window).width() <= 767 && $('.g+.expandableContent').find('.slick-initialized').length !== 1){
+                $('.g+.expandableContent .sliderm').slick({arrows: false})
+            } else {
+                $('.g+.expandableContent .sliderm').slick('unslick').slick({arrows: false})
+            }
+            $('#g5 .centered .round-btn').fadeOut();
+        })
+    },
+    g7 = function() {
+        $('img').click(function(){
+            $('#g7').find('.slider-share').fadeToggle();
         })
     },
     g12 = function() {
@@ -332,8 +427,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             index = $(this).data('index');
             $g.css('background', 'url("./images/emoji/bg' + index + '.jpg")');
+            setTimeout(function(){
+                share('#g12');
+            },1000)
+            ga('send', 'event', 'g12', 'click', $(this).parent().find('.emoji').index($(this)));
         })
-        $emoji.last().click();
     },
     handleResponsive = function(mode){
         if ( mode == 'd' || mode == 't') {
@@ -352,7 +450,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('.videog').each(function(){
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
-                $(this).find('.expandableContent').removeClass('expandableContent').removeClass('iframe').addClass('g-inner');
+                $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
             })
         }
     },
@@ -369,7 +467,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
         $('.expandableContent .close').click(function(e){
             e.preventDefault();
-            $(this).parent().slideUp()
+            $(this).parent().slideUp();
+            if ($(window).width()<768)
+                $('#g5 .g-inner .round-btn').fadeIn();
         })
     },
     getIframe = function( $g ) {
@@ -394,13 +494,14 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
     },
     sliderg = function() {
-        $('.sliderg .slider').slick({
+        config = {
             fade: true,
             arrows: true,
             lazyLoad: 'progressive',
             prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
             nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
-        });
+        };
+        $('.sliderg .slider').slick(config);
     };
     xdomain.slaves({
         'https://ss.initiumlab.com/': '/proxy.html'
