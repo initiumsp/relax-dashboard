@@ -39,6 +39,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
         g1.init();
         g2.init();
+        g3.init();
         g4.init();
         g5();
         g7();
@@ -206,9 +207,64 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
 
     },
+    g3 = {
+        imgi: 0,
+        uri: './images/bed/',
+        dir: 1,
+        playing: false,
+        timer: null,
+        timer2: null,
+        init: function(){
+            this.imgi = 0;
+            $("#g3 .bed").css('backgroundImage', 'url('+this.uri+this.imgi+'.gif'+')').show();
+            $('#g3 .rotate').bind('click', function (e) {
+                e.preventDefault();
+                if($(e.target).hasClass('share-cover')) return;
+                if(g3.timer2!=null){
+                    clearTimeout(g3.timer2);
+                    g3.timer2 = null;
+                }
+                if($(this).hasClass('toright')){
+                    g3.dir = -1;
+                    g3.imgi = 8;
+                }
+                else{
+                    g3.dir = 1;
+                    g3.imgi = 0;
+                }
+                g3.playing = true;
+                setTimeout(g3.setImage, 100);
+                g3.timer2 = setTimeout(function(){
+                    share('#g3');
+                    g3.playing = false;
+                }, 3000);
+            });
+        },
+        setImage: function(){
+            g3.imgi += 1 * g3.dir;
+            if(g3.imgi> 8){
+                g3.playing = false;
+                return;
+            }
+            if(g3.imgi < 0){
+                g3.playing = false;
+                g3.imgi = 0;
+                return;
+            }
+            var next=new Image();
+            next.onload=function(){
+                $("#g3 .bed").css("backgroundImage",  'url('+this.src+')');
+            }
+            console.log(g3.uri+g3.imgi+'.gif');
+            next.src= g3.uri+g3.imgi+'.gif';
+
+            if(g3.playing)
+                g3.timer = setTimeout(g3.setImage, 100);
+        }
+
+    },
     share = function(gid){
         $(gid).find('.share-cover').fadeIn();
-
     },
     g10 = {
         ready: false,

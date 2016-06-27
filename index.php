@@ -102,7 +102,9 @@
     </div>
     <div class="g" id="g3">
       <div class="g-inner">
-
+        <div class="bed"></div>
+        <a href="#" class="rotate toleft">Left</a>
+        <a href="#" class="rotate toright">Right</a>
       </div>
       <div class="share-cover">
         <div class="center">
