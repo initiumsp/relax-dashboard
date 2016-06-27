@@ -359,7 +359,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         return weekday;
     },
     g5 = function() {
-        var $g = $('#g5'), html =  $('#g5 .expandable').html();
+        var $g = $('#g5'), html;
 
         
         var date = new Date();
@@ -373,8 +373,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             var day = date.getDate();
             var month = date.getMonth();
             var weekday = date.getDay();
-            $('#g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
-            $('#g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
+            $('.g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
+            $('.g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
         };
         $.ajax({
             url: './SeveralDaysWeatherForecast_uc.xml',
@@ -392,8 +392,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     //line 24 
                     var k = i*10+4;
                     var desc = str[k].substr(0,str[k].length-6).trim();
-                    $('#g5_expandable .item:eq('+(i-1)+') p').text(desc);
-                    $('#g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
+                    $('.g5_expandable .item:eq('+(i-1)+') p').text(desc);
+                    $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
                 }
 
                 html =  $('#g5 .expandable').html();
