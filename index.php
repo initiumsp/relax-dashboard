@@ -140,8 +140,8 @@
           <div class="center">
             <div class="centered">
               <div class="content">
-                <h3>Weather Forcast <br><span>MONDAY</span></h3>
-                <p>17/6</p>
+                <h3>Weather Forcast <br><span class="weekday">MONDAY</span></h3>
+                <p class="date">17/6</p>
                 <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
                 <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
               </div>
@@ -149,29 +149,29 @@
           </div>
         </div>
       </a>
-      <div class="expandable hidden">
+      <div class="expandable">
       <div class=" expandableContent " id="g5_expandable">
         <div class="cf sliderm">
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon1 center"><div class="centered"><img src="./images/weather/sunny.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon2 center"><div class="centered"><img src="./images/weather/cloudy.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon3 center"><div class="centered"><img src="./images/weather/raining.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
           </div>
           <div class="item">
-            <h6>MONDAY</h6>
+            <h6 class="weekday">MONDAY</h6>
             <div class="date">17/6</div>
             <div class="icon icon4 center"><div class="centered"><img src="./images/weather/mostly-sunny.png"></div></div>
             <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
