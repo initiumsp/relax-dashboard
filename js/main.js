@@ -258,7 +258,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             next.onload=function(){
                 $("#g3 .bed").css("backgroundImage",  'url('+this.src+')');
             }
-            console.log(g3.uri+g3.imgi+'.gif');
             next.src= g3.uri+g3.imgi+'.gif';
 
             if(g3.playing)
@@ -268,6 +267,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     },
     share = function(gid){
         $(gid).find('.share-cover').fadeIn();
+
     },
     g10 = {
         ready: false,
@@ -477,18 +477,41 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             expandHiddenContent($g, html);
             $(this).removeClass('expand');
             config = {
-                arrows: false
+                arrows: false,
+                dots: true,
+                responsive: [
+                {
+                  breakpoint: 1250,
+                  settings: {
+                      centerMode: true,
+                      variableWidth: true
+                  }
+                }, {
+                  breakpoint: 767,
+                  settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1,
+                  }
+                }
+                ]
             }
-            if ($(window).width() <= 1250 && $('.g+.expandableContent').find('.slick-initialized').length !== 1){
-                $('.g+.expandableContent .sliderm').slick(config)
+            setEqualHeight = function () {
+                $(this).find('.slick-slide').height('auto');
+                var slickTrack = $(this).find('.slick-track');
+                var slickTrackHeight = $(slickTrack).height();
+                $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
+                };
+
+            if ($(window).width() <= 1250 ){
+                $('.g+.expandableContent .sliderm').slick(config).on('setPosition', setEqualHeight).slick('setPosition');
             } else {
-                $('.g+.expandableContent .sliderm').slick('unslick').slick(config)
+                $('.g+.expandableContent .sliderm').slick('unslick')
             }
             $('#g5 .centered .round-btn').fadeOut();
         })
     },
     g7 = function() {
-        $('img').click(function(){
+        $('#g7 img').click(function(){
             $('#g7').find('.share-cover').fadeToggle();
         })
     },
