@@ -88,6 +88,7 @@
       <div class="g-inner">
         <div id="mirror"></div>
         <div id="smoke"></div>
+        <div class="tap"><span class="sp sp-tap">Tap</span></div>
       </div>
       <div class="share-cover">
         <div class="center">
@@ -103,8 +104,8 @@
     <div class="g" id="g3">
       <div class="g-inner">
         <div class="bed"></div>
-        <a href="#" class="rotate toleft">Left</a>
-        <a href="#" class="rotate toright">Right</a>
+        <a href="#" class="rotate toleft"><span class="round-btn blue-d"><span class="sp sp-str">Left</span></span></a>
+        <a href="#" class="rotate toright"><span class="round-btn blue-d"><span class="sp sp-stl">Right</span></span></a>
       </div>
       <div class="share-cover">
         <div class="center">
