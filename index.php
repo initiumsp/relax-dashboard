@@ -151,9 +151,9 @@
           <div class="center">
             <div class="centered">
               <div class="content">
-                <h3>Weather Forcast <br><span class="weekday">MONDAY</span></h3>
-                <p class="date">17/6</p>
-                <div class="icon icon1"><img src="./images/weather/sunny.png"></div>
+                <h3>Weather Forcast <br><span class="weekday">-</span></h3>
+                <p class="date">-/-</p>
+                <div class="icon icon1"><img src=""></div>
                 <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
               </div>
             </div>

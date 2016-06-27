@@ -1,5 +1,4 @@
-
-define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min", "bar-ui"], function($, xdomain, MobileDetect) {
+define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "slick.min", "bar-ui", "tweenmax"], function($, xdomain, MobileDetect) {
     var mode, md = new MobileDetect(window.navigator.userAgent), t = (md.mobile() || md.tablet()), ev = (t)? 'touchstart' : 'click', hold = (t)? 'touchstart' : 'mousedown', release = (t)? 'touchend' : 'mouseup';
     var breakpoints = {
             1400: 3,
@@ -100,6 +99,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
         this.refill.w = this.$refill.width();
         this.refill.h = this.$refill.height();
+        var tl           = new TimelineMax();
+        tl.fromTo(pen, 0.75, {top:'0'}, {top:20});
         },
         penClick: function(){
             if(this.timer!=null){
@@ -378,8 +379,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     setTimeout(function(){
                         $this.html('');
                     }, 130);
-                    if ( $(('#g4 .b:not(.filled)')).length <= 0 )
-                            $('.b').removeClass('filled')
+                    if ( $(('#g4 .b:not(.filled)')).length <= 0 ){
+                            $('#g4 .centered').hide().fadeIn();
+                            $('.b').removeClass('filled');
+                    }
                     g4.timer = setTimeout(function(){
                         share('#g4');
                     }, 3000);
@@ -467,7 +470,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             dataType: 'jsonp',
             success: function(data) {
                 var forecast = data.query.results.channel.item.forecast;
-                $('#g5 .content img').attr('src', yahoo_id_icon(forecast[0].code));
+                $('#g5 .content img').hide().attr('src', yahoo_id_icon(forecast[0].code)).fadeIn();
                 for (var i = 1; i <= 4; i++) {
                     $('.g5_expandable .item:eq('+(i-1)+') p').text(yahoo_id_text(forecast[i].code));
                     $('.g5_expandable .item:eq('+(i-1)+') img').attr('src', yahoo_id_icon(forecast[i].code));
