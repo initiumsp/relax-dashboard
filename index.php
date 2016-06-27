@@ -46,7 +46,7 @@
 <body class="tc">
   <header>
     <h1 class="title-blue">12格遇上天藍</h1>
-    <p><?php echo $tc_desc?><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></p>
+    <p><?php echo $tc_desc?><span class="share"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></span></p>
     <div class="decor">
       <p>你的心情如何？</p>
       <div class="emoji-wrapper cf">
@@ -67,10 +67,16 @@
           <div class="refill"></div>
           <div class="body"></div>
         </div>
-        <div class="share-cover">
-          <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+      </div>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
         </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
       </div>
     </div>
     <div class="g" id="g2">
@@ -79,41 +85,68 @@
         <div id="smoke"></div>
       </div>
       <div class="share-cover">
-        <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-        <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
       </div>
     </div>
     <div class="g" id="g3">
       <div class="g-inner">
 
       </div>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
+      </div>
     </div>
     <div class="g" id="g4">
       <div class="g-inner">
-      <div class="center">
-      <div class="centered">
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-        <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-      </div>
-      </div>
-      </div>
-      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
-    </div>
-    <div class="g" id="g5">
-      <div class="g-inner">
         <div class="center">
           <div class="centered">
-            <h3>Weather Forcast <br>Monday</h3>
-            <p>17/6</p>
-            <span class="icon icon1"></span>
-            <a href="#" class="expand round-btn"><span class="sp sp-down">Expand hidden content</span></a>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+            <div><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
           </div>
         </div>
       </div>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
+      </div>
+    </div>
+    <div class="g" id="g5">
+      <a href="#" class="expand">
+        <div class="g-inner">
+          <div class="center">
+            <div class="centered">
+              <h3>Weather Forcast <br>Monday</h3>
+              <p>17/6</p>
+              <span class="icon icon1"></span>
+              <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
+            </div>
+          </div>
+        </div>
+      </a>
       <div class="expandable hidden">
       <div class=" expandableContent " id="g5_expandable">
         <div class="cf sliderm">
@@ -145,7 +178,8 @@
             <div class="center">
               <div class="centered">
                 <p>學和根其的位過不，題母國本他神出，力到初子遠，不為查來財，講我的……青經我差回沒之們出、球續學當交當度長學想要出為洲體心中中好始未</p>
-                <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+                <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+                <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a>
               </div>
             </div>
           </div>
@@ -161,13 +195,15 @@
     </div><!-- g6 video expandable  -->
     <div class="g sliderg" id="g7">
       <div class="g-inner">
-      <div class="slider">
-        <div class="slide"><img src="./images/illustration/slide1.jpg"></div>
-        <div class="slide"><img data-lazy="./images/illustration/slide2.jpg"></div>
-        <div class="slide"><img data-lazy="./images/illustration/slide3.jpg"></div>
+        <div class="slider">
+          <div class="slide"><img src="./images/illustration/slide1.jpg"></div>
+          <div class="slide"><img data-lazy="./images/illustration/slide2.jpg"></div>
+          <div class="slide"><img data-lazy="./images/illustration/slide3.jpg"></div>
+        </div>
       </div>
-      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
-
+      <div class="slider-share">
+        <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
+        <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
@@ -179,10 +215,19 @@
 
     <div class="g audiog" id="g9"  data-vid="yoga">
       <div class="g-inner">
-        <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
+        <a href="#" class="audio-play"><span class="round-btn"><span class="sp sp-sound">Mute / unmute</span></span></a>
 
       </div>
-      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
+      </div>
     </div>
     <div class="g audiog" id="g10">
       <div class="g-inner">
@@ -229,26 +274,38 @@
             </div>
           </div>
         </div>
-        <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
-        <a href="#" class="audio-play"><span class="sp sp-sound">Mute / unmute</span></a>
+        <div class="share-cover">
+          <div class="center">
+            <div class="centered share">
+              <p class="title-yellow">分享</p>
+              <a href="#" target="_blank" class="round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+              <a href="#" target="_blank" class="round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+            </div>
+          </div>
+          <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
+        </div>
+        <a href="#" class="audio-play"><span class="round-btn"><span class="sp sp-sound">Mute / unmute</span></span></a>
       </div><!-- g-inner -->
     </div><!-- g10 video expandable  -->
     <div class="g sliderg" id="g11">
       <div class="g-inner">
-      <div class="slider">
-        <div class="slide"><img src="./images/lanterns/slide1.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide2.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide3.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
-      </div>
-      <div class="share-cover"><p class="title-yellow">分享</p><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div>
+        <div class="slider">
+          <div class="slide"><img src="./images/lanterns/slide1.jpg"></div>
+          <div class="slide"><img data-lazy="./images/lanterns/slide2.jpg"></div>
+          <div class="slide"><img data-lazy="./images/lanterns/slide3.jpg"></div>
+          <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
+        </div>
+        <div class="slider-share">
+          <a href="#" target="_blank" class="round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="#" target="_blank" class="round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
+        </div>
       </div>
     </div>
     <div class="g" id="g12">
       <div class="g-inner">
         <div class="center">
           <div class="centered">
-            <p>你的心情如何？</p>
+            <p>你的感覺如何？</p>
             <div class="emoji-wrapper cf">
               <span class="emoji emoji1a" data-index="1"></span>
               <span class="emoji emoji2a" data-index="2"></span>
