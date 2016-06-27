@@ -45,7 +45,7 @@
 </head>
 <body class="tc">
   <header>
-    <h1 class="title-blue">12格遇上天藍</h1>
+    <h1><img src="./images/logo.png" alt="12格遇上天藍"></h1>
     <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖
       <span class="share">
         <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
@@ -211,9 +211,15 @@
           <div class="slide"><img data-lazy="./images/illustration/slide3.jpg"></div>
         </div>
       </div>
-      <div class="slider-share">
-        <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share6.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-        <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share6.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+      <div class="share-cover">
+        <div class="center">
+          <div class="centered share">
+            <p class="title-yellow">分享</p>
+            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          </div>
+        </div>
+        <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
       </div>
     </div>
     <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">

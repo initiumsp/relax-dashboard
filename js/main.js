@@ -406,17 +406,20 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             expandHiddenContent($g, html);
             $(this).removeClass('expand');
-            if ($(window).width() <= 767 && $('.g+.expandableContent').find('.slick-initialized').length !== 1){
-                $('.g+.expandableContent .sliderm').slick({arrows: false})
+            config = {
+                arrows: false
+            }
+            if ($(window).width() <= 1250 && $('.g+.expandableContent').find('.slick-initialized').length !== 1){
+                $('.g+.expandableContent .sliderm').slick(config)
             } else {
-                $('.g+.expandableContent .sliderm').slick('unslick').slick({arrows: false})
+                $('.g+.expandableContent .sliderm').slick('unslick').slick(config)
             }
             $('#g5 .centered .round-btn').fadeOut();
         })
     },
     g7 = function() {
         $('img').click(function(){
-            $('#g7').find('.slider-share').fadeToggle();
+            $('#g7').find('.share-cover').fadeToggle();
         })
     },
     g12 = function() {
@@ -438,9 +441,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     },
     handleResponsive = function(mode){
             $('.g+expandableContent').remove();
+        if ( $(window).width() > 1251 ) {
+                $('.sliderm.slick-slider').slick('unslick')
+        }
         if ( mode == 'd' || mode == 't') {
             // reset slider
-            $('.sliderm.slick-slider').slick('unslick')
             // reset video
             $('.videog').each(function(){
                 $(this).removeClass('iframe')
