@@ -150,7 +150,7 @@
         </div>
       </a>
       <div class="expandable hidden">
-      <div class=" expandableContent " id="g5_expandable">
+      <div class=" expandableContent g5_expandable">
         <div class="cf sliderm">
           <div class="item">
             <h6>MONDAY</h6>
