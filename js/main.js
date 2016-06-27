@@ -311,8 +311,82 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             });
         }
     },
+    convert_str_to_icon = function (str) {
+        // 1: sunny
+        // 2: partly sunny
+        // 3: cloudy
+        // 4: rain
+        if(str.indexOf('大 致 天 晴') != -1) {
+            return './images/weather/sunny.png';
+        } else if(str.indexOf('時 間 有 陽 光') != -1) {
+            return './images/weather/mostly-sunny.png';
+        } else if(str.indexOf('大 致 多 雲') != -1) {
+            return './images/weather/cloudy.png';
+        } else if(str.indexOf('雨') != -1) {
+            return './images/weather/raining.png';
+        } else {
+            return './images/weather/sunny.png';
+        }
+    },
+    convert_weekday = function(weekday) {
+        if(weekday == 0) {
+            weekday = 'Sunday';
+        } else if(weekday == 1) {
+            weekday = 'Monday';
+        } else if(weekday == 2) {
+            weekday = 'Tuesday';
+        } else if(weekday == 3) {
+            weekday = 'Wednesday';
+        } else if(weekday == 4) {
+            weekday = 'Thursday';
+        } else if(weekday == 5) {
+            weekday = 'Friday';
+        } else if(weekday == 6) {
+            weekday = 'Saturday';
+        }
+        return weekday;
+    },
     g5 = function() {
         var $g = $('#g5'), html =  $('#g5 .expandable').html();
+
+        
+        var date = new Date();
+        var day = date.getDate();
+        var month = date.getMonth();
+        var weekday = date.getDay();
+        $('#g5 .content .weekday').text(convert_weekday(weekday));
+        $('#g5 .content .date').text(day+'/'+(month+1));
+        for (var i = 1; i <= 4; i++) {
+            var date = new Date(new Date().getTime() + 24 * 60 * 60 * 1000*i);
+            var day = date.getDate();
+            var month = date.getMonth();
+            var weekday = date.getDay();
+            $('#g5_expandable .item:eq('+(i-1)+') .weekday').text(convert_weekday(weekday));
+            $('#g5_expandable .item:eq('+(i-1)+') .date').text(day+'/'+(month+1));
+        };
+        $.ajax({
+            url: './SeveralDaysWeatherForecast_uc.xml',
+            dataType: 'text',
+            success: function(data) {
+                var start_pos = data.indexOf('<description><![CDATA[');
+                var end_pos = data.indexOf(']]></description>');
+                var str = data.substr(start_pos+'<description><![CDATA['.length, end_pos-start_pos-'<description><![CDATA['.length).trim().split('\n');
+                //line 4 is today
+                var desc = str[4].substr(0,str[4].length-6).trim();
+                // $('#g5 .content p').text(desc);
+                $('#g5 .content img').attr('src', convert_str_to_icon(desc));
+                for (var i = 1; i <= 4; i++) {
+                    //line 14 is tmr
+                    //line 24 
+                    var k = i*10+4;
+                    var desc = str[k].substr(0,str[k].length-6).trim();
+                    $('#g5_expandable .item:eq('+(i-1)+') p').text(desc);
+                    $('#g5_expandable .item:eq('+(i-1)+') img').attr('src', convert_str_to_icon(desc));
+                }
+
+                html =  $('#g5 .expandable').html();
+            }
+        });
         $('#g5 .expand').click(function(e){
             e.preventDefault();
             expandHiddenContent($g, html);
