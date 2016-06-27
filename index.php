@@ -46,7 +46,7 @@
 <body class="tc">
   <header>
     <h1 class="title-blue">12格遇上天藍</h1>
-    <p><?php echo $tc_desc?><span class="share"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></span></p>
+    <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖<span class="share"><a href="#" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a></span></p>
   </header>
   <div id="game_wrapper" class="cf">
     <div class="decor">

@@ -319,7 +319,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $(this).removeClass('expand');
             if ($(window).width() <= 767)
                 $('.sliderm').slick({arrows: false})
-            $('#g5 .expand').fadeOut();
+            $('#g5 .centered .round-btn').fadeOut();
         })
     },
     g7 = function() {
@@ -360,7 +360,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('.videog').each(function(){
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
-                $(this).find('.expandableContent').removeClass('expandableContent').removeClass('iframe').addClass('g-inner');
+                $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
             })
         }
     },
