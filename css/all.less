@@ -1297,20 +1297,32 @@ header {
       right: 150px;
     }
   }
-  .round-btn:hover, .play:hover{
+  .round-btn, .play{
     &:before{
-      opacity: 0.8;
+      -webkit-transition: transform 0.2s ease-in-out;
+      -moz-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    &:hover{
+      &:before{
+        opacity: 0.8;
+        .transform(~'translate(-3px, -3px)');
+      }
+
     }
   }
   .btn-wrapper a{
-    .sp{
+    .sp, &:before{
 
       -webkit-transition: transform 0.2s ease-in-out;
       -moz-transition: transform 0.2s ease-in-out;
       transition: transform 0.2s ease-in-out;
     }
-    &:hover .sp{
-      .transform(~'translateX(15px)');
+    &:hover{
+      &:before{.transform(~'translate(-3px, -3px)');}
+      .sp{
+        .transform(~'translateX(15px)');
+      }
     }
   }
 }
