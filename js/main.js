@@ -535,41 +535,43 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         });
         $('#g5 .expand').click(function(e){
             e.preventDefault();
-            expandHiddenContent($g, html);
-            $('#g5 .content .round-btn .sp').removeClass('sp-down').addClass('sp-up');
-            $(this).removeClass('expand');
-            config = {
-                arrows: false,
-                dots: true,
-                responsive: [
-                {
-                  breakpoint: 1250,
-                  settings: {
-                      centerMode: true,
-                      variableWidth: true
-                  }
-              }, {
-                  breakpoint: 767,
-                  settings: {
-                    slidesToShow: 1,
-                    slidesToScroll: 1,
+            if ($('.g+.expandableContent').hasClass('g5_expandable') && $('.g+.expandableContent').is(':visible')) {
+                $('.g+.expandableContent .close').click();
+            } else {
+                expandHiddenContent($g, html);
+                $('#g5 .content .round-btn .sp').removeClass('sp-down').addClass('sp-up');
+                $(this).removeClass('expand');
+                config = {
+                    arrows: false,
+                    dots: true,
+                    responsive: [{
+                      breakpoint: 1250,
+                      settings: {
+                          centerMode: true,
+                          variableWidth: true
+                      }
+                    }, {
+                        breakpoint: 767,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1,
+                        }
+                    }]
+                }
+                setEqualHeight = function () {
+                    $(this).find('.slick-slide').height('auto');
+                    var slickTrack = $(this).find('.slick-track');
+                    var slickTrackHeight = $(slickTrack).height();
+                    $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
+                };
+
+                if ($(window).width() <= 1250 ){
+                    $('.g+.expandableContent .sliderm').slick(config).on('setPosition', setEqualHeight).slick('setPosition');
+                } else {
+                    $('.g+.expandableContent .sliderm').slick('unslick')
                 }
             }
-            ]
-        }
-        setEqualHeight = function () {
-            $(this).find('.slick-slide').height('auto');
-            var slickTrack = $(this).find('.slick-track');
-            var slickTrackHeight = $(slickTrack).height();
-            $(this).find('.slick-slide').css('height', slickTrackHeight + 'px');
-        };
-
-        if ($(window).width() <= 1250 ){
-            $('.g+.expandableContent .sliderm').slick(config).on('setPosition', setEqualHeight).slick('setPosition');
-        } else {
-            $('.g+.expandableContent .sliderm').slick('unslick')
-        }
-    })
+        })
     },
     g7 = function() {
         $('#g7 img').click(function(){
@@ -635,8 +637,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
                 $(this).parent().slideUp();
-                if ($('.g+.expandableContent').hasClass('g5_expandable'))
-                    $('#g5 .g-inner .round-btn .sp').removeClass('sp-up').addClass('sp-down');
+                if( $(this).parent().hasClass('g5_expandable'))
+                    $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
             })
         },
         getIframe = function( $g ) {
@@ -647,17 +649,25 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         },
         videog = function() {
             $('.videog .play').click(function(e){
+            // $('.videog .play').one('click', function(e){
                 e.preventDefault();
+                e.stopImmediatePropagation();
+                var $g = $(this).parents('.g');
+                console.log('clicked')
+                if ($('.g+.expandableContent').hasClass($g.attr('id')+'_expandable') && $('.g+.expandableContent').is(':visible')) {
+                    $('.g+.expandableContent .close').click();
 
-                var $g = $(this).parents('.g'),
-                title = $g.data('title').split('|'),
-                desc = $g.data('desc'),
-                html = '';
+                } else {
 
-                html += '<div class="expandableContent video"><div class="wrapper cf"><div class="desc"><h3>';
-                html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
-                html += getIframe( $g ) + '</div></div>';
-                expandHiddenContent($g, html)
+                    var title = $g.data('title').split('|'),
+                    desc = $g.data('desc'),
+                    html = '';
+                    html += '<div class="expandableContent video '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
+                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
+                    html += getIframe( $g ) + '</div></div>';
+                    expandHiddenContent($g, html)
+                }
+                // $(this).off('click');
             });
         },
         sliderg = function() {
