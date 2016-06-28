@@ -347,27 +347,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         timer: null,
         playing: '',
         init: function(){
-<<<<<<< HEAD
-            soundManager.setup({
-              url: './swf/',
-              flashVersion: 9,
-              onready: function() {
-                g9.isready = true;
-                soundManager.createSound({
-                  id: 'yoga',
-                  url: './yoga.mp3',
-                  autoLoad: true,
-                  autoPlay: false,
-                  onload: function() {
-                    $('.g[data-vid="'+this.id+'"]').addClass('ready');
-                },
-                volume: 50
-            });
-            }
-        });
-=======
 
->>>>>>> 3d78aedddde41a29a8d787b01f08f80e6bf8334f
             $('#g9 .audio-play').bind('click', function(e){
                 e.preventDefault();
                 if($('#g10').hasClass('playing')){
