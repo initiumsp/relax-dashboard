@@ -1590,17 +1590,35 @@ header {
     margin-bottom: 60px;
     overflow: visible;
     .share {
-    position: absolute;
-    top: 100%;
-    height: 60px;
-    left: 0;
-    right: 0;
+      position: absolute;
+      top: 100%;
+      height: 60px;
+      left: 0;
+      right: 0;
       background: @blue-d;
       padding-left: 50px;
       padding-right: 15px;
       text-align: left;
       line-height: 60px;
       border: 1px solid #000;
+      &:before, &:after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        bottom: 100%;
+        left: 45px;
+      }
+      &:before {
+        border-width: 0 20px 27px 20px;
+        border-color: transparent transparent #000 transparent;
+      }
+      &:after {
+        border-width: 0 18px 25px 18px;
+        border-color: transparent transparent  @blue-d transparent;
+        margin: 0 2px;
+      }
       & > div {
         float: right;
         margin-top: 9px;

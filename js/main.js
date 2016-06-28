@@ -484,6 +484,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('#g5 .expand').click(function(e){
             e.preventDefault();
             expandHiddenContent($g, html);
+            $('#g5 .content .round-btn .sp').toggleClass('sp-down sp-up');
             $(this).removeClass('expand');
             config = {
                 arrows: false,
@@ -516,7 +517,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             } else {
                 $('.g+.expandableContent .sliderm').slick('unslick')
             }
-            $('#g5 .centered .round-btn').fadeOut();
         })
     },
     g7 = function() {
@@ -582,8 +582,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('.expandableContent .close').click(function(e){
             e.preventDefault();
             $(this).parent().slideUp();
-            if ($(window).width()<768)
-                $('#g5 .g-inner .round-btn').fadeIn();
+            if ($('.g+.expandableContent').hasClass('g5_expandable'))
+                $('#g5 .g-inner .round-btn .sp').toggleClass('sp-down sp-up');
         })
     },
     getIframe = function( $g ) {
