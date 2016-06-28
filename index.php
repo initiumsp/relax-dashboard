@@ -353,7 +353,7 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="//google.com" target="_blank" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
+    <a href="https://www.proprofs.com/quiz-school/story.php?title=mtu4mty5nq72ex" target="_blank" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
     <a href="#" class="btn btn-blue btn-sm">主辦機構<span class="sp sp-arrow2"></span></a>
   </div>
   <div class="panel-wrapper">
@@ -475,7 +475,7 @@
     </div>
   </div>
   <div class="btn-wrapper">
-    <a href="//google.com" target="_blank" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
+    <a href="https://www.proprofs.com/quiz-school/story.php?title=mtu4mty5nq72ex" target="_blank" class="btn btn-yellow btn-sm">心理評估<span class="sp sp-arrow1"></span></a>
     <a href="#" class="btn btn-blue btn-sm">主辦機構<span class="sp sp-arrow2"></span></a>
   </div>
   <div class="hidden"><img src="./images/pen-on.png"/><img src="./images/bubble1-on.png"/><img src="./images/bubble2-on.png"/><img src="./images/bubble-deco1.png"/><img src="./images/bubble-deco2.png"/><img src="./images/bubble-deco3.png"/></div>
