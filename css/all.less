@@ -9,11 +9,11 @@ article,aside,details,figcaption,figure,footer,header,main,nav,section,summary{d
 .text-shadow(@p){-webkit-text-shadow: @p;-moz-text-shadow: @p;text-shadow: @p;}
 .cf:before,
 .cf:after {
-    content: " "; /* 1 */
-    display: table; /* 2 */
+  content: " "; /* 1 */
+  display: table; /* 2 */
 }
 .cf:after {
-    clear: both;
+  clear: both;
 }
 a{text-decoration: none;outline: none;.transition(all 0.4s ease-in-out);-webkit-tap-highlight-color: rgba(0, 0, 0, 0);&:focus{outline: none;}}
 *, *:focus { outline: none }
@@ -262,12 +262,12 @@ header {
     float: left;
     margin: 20px 0 0 20px;
     .val{
-    background: #edc951;
-    color: #fff;
-    border-radius: 8px;
-    border: 2px solid #000;
-    line-height: 39px;
-    padding: 0 20px;
+      background: #edc951;
+      color: #fff;
+      border-radius: 8px;
+      border: 2px solid #000;
+      line-height: 39px;
+      padding: 0 20px;
     }
   }
 }
@@ -510,7 +510,7 @@ header {
   .sm2-bar-ui .sm2-main-controls,
   .sm2-bar-ui .sm2-playlist-drawer {
    background: rgba(22, 78, 173, 0.7);
-  }
+ }
 }
 .expandableContent {
   width: 100%;
@@ -599,11 +599,11 @@ header {
   cursor: pointer;
 }
 .tap .sp {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-top: -49/2px;
-    margin-left: -50/2px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -49/2px;
+  margin-left: -50/2px;
 }
 .play {
   display: block;
@@ -984,8 +984,10 @@ header {
   // .title-red {
     // text-align: left;
   // }
-  margin-bottom: 65px;
+  // margin-bottom: 65px;
   text-align: center;
+  max-width: 1675px;
+  margin: 0 auto 65px;
   .title-red {
     max-width: 1605px;
     text-align: left;
@@ -1198,16 +1200,16 @@ header {
       display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
       overflow: hidden;
     }
-    .item {
-  -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
-  -moz-box-flex: 1;         /* OLD - Firefox 19- */
-  width: 20%;               /* For old syntax, otherwise collapses. */
-  -webkit-flex: 1;          /* Chrome */
-  -ms-flex: 1;              /* IE 10 */
-  flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
+        .item {
+      -webkit-box-flex: 1;      /* OLD - iOS 6-, Safari 3.1-6 */
+      -moz-box-flex: 1;         /* OLD - Firefox 19- */
+      width: 20%;               /* For old syntax, otherwise collapses. */
+      -webkit-flex: 1;          /* Chrome */
+      -ms-flex: 1;              /* IE 10 */
+      flex: 1;                  /* NEW, Spec - Opera 12.1, Firefox 20+ */
       // float: left;
       width: 20%;
-    }
+        }
   }
 }
 @media (max-width: 1250px) and (min-width: 768px) {
@@ -1223,8 +1225,8 @@ header {
 }
 @media (max-width: 1350px) and (min-width: 768px) {
  header {
-    margin-bottom: 110px;
- }
+  margin-bottom: 110px;
+}
 }
 @media (max-width: 930px) and (min-width: 768px) {
   header {
@@ -1233,6 +1235,9 @@ header {
   header .share {
     display: block;
     margin-top: 20px;
+  }
+  #game_wrapper .emoji {
+    margin: 0 7px;
   }
 }
 @media (min-width: 768px) {
@@ -1309,107 +1314,107 @@ header {
   }
 
   /* Copy me */
-.sp-sound {
-  width: 54/2px;
-  height: 42/2px;
-  background-position: 0 -0/2px;
-}
+  .sp-sound {
+    width: 54/2px;
+    height: 42/2px;
+    background-position: 0 -0/2px;
+  }
 
-.sp-stl {
-  width: 28/2px;
-  height: 46/2px;
-  background-position: 0 -42/2px;
-}
+  .sp-stl {
+    width: 28/2px;
+    height: 46/2px;
+    background-position: 0 -42/2px;
+  }
 
-.sp-str {
-  width: 28/2px;
-  height: 46/2px;
-  background-position: 0 -88/2px;
-}
+  .sp-str {
+    width: 28/2px;
+    height: 46/2px;
+    background-position: 0 -88/2px;
+  }
 
-.sp-tap {
-  width: 74/2px;
-  height: 74/2px;
-  background-position: 0 -134/2px;
-}
+  .sp-tap {
+    width: 74/2px;
+    height: 74/2px;
+    background-position: 0 -134/2px;
+  }
 
-.sp-arrow1 {
-  width: 34/2px;
-  height: 34/2px;
-  background-position: 0 -208/2px;
-}
+  .sp-arrow1 {
+    width: 34/2px;
+    height: 34/2px;
+    background-position: 0 -208/2px;
+  }
 
-.sp-arrow2 {
-  width: 34/2px;
-  height: 34/2px;
-  background-position: 0 -242/2px;
-}
+  .sp-arrow2 {
+    width: 34/2px;
+    height: 34/2px;
+    background-position: 0 -242/2px;
+  }
 
-.sp-close {
-  width: 44/2px;
-  height: 42/2px;
-  background-position: 0 -276/2px;
-}
+  .sp-close {
+    width: 44/2px;
+    height: 42/2px;
+    background-position: 0 -276/2px;
+  }
 
-.sp-down {
-  width: 34/2px;
-  height: 28/2px;
-  background-position: 0 -318/2px;
-}
+  .sp-down {
+    width: 34/2px;
+    height: 28/2px;
+    background-position: 0 -318/2px;
+  }
 
-.sp-fb {
-  width: 24/2px;
-  height: 46/2px;
-  background-position: 0 -346/2px;
-}
+  .sp-fb {
+    width: 24/2px;
+    height: 46/2px;
+    background-position: 0 -346/2px;
+  }
 
-.sp-fb2 {
-  width: 30/2px;
-  height: 58/2px;
-  background-position: 0 -392/2px;
-}
+  .sp-fb2 {
+    width: 30/2px;
+    height: 58/2px;
+    background-position: 0 -392/2px;
+  }
 
-.sp-fb3 {
-  width: 32/2px;
-  height: 58/2px;
-  background-position: 0 -450/2px;
-}
+  .sp-fb3 {
+    width: 32/2px;
+    height: 58/2px;
+    background-position: 0 -450/2px;
+  }
 
-.sp-next {
-  width: 30/2px;
-  height: 36/2px;
-  background-position: 0 -508/2px;
-}
+  .sp-next {
+    width: 30/2px;
+    height: 36/2px;
+    background-position: 0 -508/2px;
+  }
 
-.sp-prev {
-  width: 30/2px;
-  height: 36/2px;
-  background-position: 0 -544/2px;
-}
+  .sp-prev {
+    width: 30/2px;
+    height: 36/2px;
+    background-position: 0 -544/2px;
+  }
 
-.sp-sound-on {
-  width: 52/2px;
-  height: 42/2px;
-  background-position: 0 -580/2px;
-}
+  .sp-sound-on {
+    width: 52/2px;
+    height: 42/2px;
+    background-position: 0 -580/2px;
+  }
 
-.sp-tt {
-  width: 50/2px;
-  height: 40/2px;
-  background-position: 0 -622/2px;
-}
+  .sp-tt {
+    width: 50/2px;
+    height: 40/2px;
+    background-position: 0 -622/2px;
+  }
 
-.sp-tt2 {
-  width: 64/2px;
-  height: 50/2px;
-  background-position: 0 -662/2px;
-}
+  .sp-tt2 {
+    width: 64/2px;
+    height: 50/2px;
+    background-position: 0 -662/2px;
+  }
 
-.sp-tt3 {
-  width: 64/2px;
-  height: 50/2px;
-  background-position: 0 -712/2px;
-}
+  .sp-tt3 {
+    width: 64/2px;
+    height: 50/2px;
+    background-position: 0 -712/2px;
+  }
 
   #game_wrapper {
     max-width: 500px;
