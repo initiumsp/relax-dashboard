@@ -239,6 +239,7 @@
 
     <div class="g audiog" id="g9"  data-vid="sea">
       <div class="g-inner">
+        <div class="sea"></div>
         <a href="#" class="audio-play"><span class="round-btn"><span class="sp sp-sound">Mute / unmute</span></span></a>
 
       </div>

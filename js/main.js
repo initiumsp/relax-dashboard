@@ -60,10 +60,22 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g2.playsmoke= true;
                 setTimeout(g2.setImage, 300);
             }
+            else if($(this).parents('#g9:first').length ==1){
+                g9.playing= true;
+                setTimeout(g9.setImage, 300);
+            }
         });
         $('.share-cover .close').on('click', function(e) {
             e.preventDefault();
             $(this).parents('.share-cover').fadeOut();
+            if($(this).parents('#g2:first').length ==1){
+                g2.playsmoke= true;
+                setTimeout(g2.setImage, 300);
+            }
+            else if($(this).parents('#g9:first').length ==1){
+                g9.playing= true;
+                setTimeout(g9.setImage, 300);
+            }
         })
         $('body').delegate('.fb-share', ev, function(e){
             var url = $(this).data('share-href');
@@ -344,10 +356,16 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
     },
     g9 = {
+        imgi: 0,
+        uri: './images/sea/',
         timer: null,
-        playing: '',
+        playing: false,
+        timer2: null,
         init: function(){
-            
+            this.imgi = 0;
+            this.playing = true;
+            setTimeout(g9.setImage, 100);
+            $("#g9 .sea").css('backgroundImage', 'url('+this.uri+this.imgi+'.jpg'+')').show();
             $('#g9 .audio-play').bind('click', function(e){
                 e.preventDefault();
                 if($('#g10').hasClass('playing')){
@@ -362,6 +380,20 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     g9.pause();
             });
         },
+        setImage: function(){
+            g9.imgi += 1;
+            if(g9.imgi > 24){
+                g9.imgi = 0;
+            }
+            var next=new Image();
+            next.onload=function(){
+                $("#g9 .sea").css("backgroundImage",  'url('+this.src+')');
+            }
+            next.src= g9.uri+g9.imgi+'.jpg';
+
+            if(g9.playing)
+                g9.timer2 = setTimeout(g9.setImage, 100);
+        },
         play: function(){
             if(g9.timer!=null){
                 clearTimeout(g9.timer);
@@ -371,12 +403,13 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 share('#g9');
                 $('#g9').removeClass('playing');
             }});
-            this.playing = 'sea';
+            //this.playing = 'sea';
         },
         pause: function(){
             soundManager.pause('sea');
             g9.timer = setTimeout(function(){
                 share('#g9');
+                g9.playing = false;
             }, 3000);
         }
     },
