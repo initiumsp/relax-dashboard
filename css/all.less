@@ -1297,6 +1297,22 @@ header {
       right: 150px;
     }
   }
+  .round-btn:hover, .play:hover{
+    &:before{
+      opacity: 0.8;
+    }
+  }
+  .btn-wrapper a{
+    .sp{
+
+      -webkit-transition: transform 0.2s ease-in-out;
+      -moz-transition: transform 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    &:hover .sp{
+      .transform(~'translateX(15px)');
+    }
+  }
 }
 @media (max-width: 1664px) and (min-width: 1401px) {
   #game_wrapper .emoji {
