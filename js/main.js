@@ -39,6 +39,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 console.log(response);
             });
         });
+        audio.init();
         g1.init();
         g2.init();
         g3.init();
@@ -83,6 +84,36 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             ga('send', 'event', 'emoji', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
+    audio = {
+        init: function(){
+            soundManager.setup({
+              url: './swf/',
+              flashVersion: 9,
+              onready: function() {
+                audio.create('sea', './sea.mp3', function(){
+                    $('#g9').addClass('ready');
+                });
+                audio.create('pen', './pen.mp3', null);
+                audio.create('b0', './bubbleA.mp3', null);
+                audio.create('b1', './bubbleB.mp3', null);
+                audio.create('b2', './bubbleC.mp3', null);
+                audio.create('b3', './bubbleD.mp3', null);
+              }
+            });
+        },
+        create : function(id, url, cb){
+            soundManager.createSound({
+              id: id,
+              url: url,
+              autoLoad: true,
+              autoPlay: false,
+              onload: function() {
+                if(cb) cb();
+              },
+              volume: 50
+            });
+        }
+    },
     g1 = {
         wrapper: $('#g1'),
         pen: $('#pen'),
@@ -103,6 +134,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         tl.fromTo(pen, 0.75, {top:'0'}, {top:20});
         },
         penClick: function(){
+            soundManager.play('pen');
             if(this.timer!=null){
                 clearTimeout(this.timer);
                 this.timer = null;
@@ -312,27 +344,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
     },
     g9 = {
-        isready: false,
         timer: null,
         playing: '',
         init: function(){
-            soundManager.setup({
-              url: './swf/',
-              flashVersion: 9,
-              onready: function() {
-                g9.isready = true;
-                soundManager.createSound({
-                  id: 'yoga',
-                  url: './yoga.mp3',
-                  autoLoad: true,
-                  autoPlay: false,
-                  onload: function() {
-                    $('.g[data-vid="'+this.id+'"]').addClass('ready');
-                  },
-                  volume: 50
-                });
-              }
-            });
+            
             $('#g9 .audio-play').bind('click', function(e){
                 e.preventDefault();
                 if($('#g10').hasClass('playing')){
@@ -342,24 +357,24 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 //if(!$parent.hasClass('ready')) return;
                 $parent.toggleClass('playing')
                 if($parent.hasClass('playing'))
-                    g9.play($parent.data('vid'));
+                    g9.play();
                 else
-                    g9.pause($parent.data('vid'));
+                    g9.pause();
             });
         },
-        play: function(id){
+        play: function(){
             if(g9.timer!=null){
                 clearTimeout(g9.timer);
                 g9.timer = null;
             }
-            soundManager.play(id,{volume:50,onfinish:function(){
+            soundManager.play('sea',{volume:50,onfinish:function(){
                 share('#g9');
-                $('.g[data-vid="'+id+'"]').removeClass('playing');
+                $('#g9').removeClass('playing');
             }});
-            this.playing = id;
+            this.playing = 'sea';
         },
-        pause: function(id){
-            soundManager.pause(id);
+        pause: function(){
+            soundManager.pause('sea');
             g9.timer = setTimeout(function(){
                 share('#g9');
             }, 3000);
@@ -374,6 +389,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     clearTimeout(g4.timer);
                     g4.timer = null;
                 }
+                soundManager.play('b'+(Math.floor(Math.random() * 4)));
                     e.preventDefault();
                     var $this = $(this);
                     if($this.hasClass('filled')) return;
