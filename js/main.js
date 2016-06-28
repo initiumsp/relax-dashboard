@@ -159,6 +159,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g2.setImage, 300);
             $('#g2').bind(hold, function (e) {
                 if($(e.target).hasClass('share-cover')) return;
+                $('#g2').addClass('active');
                 g2.playbg = true;
                 setTimeout(function(){g2.setImage2(false)}, 300);
                 if(g2.timer2!=null){
@@ -168,6 +169,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             }).bind(release, function(e){
                 if($(e.target).hasClass('share-cover')) return;
                 g2.playbg = true;
+                $('#g2').removeClass('active');
                 setTimeout(function(){g2.setImage2(true)}, 300);
                 g2.timer2 = setTimeout(function(){
                     share('#g2');
