@@ -500,7 +500,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('#g5 .expand').click(function(e){
             e.preventDefault();
             expandHiddenContent($g, html);
-            $('#g5 .content .round-btn .sp').toggleClass('sp-down sp-up');
+            $('#g5 .content .round-btn .sp').removeClass('sp-down').addClass('sp-up');
             $(this).removeClass('expand');
             config = {
                 arrows: false,
@@ -585,7 +585,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
     },
     expandHiddenContent = function($g, html) {
-        $('.g + .expandableContent').remove()
+        $('.g + .expandableContent').remove();
+        $('#g5 .g-inner .round-btn .sp').removeClass('sp-up').addClass('sp-down');
         var w = $(window).width(),
             col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
             index = $('#game_wrapper .g').index( $g )+1,
@@ -599,7 +600,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             $(this).parent().slideUp();
             if ($('.g+.expandableContent').hasClass('g5_expandable'))
-                $('#g5 .g-inner .round-btn .sp').toggleClass('sp-down sp-up');
+                $('#g5 .g-inner .round-btn .sp').removeClass('sp-up').addClass('sp-down');
         })
     },
     getIframe = function( $g ) {
