@@ -399,8 +399,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                         $this.html('');
                     }, 130);
                     if ( $(('#g4 .b:not(.filled)')).length <= 0 ){
+                        setTimeout(function(){
                             $('#g4 .centered').hide().fadeIn();
                             $('.b').removeClass('filled');
+                        }, 300)
                     }
                     g4.timer = setTimeout(function(){
                         share('#g4');
