@@ -618,7 +618,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
                 $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
-                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
+                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
     },
@@ -663,7 +663,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     desc = $g.data('desc'),
                     html = '';
                     html += '<div class="expandableContent video '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
-                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
+                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
                     html += getIframe( $g ) + '</div></div>';
                     expandHiddenContent($g, html)
                 }
