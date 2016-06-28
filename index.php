@@ -215,6 +215,8 @@
           <div class="slide"><img src="./images/illustration/slide1.jpg"></div>
           <div class="slide"><img data-lazy="./images/illustration/slide2.jpg"></div>
           <div class="slide"><img data-lazy="./images/illustration/slide3.jpg"></div>
+          <div class="slide"><img data-lazy="./images/illustration/slide4.jpg"></div>
+          <div class="slide"><img data-lazy="./images/illustration/slide5.jpg"></div>
         </div>
       </div>
       <div class="share-cover">
