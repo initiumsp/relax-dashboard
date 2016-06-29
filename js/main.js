@@ -169,7 +169,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.$refill.css({left: this.refill.left, bottom: this.refill.bottom});
             this.timer = setTimeout(function(){
                 share('#g1');
-            }, 3000);
+            }, 5000);
         },
         displayText: function(el, num){
             var length=(num+'').length;
@@ -222,7 +222,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g2.timer2 = setTimeout(function(){
                     share('#g2');
                     g2.playsmoke = false;
-                }, 3000);
+                }, 5000);
             });
         },
         setImage: function(){
@@ -295,18 +295,21 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g3.timer2 = setTimeout(function(){
                     share('#g3');
                     g3.playing = false;
-                }, 3000);
+                }, 5000);
             });
         },
         setImage: function(){
             g3.imgi += 1 * g3.dir;
-            if(g3.imgi> 8){
+            var rand = (Math.floor(Math.random() * 2));
+            var rand2 = (Math.floor(Math.random() * (8 - 7 + 1)) + 7);
+            if(g3.imgi> rand2){
                 g3.playing = false;
                 return;
             }
-            if(g3.imgi < 0){
+            console.log(rand);
+            if(g3.imgi < rand){
                 g3.playing = false;
-                g3.imgi = 0;
+                g3.imgi = rand;
                 return;
             }
             var next=new Image();
@@ -351,7 +354,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     window.sm2BarPlayers[0].actions.pause();
                     g10.timer = setTimeout(function(){
                         share('#g10');
-                    }, 3000);
+                    }, 5000);
                 }
             });
             window.sm2BarPlayers.on['end'] = function(){
@@ -414,7 +417,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             g9.timer = setTimeout(function(){
                 share('#g9');
                 g9.playing = false;
-            }, 3000);
+            }, 5000);
         }
     },
     g4 = {
@@ -443,7 +446,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     }
                     g4.timer = setTimeout(function(){
                         share('#g4');
-                    }, 3000);
+                    }, 5000);
             });
         }
     },
@@ -595,7 +598,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             $g.css('background', 'url("./images/emoji/bg' + index + '.jpg")');
             setTimeout(function(){
                 share('#g12');
-            },1000)
+            },5000)
             ga('send', 'event', 'g12', 'click', $(this).parent().find('.emoji').index($(this)));
         })
     },
