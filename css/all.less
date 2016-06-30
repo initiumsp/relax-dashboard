@@ -87,9 +87,6 @@ header {
   position: relative;
   margin: 0 auto;
   box-sizing: border-box;
-  h1, p {
-    margin-left: 50px;
-  }
   h1 {
     // font-size: 45px;
     max-width: 391px;
@@ -1182,12 +1179,10 @@ header {
   #game_wrapper .decor {
     width: 25%;
   }
-
-}
-@media (max-widh: 1675px) and (min-width: 1401px) {
   header {
     padding-left: 25%;
   }
+
 }
 @media (min-width: 1676px) {
   header {
@@ -1294,9 +1289,12 @@ header {
   body {
     padding-bottom: 130px;
   }
-  // header {
+  header {
   //   padding-left: 25%;
-  // }
+    h1, p {
+      margin-left: 50px;
+    }
+  }
   #game_wrapper {
     position: relative;
     .decor {
