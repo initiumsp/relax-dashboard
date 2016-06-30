@@ -324,6 +324,9 @@
         <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
         <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share11.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
       </div>
+      <a href="#" class="cover">
+        <img src="./images/g11_bg.jpg">
+      </a>
     </div>
   </div>
   <div class="g" id="g12">

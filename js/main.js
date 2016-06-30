@@ -46,6 +46,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g4.init();
         g5();
         g7();
+        g11();
         g12();
         sliderg();
         videog();
@@ -583,6 +584,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     g7 = function() {
         $('#g7 img').click(function(){
             $('#g7').find('.share-cover').fadeToggle();
+        })
+    },
+    g11 = function() {
+        $('#g11 .cover').click(function(e){
+            e.preventDefault();
+            $(this).fadeOut()
         })
     },
     g12 = function() {
