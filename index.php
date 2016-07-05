@@ -204,7 +204,7 @@
       </div>
     </div>
   </div><!-- g5 expandable  -->
-  <div class="g videog" id="g6" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
+  <div class="g videog" id="g6" data-title="COOK GUIDE|焦糖雞蛋布丁" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
     <div class="g-inner">
     <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
     </div>
@@ -230,7 +230,7 @@
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
     </div>
   </div>
-  <div class="g videog" id="g8" data-title="COOK GUIDE|糖不甩" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
+  <div class="g videog" id="g8" data-title="COOK GUIDE|焦糖雞蛋布丁" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖" data-vid="3O1_3zBUKM8">
     <div class="g-inner">
     <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
     </div>
