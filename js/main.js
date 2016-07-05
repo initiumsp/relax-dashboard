@@ -40,6 +40,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             });
         });
         audio.init();
+        sliderg();
         g1.init();
         g2.init();
         g3.init();
@@ -48,7 +49,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g7();
         g11();
         g12();
-        sliderg();
         videog();
         g9.init();
         g10.init();
@@ -595,7 +595,22 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         $('#g11 .cover').click(function(e){
             e.preventDefault();
             $(this).fadeOut()
+        });
+        // $slider = $('#g11 .slider');
+        $('#g11 .slider').slick('slickSetOption', 'swipe', false)
+        $('#g11 .slider img').click(function(){
+            slick = $('#g11 .slider').slick('getSlick')
+           $('#g11 .slider').slick('slickGoTo', Math.ceil(Math.random() * slick.$slides.length))
         })
+        $('.slick-arrow').click(function(e){
+            e.preventDefault();
+            $('#g11 .slider img').click();
+        })
+        // $('#g11 .slider').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        //    // event.preventDefault()
+        //    $('#g11 .slider').slick('slickGoTo', Math.ceil(Math.random() * slick.$slides.length))
+        //    // $('#g11 .slider').slick('slickGoTo',  1 )
+        // })
     },
     g12 = function() {
         var $g = $('#g12'),
@@ -697,8 +712,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 fade: true,
                 arrows: true,
                 lazyLoad: 'progressive',
-                autoplay: true,
-                autoplaySpeed: 4000,
+                // autoplay: true,
+                // autoplaySpeed: 4000,
                 prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
                 nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
             };
