@@ -6,6 +6,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         767: 1
     },
     init = function(){
+        //$("body").on("contextmenu",function(){
+        //   return false;
+        //}); 
         if(t) $('body').addClass('touch');
         $(window).resize(function(){
             var w = $(window).width();
