@@ -433,7 +433,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         timer: null,
         init: function(){
             var $g = $('#g4'), $b = $('#g4 .b');
-            $b.bind('click',function(e){
+            $b.bind(ev,function(e){
                 if(g4.timer!=null){
                     clearTimeout(g4.timer);
                     g4.timer = null;
