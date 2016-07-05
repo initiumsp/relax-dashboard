@@ -6,6 +6,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         767: 1
     },
     init = function(){
+        //$("body").on("contextmenu",function(){
+        //   return false;
+        //}); 
         if(t) $('body').addClass('touch');
         $(window).resize(function(){
             var w = $(window).width();
@@ -215,7 +218,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 if($(e.target).hasClass('share-cover')) return;
                 $('#g2').addClass('active');
                 g2.playbg = true;
-                setTimeout(function(){g2.setImage2(false)}, 300);
+                setTimeout(function(){g2.setImage2(false)}, 40);
                 if(g2.timer2!=null){
                     clearTimeout(g2.timer2);
                     g2.timer2 = null;
@@ -224,7 +227,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 if($(e.target).hasClass('share-cover')) return;
                 g2.playbg = true;
                 $('#g2').removeClass('active');
-                setTimeout(function(){g2.setImage2(true)}, 300);
+                setTimeout(function(){g2.setImage2(true)}, 40);
                 g2.timer2 = setTimeout(function(){
                     share('#g2');
                     g2.playsmoke = false;
@@ -241,7 +244,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             }
             next.src= g2.smokes_uri+g2.imgi+'.png';
             if(g2.playsmoke)
-                setTimeout(g2.setImage, 300);
+                setTimeout(g2.setImage, 200);
         },
         setImage2: function(revert){
             if(revert)
@@ -267,7 +270,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g2.timer = null;
             }
             if(g2.playbg)
-                g2.timer = setTimeout(function(){g2.setImage2(revert)}, 100);
+                g2.timer = setTimeout(function(){g2.setImage2(revert)}, 40);
         }
 
     },
@@ -395,7 +398,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         },
         setImage: function(){
             g9.imgi += 1;
-            if(g9.imgi > 24){
+            if(g9.imgi > 45){
                 g9.imgi = 0;
             }
             var next=new Image();
