@@ -280,7 +280,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         timer2: null,
         init: function(){
             this.imgi = 0;
-            $("#g3 .bed").css('backgroundImage', 'url('+this.uri+this.imgi+'.gif'+')').show();
+            $("#g3 .bed").css('backgroundImage', 'url('+this.uri+this.imgi+'.jpg'+')').show();
             $('#g3 .rotate').bind('click', function (e) {
                 e.preventDefault();
                 if($(e.target).hasClass('share-cover')) return;
@@ -312,7 +312,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g3.playing = false;
                 return;
             }
-            console.log(rand);
+
             if(g3.imgi < rand){
                 g3.playing = false;
                 g3.imgi = rand;
@@ -322,7 +322,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             next.onload=function(){
                 $("#g3 .bed").css("backgroundImage",  'url('+this.src+')');
             }
-            next.src= g3.uri+g3.imgi+'.gif';
+            next.src= g3.uri+g3.imgi+'.jpg';
 
             if(g3.playing)
                 g3.timer = setTimeout(g3.setImage, 100);
