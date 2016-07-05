@@ -361,121 +361,123 @@
   <a href="http://csrp.hku.hk/" target="_blank" class="btn btn-blue">合作機構<span class="sp sp-arrow2"></span></a>
 </div>
 <div class="panel-wrapper">
-  <h3 class="title-red"><span>機構資料</span></h3>
-  <div class="panel panel-bd">
-    <h4>學友社</h4>
-    <p>25033399</p>
-    <p>星期一、三、五:7am-9pm<br>服務對象:學生</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>香港青年協會</h4>
-    <p>27771112</p>
-    <p>星期一至六:2pm-2am<br>服務對象:學生</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>香港聖公會福利協會</h4>
-    <p>82039070</p>
-    <p>星期一至六:2pm-10pm<br>服務對象:學生</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4><span class="en">Infinity Teens</span>連線<span class="en">teen</span>地</h4>
-    <p>25802626/(WhatsApp 93773666)</p>
-    <p>先預約<br>服務對象:青少年</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4><span class="en">uTouch</span>網上外展輔導服務</h4>
-    <p>27778899/ (WhatsApp 62778899)</p>
-    <p>星期一至五:2pm-12am<br>服務對象:青少年</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>夜貓<span class="en">Online</span></h4>
-    <p>97268159/98528625</p>
-    <p>星期一、三、五及六(公眾假期除外):3pm-3am<br>服務對象:青少年</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>香港青年協會</h4>
-    <p>27778899</p>
-    <p>星期一至六:2pm-2am<br>服務對象:青少年</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>香港神託會</h4>
-    <p>26357709</p>
-    <p>星期一至五(公眾假期休息):10am-5pm<br>服務對象:青少年</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>自殺自療互助舍</h4>
-    <p>23417227</p>
-    <p>8pm-2am<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>香港明愛</h4>
-    <p>18288</p>
-    <p>24小時<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>生命熱線</h4>
-    <p>23820000</p>
-    <p>24小時<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>香港撒瑪利亞防止自殺會</h4>
-    <p>23892222</p>
-    <p>24小時<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>撒瑪利亞會</h4>
-    <p>28960000</p>
-    <p>24小時<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>社會福利署</h4>
-    <p>23432255</p>
-    <p>24小時<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>香港基督教女青年會</h4>
-    <p>27116622</p>
-    <p>星期一至五:7pm-10pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>影音使團</h4>
-    <p>81008012</p>
-    <p>星期一至六:10am-10pm；星期日:4pm-10pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>基督教靈實協會</h4>
-    <p>27023321</p>
-    <p>星期一至六:9:30am-12pm，2pm-5pm ；星期二:7pm-9pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>心晴行動慈善基金</h4>
-    <p>23012303</p>
-    <p>星期一至五:10am-1pm，2pm-5pm；星期六:10m-1pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>扶康會</h4>
-    <p>81005555</p>
-    <p>星期一、三、五:10am-1pm，2pm-5pm；星期二:2pm-5pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>香港心理衛生會</h4>
-    <p>27720047</p>
-    <p>星期一至五:2pm-10pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>香港健康情緒中心</h4>
-    <p>21446004</p>
-    <p>星期一至六:9am-6pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bl">
-    <h4>浸信會愛羣社會服務處</h4>
-    <p>25354135</p>
-    <p>星期一至五:10am-12:30pm，2pm-5pm；星期二:7pm-9pm<br>服務對象:所有</p>
-  </div>
-  <div class="panel panel-bd">
-    <h4>醫院管理局</h4>
-    <p>24667350</p>
-    <p>24小時<br>服務對象:所有</p>
+  <h3 class="title-red"><a href="#" id="expand-panel"><span>機構資料</span></a></h3>
+  <div class="expandable">
+    <div class="panel panel-bd">
+      <h4>學友社</h4>
+      <p>25033399</p>
+      <p>星期一、三、五:7am-9pm<br>服務對象:學生</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>香港青年協會</h4>
+      <p>27771112</p>
+      <p>星期一至六:2pm-2am<br>服務對象:學生</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>香港聖公會福利協會</h4>
+      <p>82039070</p>
+      <p>星期一至六:2pm-10pm<br>服務對象:學生</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4><span class="en">Infinity Teens</span>連線<span class="en">teen</span>地</h4>
+      <p>25802626/(WhatsApp 93773666)</p>
+      <p>先預約<br>服務對象:青少年</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4><span class="en">uTouch</span>網上外展輔導服務</h4>
+      <p>27778899/ (WhatsApp 62778899)</p>
+      <p>星期一至五:2pm-12am<br>服務對象:青少年</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>夜貓<span class="en">Online</span></h4>
+      <p>97268159/98528625</p>
+      <p>星期一、三、五及六(公眾假期除外):3pm-3am<br>服務對象:青少年</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>香港青年協會</h4>
+      <p>27778899</p>
+      <p>星期一至六:2pm-2am<br>服務對象:青少年</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>香港神託會</h4>
+      <p>26357709</p>
+      <p>星期一至五(公眾假期休息):10am-5pm<br>服務對象:青少年</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>自殺自療互助舍</h4>
+      <p>23417227</p>
+      <p>8pm-2am<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>香港明愛</h4>
+      <p>18288</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>生命熱線</h4>
+      <p>23820000</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>香港撒瑪利亞防止自殺會</h4>
+      <p>23892222</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>撒瑪利亞會</h4>
+      <p>28960000</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>社會福利署</h4>
+      <p>23432255</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>香港基督教女青年會</h4>
+      <p>27116622</p>
+      <p>星期一至五:7pm-10pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>影音使團</h4>
+      <p>81008012</p>
+      <p>星期一至六:10am-10pm；星期日:4pm-10pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>基督教靈實協會</h4>
+      <p>27023321</p>
+      <p>星期一至六:9:30am-12pm，2pm-5pm ；星期二:7pm-9pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>心晴行動慈善基金</h4>
+      <p>23012303</p>
+      <p>星期一至五:10am-1pm，2pm-5pm；星期六:10m-1pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>扶康會</h4>
+      <p>81005555</p>
+      <p>星期一、三、五:10am-1pm，2pm-5pm；星期二:2pm-5pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>香港心理衛生會</h4>
+      <p>27720047</p>
+      <p>星期一至五:2pm-10pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>香港健康情緒中心</h4>
+      <p>21446004</p>
+      <p>星期一至六:9am-6pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bl">
+      <h4>浸信會愛羣社會服務處</h4>
+      <p>25354135</p>
+      <p>星期一至五:10am-12:30pm，2pm-5pm；星期二:7pm-9pm<br>服務對象:所有</p>
+    </div>
+    <div class="panel panel-bd">
+      <h4>醫院管理局</h4>
+      <p>24667350</p>
+      <p>24小時<br>服務對象:所有</p>
+    </div>
   </div>
 </div>
 <div class="btn-wrapper">
