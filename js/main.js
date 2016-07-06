@@ -678,9 +678,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
-                $(this).parent().slideUp();
-                if( $(this).parent().hasClass('g5_expandable'))
-                    $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
+                $parent = $(this).parent();
+                $parent.slideUp(function(){
+                    if( $parent.hasClass('g5_expandable'))
+                        $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
+                    $parent.remove()
+                });
             })
         },
         getIframe = function( $g ) {
