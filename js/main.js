@@ -408,7 +408,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             next.src= g9.uri+g9.imgi+'.jpg';
 
             if(g9.playing)
-                g9.timer2 = setTimeout(g9.setImage, 100);
+                g9.timer2 = setTimeout(g9.setImage, 60);
         },
         play: function(){
             if(g9.timer!=null){
