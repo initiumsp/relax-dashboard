@@ -678,9 +678,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
-                $(this).parent().slideUp();
-                if( $(this).parent().hasClass('g5_expandable'))
-                    $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
+                $parent = $(this).parent();
+                $parent.slideUp(function(){
+                    if( $parent.hasClass('g5_expandable'))
+                        $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
+                    $parent.remove()
+                });
             })
         },
         getIframe = function( $g ) {
@@ -717,8 +720,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 fade: true,
                 arrows: true,
                 lazyLoad: 'progressive',
-                // autoplay: true,
-                // autoplaySpeed: 4000,
+                autoplay: true,
+                autoplaySpeed: 4000,
                 prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
                 nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
             };
