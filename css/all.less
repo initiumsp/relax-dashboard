@@ -85,12 +85,12 @@ header {
   max-width: 1675px;
   padding: 0 50px;
   position: relative;
-  margin: 0 auto;
+  margin: 118px auto 0;
   box-sizing: border-box;
   h1 {
     // font-size: 45px;
     max-width: 391px;
-    margin-top: 138px;
+    // margin-top: 138px;
     margin-bottom: 0;
     img {
       display: block;
@@ -100,7 +100,7 @@ header {
     font-size: 28px;
     line-height: 1.3;
   }
-  p {
+  > p {
     margin-bottom: 0;
     font-size: 27px;
     letter-spacing: 8px;
@@ -115,6 +115,34 @@ header {
     display: inline-block;
     vertical-align: middle;
     margin: 0 9px;
+  }
+  .logos {
+    color: #000;
+    text-align: center;
+    a {
+      display: inline-block;
+      margin: 0 28px;
+    }
+    p {
+      letter-spacing: 3px;
+      margin: 7px 0;
+    }
+  }
+  .hku {
+    width: 60px;
+    position: relative;
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      margin: 10px -30px 10px 0;
+      bottom: 0;
+      border-left: 2px solid #91bcd5;
+    }
+  }
+  .initium {
+    width: 64px;
   }
 }
 
@@ -768,7 +796,8 @@ header {
   }
   .content {
     position: relative;
-    max-width: 290px;
+    // max-width: 290px;
+    max-width: 305px;
     margin: 0 auto;
   }
   .icon {
@@ -1316,8 +1345,14 @@ header {
   }
   header {
   //   padding-left: 25%;
-    h1, p {
+    h1, > p {
       margin-left: 50px;
+    }
+    .logos {
+      position: absolute;
+      bottom: 100%;
+      right: 0;
+      margin-bottom: -5px;
     }
   }
   #game_wrapper {
@@ -1783,18 +1818,18 @@ header {
   }
 
   header {
+    margin-top: 17px;
     max-width: 500px;
     padding: 0 30px;
     h1 {
       width: 100%;
       // font-size: 29px;
       // letter-spacing: 5px;
-      margin-top: 32px;
       max-width: 313px;
     }
-    p {
-      font-size: 24px;
-      letter-spacing: 5px;
+    > p {
+      font-size: 23px;
+      letter-spacing: 4px;
       padding: 12px 0 15px;
       line-height: 1.3;
     }
@@ -1802,6 +1837,32 @@ header {
       display: block;
       text-align: center;
       margin-top: 10px;
+    }
+    .logos {
+      text-align: right;
+      font-size: 16px;
+      margin-bottom: 23px;
+      p {
+        display: inline-block;
+        vertical-align: middle;
+      }
+      a {
+        vertical-align: middle;
+        margin: 0 20px;
+      }
+      img {
+        max-height: 100%;
+      }
+    }
+    .hku, .initium {
+      width: auto;
+      height: 87/2px;
+    }
+    .hku {
+      &:before {
+        border-width: 1px;
+        margin-right: -21px;
+      }
     }
   }
 }
