@@ -156,7 +156,7 @@
         <div class="center">
           <div class="centered">
             <div class="content">
-              <h3>Weather Forcast <br><span class="weekday">-</span></h3>
+              <h3>Weather Forecast <br><span class="weekday">-</span></h3>
               <p class="date">-/-</p>
               <div class="icon icon1"><img src=""></div>
               <span class="round-btn"><span class="sp sp-down">Expand hidden content</span></span>
