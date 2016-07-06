@@ -510,14 +510,18 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             }
         };
         var yahoo_id_text = function(id) {
+            var cloudy_arr = ["天陰陰，約埋三五知己一齊睇戲，心情一樣咁好﹗","一班人齊齊玩Boardgame，陰天一樣好心情﹗","同朋友參加Workshop玩吓，陰天一樣好心情﹗"];
+            var sunny_arr = ["咁好太陽，唔好匿埋喺屋企啦，不如去行山出身汗～","大熱天時，最適合去沙灘曬太陽，齊齊同陽光玩遊戲～","咁好陽光，去野餐輕鬆吓，呼吸吓新鮮空氣啦～"];
+            var mostly_sunny_arr = ["天氣好，快啲出去玩啦﹗溜吓冰，心情都靚啲～","咁好天氣，出去放吓風箏、望吓個天，心情靚晒～","襯住天氣好，約埋朋友打羽毛球，心情靚晒～"];
+            var raining_arr = ["去Cafe做文青，落雨又有咩好怕﹖希望在明天嘛！","雨聲中睇書睇漫畫，落雨一樣咁開心～","大不了咪旅行去出走，落雨又有咩好怕﹖"];
             if(id>=31 && id<=34 || id==36) {
-                return '大熱天時，最適合行山、去沙灘同野餐，齊齊同陽光玩遊戲～';
+                return sunny_arr[Math.floor((Math.random()*3)+0)];
             } else if(id>=27 && id<=30 || id==44) {
-                return '天氣好，快啲出去玩啦﹗溜冰、放風箏、打羽毛球，心情靚晒～';
+                return mostly-sunny_arr[Math.floor((Math.random()*3)+0)];
             } else if(id>17 && id<=26 || id==35 || id>37 && id<=40 || id==4 || id==45) {
-                return '約埋朋友一齊睇戲、玩Boardgame、參加工作坊，陰天一樣好心情！';
+                return cloudy_arr[Math.floor((Math.random()*3)+0)];
             } else {
-                return '去Cafe、睇書做文青，再唔係咪旅行出走，落雨又有咩好怕﹖';
+                return raining_arr[Math.floor((Math.random()*3)+0)];
             }
         };
         var date = new Date();
