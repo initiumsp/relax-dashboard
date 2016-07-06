@@ -54,7 +54,7 @@
     <a href="https://theinitium.com/" target="_blank" class="initium"><img src="./images/initium-logo.png" alt="端傳媒"></a>
   </div>
   <h1><img src="./images/logo.png" alt="12格遇上天藍"></h1>
-  <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖<br>來這裡放空、放鬆，<br class="mobile-only">重遇藍天下的自己。
+  <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖<br>來這裡放空、放鬆，重遇藍天下的自己。
     <span class="share">
       <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
       <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
