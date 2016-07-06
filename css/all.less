@@ -1027,7 +1027,13 @@ header {
     left: 219/414.75*100%;
     width: 163/414.75*100%;
   }
-
+  .slide{
+    background-image: url(../images/lanterns/slidebg.jpg);
+    background-size: cover; 
+    -webkit-animation: light 2s 0s linear  infinite;
+    -moz-animation: light 2s 0s linear  infinite;
+    animation: light 2s 0s linear  infinite;
+  }
 }
 #g12 {
   background: url("../images/emoji/bg5.jpg");
@@ -2015,4 +2021,40 @@ header {
   .emoji {
     margin: 0 6px;
   }
+}
+@-webkit-keyframes light {
+ 0% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 5% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 10% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 11% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 38% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 59% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 60% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 99% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 100% {background-image: url(../images/lanterns/slidebg.jpg);}
+
+}
+@-moz-keyframes light {
+   0% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 5% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 10% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 11% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 38% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 59% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 60% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 99% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 100% {background-image: url(../images/lanterns/slidebg.jpg);}
+
+}
+@keyframes light {
+ 0% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 5% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 10% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 11% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 38% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 59% {background-image: url(../images/lanterns/slidebg.jpg);}
+ 60% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 99% {background-image: url(../images/lanterns/slidebg-on.jpg);}
+ 100% {background-image: url(../images/lanterns/slidebg.jpg);}
+
 }

@@ -439,10 +439,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     g4.timer = null;
                 }
 
-                soundManager.play('b'+(Math.floor(Math.random() * 4)));
                     e.preventDefault();
                     var $this = $(this);
                     if($this.hasClass('filled')) return;
+                    soundManager.play('b'+(Math.floor(Math.random() * 4)));
                     $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled');
                     setTimeout(function(){
                         $this.html('');

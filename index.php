@@ -320,10 +320,10 @@
   <div class="g sliderg" id="g11">
     <div class="g-inner">
       <div class="slider">
-        <div class="slide"><img src="./images/lanterns/slide1.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide2.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide3.jpg"></div>
-        <div class="slide"><img data-lazy="./images/lanterns/slide4.jpg"></div>
+        <div class="slide"><img src="./images/lanterns/slide1.png"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide2.png"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide3.png"></div>
+        <div class="slide"><img data-lazy="./images/lanterns/slide4.png"></div>
       </div>
       <div class="slider-share">
         <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
