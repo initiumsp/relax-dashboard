@@ -99,7 +99,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             e.preventDefault();
             $(this).parent().siblings('.expandable').slideToggle();
         });
-        $('#expand-panel').click()
+        // $('#expand-panel').click()
     },
     emoji = function() {
         $('.emoji').click(function(e){
