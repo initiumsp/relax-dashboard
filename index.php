@@ -48,6 +48,11 @@
 </head>
 <body class="tc">
 <header>
+  <div class="logos">
+    <p>合作機構</p>
+    <a href="http://www.hku.hk/" target="_blank" class="hku"><img src="./images/hku-logo.png" alt="香港大學"></a>
+    <a href="https://theinitium.com/" target="_blank" class="initium"><img src="./images/initium-logo.png" alt="端傳媒"></a>
+  </div>
   <h1><img src="./images/logo.png" alt="12格遇上天藍"></h1>
   <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖
     <span class="share">
