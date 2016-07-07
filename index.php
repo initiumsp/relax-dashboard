@@ -63,7 +63,7 @@
 </header>
 <div id="game_wrapper" class="cf">
   <div class="decor">
-    <p>Hi～歡迎來到這裏﹗<br>你的心情如何？</p>
+    <p>Hi～歡迎來到這裏﹗<br>你現在心情如何﹖</p>
     <div class="emoji-wrapper cf">
     <a href="#" class="emoji emoji1"></a>
     <a href="#" class="emoji emoji2"></a>
