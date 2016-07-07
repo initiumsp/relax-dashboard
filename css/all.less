@@ -290,6 +290,16 @@ header {
   background: url('../images/g1_bg.jpg');
   background-size: cover;
   color: #333;
+  &.inactive{
+    .effect{
+      width: 26px;
+      height: 24px;
+      background: url(../images/pen/pen-effect.png) no-repeat 0 0; 
+      -webkit-animation: pen 2s 0s linear  infinite;
+      -moz-animation: pen 2s 0s linear  infinite;
+      animation: pen 2s 0s linear  infinite;
+    }
+  }
   .val{
     line-height: 1em;
   }
@@ -2021,6 +2031,27 @@ header {
   .emoji {
     margin: 0 6px;
   }
+}
+@-webkit-keyframes pen {
+ 0% {background-image: url(../images/pen/pen-effect0.png);}
+ 30% {background-image: url(../images/pen/pen-effect1.png);}
+ 60% {background-image: url(../images/pen/pen-effect2.png);}
+ 90% {background-image: url(../images/pen/pen-effect3.png);}
+ 100% {background-image: url(../images/pen/pen-effect0.png);}
+}
+@-moz-keyframes pen {
+ 0% {background-image: url(../images/pen/pen-effect.png);}
+ 30% {background-image: url(../images/pen/pen-effect.png);}
+ 60% {background-image: url(../images/pen/pen-effect.png);}
+ 90% {background-image: url(../images/pen/pen-effect.png);}
+ 100% {background-image: url(../images/pen/pen-effect.png);}
+}
+@keyframes pen {
+ 0% {background-image: url(../images/pen/pen-effect0.png);}
+ 30% {background-image: url(../images/pen/pen-effect1.png);}
+ 60% {background-image: url(../images/pen/pen-effect2.png);}
+ 90% {background-image: url(../images/pen/pen-effect3.png);}
+ 100% {background-image: url(../images/pen/pen-effect0.png);}
 }
 @-webkit-keyframes light {
  0% {background-image: url(../images/lanterns/slidebg.jpg);}

@@ -160,6 +160,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         },
         penClick: function(){
             soundManager.play('pen');
+            this.wrapper.removeClass('inactive');
             if(this.timer!=null){
                 clearTimeout(this.timer);
                 this.timer = null;
@@ -178,6 +179,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.$refill.css({left: this.refill.left, bottom: this.refill.bottom});
             this.timer = setTimeout(function(){
                 share('#g1');
+                g1.wrapper.addClass('inactive');
             }, 5000);
         },
         displayText: function(el, num){
