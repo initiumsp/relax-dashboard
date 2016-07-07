@@ -156,7 +156,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.refill.w = this.$refill.width();
             this.refill.h = this.$refill.height();
             var tl           = new TimelineMax();
-            tl.fromTo(pen, 0.75, {top:'0'}, {top:20});
+            tl.fromTo(pen, 0.75, {top:'0'}, {top:38});
         },
         penClick: function(){
             soundManager.play('pen');
