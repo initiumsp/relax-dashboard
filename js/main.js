@@ -160,6 +160,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         },
         penClick: function(){
             soundManager.play('pen');
+            this.wrapper.removeClass('inactive');
             if(this.timer!=null){
                 clearTimeout(this.timer);
                 this.timer = null;
@@ -178,6 +179,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.$refill.css({left: this.refill.left, bottom: this.refill.bottom});
             this.timer = setTimeout(function(){
                 share('#g1');
+                g1.wrapper.addClass('inactive');
             }, 5000);
         },
         displayText: function(el, num){
@@ -439,10 +441,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     g4.timer = null;
                 }
 
-                soundManager.play('b'+(Math.floor(Math.random() * 4)));
                     e.preventDefault();
                     var $this = $(this);
                     if($this.hasClass('filled')) return;
+                    soundManager.play('b'+(Math.floor(Math.random() * 4)));
                     $(this).html('<i class="deco'+(Math.floor(Math.random() * (3 - 1 + 1)) + 1)+'"></i>').addClass('filled');
                     setTimeout(function(){
                         $this.html('');
