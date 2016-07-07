@@ -417,9 +417,9 @@
         </li>
         <li>
           <h4>資料搜集</h4>
-          <p>陳梓鋒、吳漪嶠<br>吳雅詩、曾皓晴、馬婉婷</p>
+          <p>陳梓鋒、吳漪嶠<br>吳雅詩、曾皓晴、<span class="nowrap">馬婉婷</span></p>
         </li>
-        <li class="art_design">
+        <li>
           <h4>美術設計</h4>
           <p>端傳媒設計部</p>
         </li>        
