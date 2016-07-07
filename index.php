@@ -77,9 +77,8 @@
       <span class="count"><span class="advent">Pencil refilled:</span><br/><span class="val">0000</span></span>
       <div class="clicks hidden">Pens clicks:<div class="val">0000</div></div>
       <div id="pen">
-        <div class="effect"></div>
         <div class="refill"></div>
-        <div class="body"></div>
+        <div class="body"><div class="effect"></div></div>
       </div>
     </div>
     <div class="share-cover">

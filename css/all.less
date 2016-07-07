@@ -295,17 +295,19 @@ header {
   color: #333;
   &.inactive{
     .effect{
+      background: url(../images/pen/pen-effect.png) no-repeat 0 0; 
+      -webkit-animation: pen 2s 0s linear  infinite;
+      -moz-animation: pen 2s 0s linear  infinite;
+      animation: pen 2s 0s linear  infinite;
+    }
+  }
+  .effect{
       position: absolute;
       top: -20px;
       margin-right: -15px;
       right: 0;
       width: 26px;
       height: 24px;
-      background: url(../images/pen/pen-effect.png) no-repeat 0 0; 
-      -webkit-animation: pen 2s 0s linear  infinite;
-      -moz-animation: pen 2s 0s linear  infinite;
-      animation: pen 2s 0s linear  infinite;
-    }
   }
   .advent{
      font-size: 19px;
@@ -340,6 +342,9 @@ header {
     .transform(~'rotate(-2deg) scale(0.97)');
     .body{
       background-image: url(../images/pen-on.png);
+    }
+    .effect{
+      background: url(../images/pen/pen-effect3.png) no-repeat 0 0; 
     }
   }
   .body{
