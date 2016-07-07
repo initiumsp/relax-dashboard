@@ -74,7 +74,7 @@
   </div>
   <div class="g inactive" id="g1">
     <div class="g-inner">
-      <span class="count">Pens refilled:<br/><span class="val">0000</span></span>
+      <span class="count"><span class="advent">Pencil refilled:</span><br/><span class="val">0000</span></span>
       <div class="clicks hidden">Pens clicks:<div class="val">0000</div></div>
       <div id="pen">
         <div class="effect"></div>
