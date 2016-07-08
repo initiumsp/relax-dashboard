@@ -429,6 +429,10 @@
           <p><span class="en-text"><a target="_blank" href="https://www.digiology.com.hk/">Digiology HK</a></span></p>
         </li>
         <li>
+          <h4>專業顧問</h4>
+          <p>香港大學香港賽馬會防止自殺研究中心</p>
+        </li>
+        <li>
           <h4>監製</h4>
           <p>李皚茵</p>
         </li>
