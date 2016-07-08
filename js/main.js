@@ -418,7 +418,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g9.loopSea();
                 //$('#g9').removeClass('playing');
             }});
-            
+
         },
         play: function(){
             if(g9.timer!=null){
@@ -699,8 +699,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     },
     expandHiddenContent = function($g, html, callback) {
         callback = callback || '';
-        $expanded = $('.g + .expandableContent');
-        $expanded.remove();
+        // $expanded = $('.g + .expandableContent');
+        $('.g + .expandableContent').remove();
         $('#g5 .g-inner .round-btn .sp').removeClass('sp-up').addClass('sp-down');
         var w = $(window).width(),
             col = w <= 767 ? 1 : w <= 1024 ? 2 : w <= 1400 ? 3 : 4, // breakpoints = { 1400: 3, 1024: 2, 767: 1 }
@@ -709,7 +709,13 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             closeButton = '<a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>';
 
             $('#game_wrapper .g:eq(' + insert_pos + ')').after( $(html) );
-            $expanded.hide().slideDown().append( closeButton );
+            // $('.g + .expandableContent').hide().slideDown().append( closeButton );
+
+            console.log(closeButton)
+            console.log($('.g + .expandableContent'))
+            $('.g + .expandableContent').hide().slideDown(function(){
+                $('.g + .expandableContent').append( closeButton )
+            });
 
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
@@ -722,8 +728,8 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             })
             if (callback !== '')
                 callback();
-            // if ( $expanded.find('.slider').length > 0 ) {
-            //     $expanded.find('.slider').slick('unslick').slick()
+            // if ( $('.g + .expandableContent').find('.slider').length > 0 ) {
+            //     $('.g + .expandableContent').find('.slider').slick('unslick').slick()
             // }
         },
         appendHiddenContentMarkup = function ($el, callback){
