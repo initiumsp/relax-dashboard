@@ -209,7 +209,7 @@
       </div>
     </div>
   </div><!-- g5 expandable  -->
-  <div class="g videog" id="g6" data-title="|明星打氣" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖來這裡放空、放鬆，重遇藍天下的自己。" data-vid="NCX0JKKgmeY">
+  <div class="g videog" id="g6" data-title="|明星打氣" data-desc="" data-vid="NCX0JKKgmeY">
     <div class="g-inner">
     <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
     </div>
@@ -235,7 +235,7 @@
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
     </div>
   </div>
-  <div class="g videog" id="g8" data-title="COOKING GUIDE|焦糖雞蛋布丁" data-desc="你最近還好嗎﹖尚愛看少女／少男漫畫嗎﹖來這裡放空、放鬆，重遇藍天下的自己。" data-vid="sVnbU2j7sjc">
+  <div class="g videog" id="g8" data-title="COOKING GUIDE|焦糖雞蛋布丁" data-desc="" data-vid="sVnbU2j7sjc">
     <div class="g-inner">
     <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
     </div>
