@@ -416,7 +416,7 @@
         </li>
         <li>
           <h4>資料搜集</h4>
-          <p>陳梓鋒、吳漪嶠<br>吳雅詩、曾皓晴、<span class="nowrap">馬婉婷</span></p>
+          <p>陳梓鋒、吳漪嶠<br>吳雅詩、<span class="nowrap">曾皓晴、</span>馬婉婷</p>
         </li>
         <li>
           <h4>美術設計</h4>

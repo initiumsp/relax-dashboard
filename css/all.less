@@ -1330,15 +1330,12 @@ header {
   letter-spacing: 2px;
   margin-top: 65px;
   margin-bottom: 80px;
-  overflow: hidden;
   margin-left: 50px;
   margin-right: 50px;
-  // padding: 40px;
   .inner {
     text-align: center;
     margin: 0 auto;
     width: 800px;
-    //width: 1100px;
   }
   .wrapper{
     position: relative;
@@ -1470,7 +1467,7 @@ header {
   }
   #credits {
     .inner {
-      width: 800px;
+      width: 570px;
     }
     ul {
       width: 100%;
@@ -1536,44 +1533,6 @@ header {
     margin: 0 7px;
   }
 }
-
-@media (max-width: 767px) {
-  .title-blue {
-    font-size: 27px;
-    padding-top: 26px;
-    margin-bottom: 23px;
-  }
-  #credits {
-    margin-left: 40px;
-    margin-right: 40px;
-    .inner {
-      width: 100%;
-    }
-    .wrapper {
-      padding: 0px 0px;
-    }
-    h4 {
-      font-size: 18px;
-      margin-bottom: 0px;
-      margin-top: 0px;
-    }
-    p {
-      font-size: 14px;
-      margin-bottom: 10px;
-    }
-    ul {
-      margin-top: 0px;
-    }
-    span.copyright {
-      margin-top: 0px;
-      font-size: 8px;
-      line-height: 15px;
-
-    }
-  }
-}
-
-
 @media (min-width: 768px) {
   .mobile-only {
     display: none !important;
@@ -2105,48 +2064,58 @@ header {
       }
     }
   }
+  .title-blue {
+    text-shadow: 1.7px 0 0 #7bcfe8;
+    font-size: 28px;
+    padding-top: 26px;
+    margin-bottom: 23px;
+    letter-spacing: 7px;
+  }
   #credits{
+    margin-left: 30px;
+    margin-right: 30px;
+
+    .inner {
+      width: 100%;
+    }
     .wrapper {
-      padding: 0 30px;
+      padding: 0 0px;
+      border-width: 2px;
+    }
+    .wrapper:before {
+      top: 2px;
+      left: 2px;
+      right: -20px;
+      border-radius: 6px;
     }
     h4, p{
       text-align: center;
+      font-size: 12px;
     }
     h4{
-      //margin-bottom: 3px;
-      //margin-top: 10px;
+      font-size: 17px;
+      margin-bottom: 0px;
+      margin-top: 0px;
       vertical-align: top;
     }
     p{
-      margin-bottom: 20px;
+      margin-bottom: 10px;
       line-height: 1.5;
     }
     ul, li{
       width: 100%;
+      margin-top: 0px;
     }
     li {
         margin: 0;
     }
+    span.copyright {
+        font-size: 9px;
+        margin-top: 0px;
+        line-height: 15px;
+    }
   }
 }
-// @media (max-width: 1197px) and (min-width: 1025px) {
-//   #credits{
-//     .wrapper {
-//       li {
-//         width: 33%
-//       }
-//     }
-//   }
-// }
-// @media (max-width: 1024px) and (min-width: 955px) {
-//   #credits{
-//     .wrapper {
-//       p {
-//         width: 170px;
-//       }
-//     }
-//   }
-// }
 @media (max-width: 368px) {
   .emoji {
     margin: 0 6px;
