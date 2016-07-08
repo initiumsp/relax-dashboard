@@ -78,10 +78,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g2.playsmoke= true;
                 setTimeout(g2.setImage, 300);
             }
-            else if($(this).parents('#g9:first').length ==1){
-                g9.playing= true;
-                setTimeout(g9.setImage, 300);
-            }
+            // else if($(this).parents('#g9:first').length ==1){
+            //     g9.playing= true;
+            //     setTimeout(g9.setImage, 300);
+            // }
         });
         $('.share-cover .close').on('click', function(e) {
             e.preventDefault();
@@ -90,10 +90,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g2.playsmoke= true;
                 setTimeout(g2.setImage, 300);
             }
-            else if($(this).parents('#g9:first').length ==1){
-                g9.playing= true;
-                setTimeout(g9.setImage, 300);
-            }
+            // else if($(this).parents('#g9:first').length ==1){
+            //     g9.playing= true;
+            //     setTimeout(g9.setImage, 300);
+            // }
         })
         // $('#expand-panel').on('click', function (e) {
         //     e.preventDefault();
@@ -412,15 +412,20 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             if(g9.playing)
                 g9.timer2 = setTimeout(g9.setImage, 60);
         },
+        loopSea: function(){
+            soundManager.play('sea',{volume:50, onfinish:function(){
+                share('#g9');
+                g9.loopSea();
+                //$('#g9').removeClass('playing');
+            }});
+            
+        },
         play: function(){
             if(g9.timer!=null){
                 clearTimeout(g9.timer);
                 g9.timer = null;
             }
-            soundManager.play('sea',{volume:50,onfinish:function(){
-                share('#g9');
-                $('#g9').removeClass('playing');
-            }});
+            g9.loopSea();
             //this.playing = 'sea';
         },
         pause: function(){
