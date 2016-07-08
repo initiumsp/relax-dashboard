@@ -595,7 +595,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 if ($(window).width() <= 1250 ){
                     $('.g+.expandableContent .sliderm').slick(config).on('setPosition', setEqualHeight).slick('setPosition');
                 } else {
-                    $('.g+.expandableContent .sliderm').slick('unslick')
+
+                    if ( typeof $('.g+.expandableContent .sliderm').slick() !== "undefined" )
+                        $('.g+.expandableContent .sliderm').slick('unslick')
+
                 }
             }
         })
@@ -669,7 +672,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     handleResponsive = function(mode){
         $('.g+expandableContent').remove();
         if ( $(window).width() > 1251 ) {
-            $('.sliderm.slick-slider').slick('unslick')
+            if ( typeof $('.sliderm.slick-slider').slick() !== "undefined" ) {
+                $('.sliderm.slick-slider').slick('unslick')
+            }
         }
         if ( mode == 'd' || mode == 't') {
             // reset slider
@@ -713,13 +718,11 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             console.log(closeButton)
             console.log($('.g + .expandableContent'))
-            $('.g + .expandableContent').hide().slideDown(function(){
-                $('.g + .expandableContent').append( closeButton )
-            });
+            $('.g + .expandableContent').hide().slideDown().append( closeButton )
 
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
-                $parent = $(this).parent();
+                $parent = $(this).parents('.expandableContent');
                 $parent.slideUp(function(){
                     if( $parent.hasClass('g5_expandable'))
                         $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
