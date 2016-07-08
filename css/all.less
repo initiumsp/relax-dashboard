@@ -155,8 +155,10 @@ header {
 .title-blue {
    color: #fff;
    text-shadow: 2.9px 0px 0 #7bcfe8;
-   padding-top: 46px;
+   padding-top: 94px;
    font-size: 39px;
+   font-size: 36px;
+   letter-spacing: 6px;
    //margin-bottom: 65px;
 }
 .title-yellow {
@@ -1327,15 +1329,14 @@ header {
 }
 
 #credits{
-  letter-spacing: 2px;
-  margin-top: 65px;
-  margin-bottom: 80px;
-  margin-left: 50px;
-  margin-right: 50px;
+  // letter-spacing: 2px;
+  // mamax-rgin-top: 65px;
+  // margin-bottom: 80px;
   .inner {
     text-align: center;
     margin: 0 auto;
-    width: 800px;
+    // width: 900px;
+    max-width: 900px;
   }
   .wrapper{
     position: relative;
@@ -1345,6 +1346,7 @@ header {
     text-align: center;
     line-height: 50px;
     position: relative;
+    max-width: 1675px;
   }
   .wrapper:before{
     margin: 0 auto;
@@ -1354,7 +1356,7 @@ header {
     border-radius: 10px;
     top: 3px;
     left: 3px;
-    right: -5px;
+    right: -7px;
     bottom: -8px;
     z-index: -1;
     background: #15437d;
@@ -1370,6 +1372,7 @@ header {
   li{
     display: block;
     width: 33%;
+    padding-left: 2%;
     float: left;
     vertical-align: top;
     font-size: 16px;
@@ -1390,23 +1393,23 @@ header {
     color: #5bc5e8;
   }
   p{
-    font-size: 20px;
+    font-size: 19px;
     line-height: 30px;
-    letter-spacing: 1px;
+    letter-spacing: 3.5px;
     word-break: break-all;
     text-indent: 0;
     margin: 0 0 0;
   }
   .en-text{
     vertical-align: middle;
-    font-size: smaller;
+    font-size: 20px;
     letter-spacing: 0;
   }
   a {
     color: inherit;
   }
   span.copyright {
-  	font-size: 15px;
+  	font-size: 12px;
   	letter-spacing: 1px;
   	display: inline-block;
   	margin-top: 178px;
@@ -1466,9 +1469,9 @@ header {
     }
   }
   #credits {
-    .inner {
-      width: 570px;
-    }
+    // .inner {
+    //   max-width: 570px;
+    // }
     ul {
       width: 100%;
       padding: 0;
@@ -1626,8 +1629,15 @@ header {
       }
     }
   }
-  #credits h2 {
-    margin-bottom: 0;
+  #credits {
+    padding-left:  140px;
+    padding-right: 140px;
+    h2 {
+      margin-bottom: 0;
+    }
+    .wrapper {
+      padding: 0 30px;      
+    }
   }
 }
 @media (max-width: 1664px) and (min-width: 1401px) {
@@ -2085,8 +2095,11 @@ header {
     .wrapper:before {
       top: 2px;
       left: 2px;
-      right: -20px;
-      border-radius: 6px;
+      right: -4px;
+      border-radius: 9px;
+    }
+    .en-text {
+      font-size: 12px;
     }
     h4, p{
       text-align: center;
@@ -2110,7 +2123,7 @@ header {
         margin: 0;
     }
     span.copyright {
-        font-size: 9px;
+        font-size: 10px;
         margin-top: 0px;
         line-height: 15px;
     }
