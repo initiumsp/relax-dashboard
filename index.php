@@ -426,14 +426,14 @@
       <ul class="clearfix">
         <li>
           <h4>網頁設計</h4>
-          <p><span class="en-text"><a target="_blank" href="https://www.digiology.com.hk/">Digiology Ltd.</a></span></p>
+          <p><span class="en-text"><a target="_blank" href="https://www.digiology.com.hk/">Digiology HK</a></span></p>
         </li>
         <li>
           <h4>監製</h4>
           <p>李皚茵</p>
         </li>
       </ul>
-      <span class="copyright">©2016 Initium Media. All rights reserved.</span>
+      <span class="copyright">(c) 2016 initium media. CSRP. ALL rights reserved.</span>
     </div>
   </div>
 </div>
