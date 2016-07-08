@@ -130,12 +130,12 @@
     <div class="g-inner">
       <div class="center">
         <div class="centered">
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
-          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span><span><a href="#" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
+          <div><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span><span><a href="javascript:void(0);" class="b"></a></span></div>
         </div>
       </div>
     </div>
@@ -227,11 +227,11 @@
     <div class="hidden">
       <div class="content">
         <div class="slider">
-          <div class="slide" data-caption="caption1"><img src="./images/illustration/slide1.jpg"></div>
-          <div class="slide" data-caption="caption2"><img data-lazy="./images/illustration/slide2.jpg"></div>
-          <div class="slide" data-caption="caption3"><img data-lazy="./images/illustration/slide3.jpg"></div>
-          <div class="slide" data-caption="caption4"><img data-lazy="./images/illustration/slide4.jpg"></div>
-          <div class="slide" data-caption="caption5"><img data-lazy="./images/illustration/slide5.jpg"></div>
+          <div class="slide" data-caption="不管結果如何，你們都已經盡力了。"><img src="./images/illustration/slide1.jpg"></div>
+          <div class="slide" data-caption="記住，讀書唔成唔緊要！做緊要有大志！"><img data-lazy="./images/illustration/slide2.jpg"></div>
+          <div class="slide" data-caption="天地咁大，一個深呼吸，嘢挫折都冇晒啦！"><img data-lazy="./images/illustration/slide3.jpg"></div>
+          <div class="slide" data-caption=""><img data-lazy="./images/illustration/slide4.jpg"></div>
+          <div class="slide" data-caption="閉上眼，感受心裡的平靜，與字宙的聯繫。"><img data-lazy="./images/illustration/slide5.jpg"></div>
         </div>
       </div>
     </div>
