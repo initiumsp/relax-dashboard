@@ -375,33 +375,33 @@
   <div class="expandable">
     <div class="panel panel-bd">
       <h4>生命熱線</h4>
-      <p>23820000</p>
+      <p>2382 0000</p>
       <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>香港撒瑪利亞防止自殺會</h4>
-      <p>23892222</p>
+      <p>2389 2222</p>
       <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bd">
       <h4>撒瑪利亞會</h4>
-      <p>28960000</p>
+      <p>2896 0000</p>
       <p>24小時<br>服務對象:所有</p>
     </div>
     <div class="panel panel-bl">
       <h4>夜貓<span class="en">Online</span></h4>
-      <p>97268159/98528625</p>
+      <p>9726 8159/9852 8625</p>
       <p>星期一、三、五及六(公眾假期除外):3pm-3am<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bd">
       <h4><span class="en">uTouch</span>網上外展輔導服務</h4>
-      <p>27778899/ (WhatsApp 62778899)</p>
+      <p>2777 8899/ (WhatsApp 6277 8899)</p>
       <p>星期一至五:2pm-12am<br>服務對象:青少年</p>
     </div>
     <div class="panel panel-bl">
-      <h4><span class="en">Infinity Teens</span>連線<span class="en">teen</span>地</h4>
-      <p>25802626/(WhatsApp 93773666)</p>
-      <p>先預約<br>服務對象:青少年</p>
+      <h4><span class="en">Infinity Teens</span>連線<span class="en">Teen</span>地</h4>
+      <p>2580 2626/(WhatsApp 9377 3666)</p>
+      <p>星期一至五：10am－6pm<br>服務對象:青少年</p>
     </div>
   </div>
 </div>
