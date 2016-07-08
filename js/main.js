@@ -95,10 +95,10 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 setTimeout(g9.setImage, 300);
             }
         })
-        $('#expand-panel').on('click', function (e) {
-            e.preventDefault();
-            $(this).parent().siblings('.expandable').slideToggle();
-        });
+        // $('#expand-panel').on('click', function (e) {
+        //     e.preventDefault();
+        //     $(this).parent().siblings('.expandable').slideToggle();
+        // });
         // $('#expand-panel').click()
     },
     emoji = function() {
@@ -736,7 +736,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     config.autoplay =  false;
                 }
                 $(this).slick(config);
-            });     
+            });
         };
         xdomain.slaves({
             'https://ss.initiumlab.com/': '/proxy.html'

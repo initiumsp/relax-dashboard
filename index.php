@@ -371,7 +371,7 @@
   <!--<a href="http://csrp.hku.hk/" target="_blank" class="btn btn-blue">合作機構<span class="sp sp-arrow2"></span></a>-->
 </div>
 <div class="panel-wrapper">
-  <h3 class="title-red"><a href="#" id="expand-panel"><span>求助機構資料</span></a></h3>
+  <h3 class="title-red"><!-- <a href="#" id="expand-panel"> --><span>求助機構資料</span><!-- </a> --></h3>
   <div class="expandable">
     <div class="panel panel-bd">
       <h4>生命熱線</h4>
@@ -421,7 +421,7 @@
         <li>
           <h4>美術設計</h4>
           <p>端傳媒設計部</p>
-        </li>        
+        </li>
       </ul>
       <ul class="clearfix">
         <li>
