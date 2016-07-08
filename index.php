@@ -433,7 +433,7 @@
           <p>李皚茵</p>
         </li>
       </ul>
-      <span class="copyright">(c) 2016 initium media. CSRP. ALL rights reserved.</span>
+      <span class="copyright">© 2016 initium media. CSRP. ALL rights reserved.</span>
     </div>
   </div>
 </div>
