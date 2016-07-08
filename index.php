@@ -416,7 +416,7 @@
         </li>
         <li>
           <h4>資料搜集</h4>
-          <p>陳梓鋒、吳漪嶠<br>吳雅詩、<span class="nowrap">曾皓晴、</span>馬婉婷</p>
+          <p><span class="nowrap">陳梓鋒、吳漪嶠</span><p><span class="nowrap">吳雅詩、曾皓晴</span>、馬婉婷</p></p>
         </li>
         <li>
           <h4>美術設計</h4>
@@ -426,14 +426,14 @@
       <ul class="clearfix">
         <li>
           <h4>網頁設計</h4>
-          <p><span class="en-text"><a target="_blank" href="https://www.digiology.com.hk/">Digiology Ltd.</a></span></p>
+          <p><span class="en-text"><a target="_blank" href="https://www.digiology.com.hk/">Digiology HK</a></span></p>
         </li>
         <li>
           <h4>監製</h4>
           <p>李皚茵</p>
         </li>
       </ul>
-      <span class="copyright">©2016 Initium Media. All rights reserved.</span>
+      <span class="copyright">(c) 2016 initium media. CSRP. ALL rights reserved.</span>
     </div>
   </div>
 </div>
