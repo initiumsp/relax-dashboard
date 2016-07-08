@@ -619,6 +619,13 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 $('.g7_expandable h2').text('');
                 $('.g7_expandable h3').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('caption') );
 
+                var play = function() {
+                    setTimeout(function(){
+                        $('.g7_expandable .slider').slick('slickNext')
+                        play()
+                    }, 4000)
+                }
+                play()
             };
             appendHiddenContentMarkup($('#g7 img'), initSlider)
 
@@ -714,10 +721,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             closeButton = '<a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>';
 
             $('#game_wrapper .g:eq(' + insert_pos + ')').after( $(html) );
-            // $('.g + .expandableContent').hide().slideDown().append( closeButton );
 
-            console.log(closeButton)
-            console.log($('.g + .expandableContent'))
             $('.g + .expandableContent').hide().slideDown().append( closeButton )
 
             $('.expandableContent .close').click(function(e){
