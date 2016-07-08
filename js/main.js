@@ -49,7 +49,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g3.init();
         g4.init();
         g5();
-        g7();
+        // g7();
         g11();
         g12();
         videog();
@@ -595,10 +595,17 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             }
         })
     },
-    g7 = function() {
-        $('#g7 img').click(function(){
-            $('#g7').find('.share-cover').fadeToggle();
-        })
+    g7 = function( m ) {
+        if (m==='d') {
+            appendHiddenContentMarkup($('#g7 img'))
+        } else {
+            $('#g7 img').click(function(){
+                $('#g7').find('.share-cover').fadeToggle();
+            })
+
+        }
+    // },
+    // g7 = function() {
     },
     g11 = function() {
         slick = $('#g11 .slider').slick('getSlick');
@@ -669,6 +676,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
+        g7(mode);
     },
     expandHiddenContent = function($g, html) {
         $('.g + .expandableContent').remove();
@@ -692,19 +700,16 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 });
             })
         },
-        getIframe = function( $g ) {
-            var vid = $g.data('vid'),
-            url='https://www.youtube.com/embed/' + vid + '?autoplay=1',
-            html = '<div class="iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
-            return html;
-        },
-        videog = function() {
-            $('.videog .play').click(function(e){
+        appendHiddenContentMarkup = function ($el){
+            $el.click(function(e){
             // $('.videog .play').one('click', function(e){
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 var $g = $(this).parents('.g');
-                console.log('clicked')
+                var className = $el.parents('.videog').length > 0 ? 'video':'slider2';
+                var content = className=='video'? getIframe( $g ) : '<div class="slidercondent"></div>';
+                // console.log('clicked')
+
                 if ($('.g+.expandableContent').hasClass($g.attr('id')+'_expandable') && $('.g+.expandableContent').is(':visible')) {
                     $('.g+.expandableContent .close').click();
 
@@ -713,13 +718,23 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     var title = $g.data('title').split('|'),
                     desc = $g.data('desc'),
                     html = '';
-                    html += '<div class="expandableContent video '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
+                    html += '<div class="expandableContent '+ className +' '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
                     html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
-                    html += getIframe( $g ) + '</div></div>';
-                    expandHiddenContent($g, html)
+                    html += content + '</div></div>';
+                    expandHiddenContent( $g, html )
                 }
                 // $(this).off('click');
             });
+
+        },
+        getIframe = function( $g ) {
+            var vid = $g.data('vid'),
+            url='https://www.youtube.com/embed/' + vid + '?autoplay=1',
+            html = '<div class="iframe"><iframe id="ytplayer" type="text/html" width="100%" height="100%" src="' + url + '" frameborder="0"/></div>';
+            return html;
+        },
+        videog = function() {
+            appendHiddenContentMarkup($('.videog .play'))
         },
         sliderg = function() {
             config = {
