@@ -731,7 +731,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
                 nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
             };
-            $('.sliderg .slider').slick(config);
+            $('.sliderg .slider').each(function(){
+                if ($(this).parents("#g11").length>0){
+                    config.autoplay =  false;
+                }
+                $(this).slick(config);
+            });     
         };
         xdomain.slaves({
             'https://ss.initiumlab.com/': '/proxy.html'
