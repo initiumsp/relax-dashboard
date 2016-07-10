@@ -613,11 +613,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     .on('beforeChange', function(event, slick, currentSlide, nextSlide){
 
                         caption = $(slick.$slides[nextSlide]).data('caption')
-                        $('.g7_expandable h2').text('');
+                        title = $(slick.$slides[nextSlide]).data('title')
+                        $('.g7_expandable h2').text(title);
                         $('.g7_expandable h3').text(caption);
                     })
 
-                $('.g7_expandable h2').text('');
+                $('.g7_expandable h2').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('title') );
                 $('.g7_expandable h3').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('caption') );
 
                 var play = function() {
