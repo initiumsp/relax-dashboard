@@ -26,7 +26,7 @@
 <meta property="og:image" content="<?php echo $base_url;?>images/share.jpg"/>
 <link href='https://fonts.googleapis.com/css?family=Advent+Pro:700' rel='stylesheet' type='text/css'>
 <script type="text/javascript">
-  var base_url = './';
+  var base_url = '<?php echo $base_url;?>';
   var lang = 'tc';
 </script>
 
@@ -239,8 +239,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share7.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share7.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
