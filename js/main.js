@@ -57,6 +57,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g10.init();
         emoji();
         $('body').delegate('.fb-share', ev, function(e){
+            if(mode != 'd') return;
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
@@ -64,6 +65,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             return false;
         });
         $('body').delegate('.tw-share', ev, function(e){
+            if(mode != 'd') return;
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
@@ -706,7 +708,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     var link = document.createElement("a");
                     link.href = base_url;
                     var url = link.protocol+"//"+link.host+link.pathname+link.search+link.hash;
-                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
+                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
         g7(mode);
@@ -769,7 +771,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
                     html += '<div class="expandableContent '+ className +' '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
 
-                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
+                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
                     html += content + '</div></div>';
 
                     expandHiddenContent( $g, html, callback )
