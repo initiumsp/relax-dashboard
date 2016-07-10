@@ -699,7 +699,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             // reset video
             $('.videog').each(function(){
-                var $g = $(this).parents('.g');
+                var $g = $(this);
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
                 $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
