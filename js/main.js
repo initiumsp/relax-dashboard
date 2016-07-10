@@ -157,7 +157,6 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.refill.h = this.$refill.height();
             var tl           = new TimelineMax();
             tl.fromTo(pen, 0.75, {top:'0'}, {top:38});
-            share('#g1')
         },
         penClick: function(){
             soundManager.play('pen');
@@ -769,7 +768,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
                     html += '<div class="expandableContent '+ className +' '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
 
-                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
+                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
                     html += content + '</div></div>';
 
                     expandHiddenContent( $g, html, callback )
