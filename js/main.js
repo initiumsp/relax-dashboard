@@ -56,33 +56,33 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g9.init();
         g10.init();
         emoji();
-        $('body').delegate('.fb-share', 'click', function(e){
+        $('body').delegate('.fb-share', ev, function(e){
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
             window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
             return false;
         });
-        $('body').delegate('.tw-share', 'click', function(e){
+        $('body').delegate('.tw-share', ev, function(e){
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
             window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600');
             return false;
         });
-        $('.share-cover').bind('click', function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            $(this).fadeOut();
-            if($(this).parents('#g2:first').length ==1){
-                g2.playsmoke= true;
-                setTimeout(g2.setImage, 300);
-            }
-            // else if($(this).parents('#g9:first').length ==1){
-            //     g9.playing= true;
-            //     setTimeout(g9.setImage, 300);
-            // }
-        });
+        // $('.share-cover').bind('click', function(e){
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     // $(this).fadeOut();
+        //     if($(this).parents('#g2:first').length ==1){
+        //         g2.playsmoke= true;
+        //         setTimeout(g2.setImage, 300);
+        //     }
+        //     // else if($(this).parents('#g9:first').length ==1){
+        //     //     g9.playing= true;
+        //     //     setTimeout(g9.setImage, 300);
+        //     // }
+        // });
         $('.share-cover .close').on('click', function(e) {
             e.preventDefault();
             $(this).parents('.share-cover').fadeOut();
@@ -157,6 +157,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             this.refill.h = this.$refill.height();
             var tl           = new TimelineMax();
             tl.fromTo(pen, 0.75, {top:'0'}, {top:38});
+            share('#g1')
         },
         penClick: function(){
             soundManager.play('pen');
