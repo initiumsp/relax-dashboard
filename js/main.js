@@ -699,13 +699,14 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             // reset video
             $('.videog').each(function(){
+                var $g = $(this).parents('.g');
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
                 $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
                     var link = document.createElement("a");
                     link.href = base_url;
                     var url = link.protocol+"//"+link.host+link.pathname+link.search+link.hash;
-                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
+                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
         g7(mode);
