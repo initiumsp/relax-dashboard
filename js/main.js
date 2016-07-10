@@ -418,7 +418,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 g9.loopSea();
                 //$('#g9').removeClass('playing');
             }});
-            
+
         },
         play: function(){
             if(g9.timer!=null){
@@ -595,22 +595,46 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                 if ($(window).width() <= 1250 ){
                     $('.g+.expandableContent .sliderm').slick(config).on('setPosition', setEqualHeight).slick('setPosition');
                 } else {
-                    $('.g+.expandableContent .sliderm').slick('unslick')
+
+                    if ( typeof $('.g+.expandableContent .sliderm').slick() !== "undefined" )
+                        $('.g+.expandableContent .sliderm').slick('unslick')
+
                 }
             }
         })
     },
     g7 = function( m ) {
         if (m==='d') {
-            appendHiddenContentMarkup($('#g7 img'))
+            initSlider = function(){
+                var caption = '';
+                $('.g7_expandable .slider')
+                    .slick( sliderConfig )
+                    .on('beforeChange', function(event, slick, currentSlide, nextSlide){
+
+                        caption = $(slick.$slides[nextSlide]).data('caption')
+                        $('.g7_expandable h2').text('');
+                        $('.g7_expandable h3').text(caption);
+                    })
+
+                $('.g7_expandable h2').text('');
+                $('.g7_expandable h3').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('caption') );
+
+                var play = function() {
+                    setTimeout(function(){
+                        $('.g7_expandable .slider').slick('slickNext')
+                        play()
+                    }, 4000)
+                }
+                play()
+            };
+            appendHiddenContentMarkup($('#g7 img'), initSlider)
+
         } else {
             $('#g7 img').click(function(){
                 $('#g7').find('.share-cover').fadeToggle();
             })
 
         }
-    // },
-    // g7 = function() {
     },
     g11 = function() {
         slick = $('#g11 .slider').slick('getSlick');
@@ -655,7 +679,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
     handleResponsive = function(mode){
         $('.g+expandableContent').remove();
         if ( $(window).width() > 1251 ) {
-            $('.sliderm.slick-slider').slick('unslick')
+            if ( typeof $('.sliderm.slick-slider').slick() !== "undefined" ) {
+                $('.sliderm.slick-slider').slick('unslick')
+            }
         }
         if ( mode == 'd' || mode == 't') {
             // reset slider
@@ -683,7 +709,9 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         }
         g7(mode);
     },
-    expandHiddenContent = function($g, html) {
+    expandHiddenContent = function($g, html, callback) {
+        callback = callback || '';
+        // $expanded = $('.g + .expandableContent');
         $('.g + .expandableContent').remove();
         $('#g5 .g-inner .round-btn .sp').removeClass('sp-up').addClass('sp-down');
         var w = $(window).width(),
@@ -692,41 +720,57 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
             insert_pos = Math.ceil(index/col)*col-1,
             closeButton = '<a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>';
 
-            $('#game_wrapper .g:eq('+insert_pos+')').after( $(html) );
-            $('.g + .expandableContent').hide().slideDown().append( closeButton );
+            $('#game_wrapper .g:eq(' + insert_pos + ')').after( $(html) );
+
+            $('.g + .expandableContent').hide().slideDown().append( closeButton )
 
             $('.expandableContent .close').click(function(e){
                 e.preventDefault();
-                $parent = $(this).parent();
+                $parent = $(this).parents('.expandableContent');
                 $parent.slideUp(function(){
                     if( $parent.hasClass('g5_expandable'))
                         $('#g5 .content .round-btn .sp').removeClass('sp-up').addClass('sp-down');
                     $parent.remove()
                 });
             })
+            if (callback !== '')
+                callback();
+            // if ( $('.g + .expandableContent').find('.slider').length > 0 ) {
+            //     $('.g + .expandableContent').find('.slider').slick('unslick').slick()
+            // }
         },
-        appendHiddenContentMarkup = function ($el){
+        appendHiddenContentMarkup = function ($el, callback){
+            callback = callback || '';
+
             $el.click(function(e){
             // $('.videog .play').one('click', function(e){
                 e.preventDefault();
                 e.stopImmediatePropagation();
                 var $g = $(this).parents('.g');
-                var className = $el.parents('.videog').length > 0 ? 'video':'slider2';
-                var content = className=='video'? getIframe( $g ) : '<div class="slidercondent"></div>';
-                // console.log('clicked')
 
+                var isVideo = $el.parents('.videog').length > 0;
+                var className =  isVideo ? 'video':'slider2';
+                var content = isVideo ? getIframe( $g ) : $g.find('.hidden').html();
+
+                // console.log($g.find('.hidden .content').html())
+                // console.log($g.find('.hidden').html())
+
+                // console.log('clicked')
                 if ($('.g+.expandableContent').hasClass($g.attr('id')+'_expandable') && $('.g+.expandableContent').is(':visible')) {
                     $('.g+.expandableContent .close').click();
 
                 } else {
 
-                    var title = $g.data('title').split('|'),
-                    desc = $g.data('desc'),
-                    html = '';
+                    var title = isVideo ? $g.data('title').split('|') : '';
+                    var desc = isVideo ? $g.data('desc') : '';
+                    var html = '';
+
                     html += '<div class="expandableContent '+ className +' '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
+
                     html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
                     html += content + '</div></div>';
-                    expandHiddenContent( $g, html )
+
+                    expandHiddenContent( $g, html, callback )
                 }
                 // $(this).off('click');
             });
@@ -741,21 +785,24 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         videog = function() {
             appendHiddenContentMarkup($('.videog .play'))
         },
+        sliderConfig = {
+            fade: true,
+            arrows: true,
+            lazyLoad: 'progressive',
+            autoplay: true,
+            autoplaySpeed: 4000,
+            prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
+            nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
+        },
+
         sliderg = function() {
-            config = {
-                fade: true,
-                arrows: true,
-                lazyLoad: 'progressive',
-                autoplay: true,
-                autoplaySpeed: 4000,
-                prevArrow: '<button type="button" class="round-btn slick-prev"><span class="sp sp-prev">Prev</span></button>',
-                nextArrow: '<button type="button" class="round-btn slick-next"><span class="sp sp-next">Next</span></button>'
-            };
             $('.sliderg .slider').each(function(){
-                if ($(this).parents("#g11").length>0){
-                    config.autoplay =  false;
+                if ( $(this).parents("#g11").length>0 ){
+                    sliderConfig.autoplay =  false;
                 }
-                $(this).slick(config);
+                if (! $(this).parents(".hidden").length>0 ) {
+                    $(this).slick(sliderConfig);
+                }
             });
         };
         xdomain.slaves({
