@@ -56,8 +56,8 @@
   <h1><img src="./images/logo.png" alt="12格遇上天藍"></h1>
   <p>你最近還好嗎﹖<br class="mobile-only">尚愛看少女／少男漫畫嗎﹖<br>來這裡放空、放鬆，重遇藍天下的自己。
     <span class="share">
-      <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-      <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+      <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+      <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
     </span>
   </p>
 </header>
@@ -85,8 +85,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share1.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share1.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share1.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share1.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share1.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share1.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -102,8 +102,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share2.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share2.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -119,8 +119,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share3.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share3.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share3.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share3.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share3.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share3.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -143,8 +143,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share4.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share4.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share4.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share4.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share4.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share4.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -198,8 +198,8 @@
             <div class="centered">
               <p>立即分享！</p>
               <span class="share">
-                <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share5.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb desktop-only">Share to facebook</span><span class="sp sp-fb3 mobile-only">Share to facebook</span></a>
-                <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share5.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt desktop-only">Share to twitter</span><span class="sp sp-tt3 mobile-only">Share to twitter</span></a>
+                <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share5.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share5.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb desktop-only">Share to facebook</span><span class="sp sp-fb3 mobile-only">Share to facebook</span></a>
+                <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share5.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share5.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt desktop-only">Share to twitter</span><span class="sp sp-tt3 mobile-only">Share to twitter</span></a>
               </span>
             </div>
           </div>
@@ -239,8 +239,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share7.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share7.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share7.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share7.html" target="_blank" class="fb-share round-btn blue-d"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share7.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share7.html" target="_blank" class="tw-share round-btn blue-l"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -263,8 +263,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share9.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share9.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+            <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share9.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share9.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+            <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share9.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share9.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -319,8 +319,8 @@
         <div class="center">
           <div class="centered share">
             <p class="title-yellow">分享</p>
-            <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share10.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-            <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share10.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+            <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share10.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share10.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+            <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share10.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share10.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
           </div>
         </div>
         <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
@@ -337,8 +337,8 @@
         <div class="slide"><img data-lazy="./images/lanterns/slide4.png"></div>
       </div>
       <div class="slider-share">
-        <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
-        <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share11.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
+        <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share11.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a>
+        <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share11.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share11.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a>
       </div>
       <a href="#" class="cover">
         <img src="./images/g11_bg.jpg">
@@ -369,8 +369,8 @@
       <div class="center">
         <div class="centered share">
           <p class="title-yellow">分享</p>
-          <a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-d fb-share round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
-          <a href="#" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-l tw-share round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
+          <a href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share12.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-d fb-share round-btn"><span class="sp sp-fb2">Share to facebook</span></a>
+          <a href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share12.html" data-share-href="https://twitter.com/share?text=<?php echo $tc_title;?>&via=initiumnews&url=<?php echo $base_url;?>share/share12.html" target="_blank" class="blue-l tw-share round-btn"><span class="sp sp-tt2">Share to twitter</span></a>
         </div>
       </div>
       <a href="#" class="round-btn close"><span class="sp sp-close">Close</span></a>
