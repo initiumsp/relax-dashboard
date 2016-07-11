@@ -11,7 +11,7 @@
 <meta name="twitter:domain" content="theinitium.com">
 <meta name="twitter:site" content="@initiumnews">
 <meta name="twitter:creator" content="@initiumnews">
-<meta name="twitter:image:src" content="<?php echo $base_url;?>images/share/share6.jpg">
+<meta name="twitter:image:src" content="<?php echo $base_url;?>images/share/share6.png">
 <title><?php echo $tc_title;?> | 端傳媒 Initium Media</title>
 <script type="text/javascript">
   var shop_name = window.location.pathname.split('/').pop();

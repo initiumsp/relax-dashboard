@@ -56,33 +56,35 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
         g9.init();
         g10.init();
         emoji();
-        $('body').delegate('.fb-share', 'click', function(e){
+        $('body').delegate('.fb-share', ev, function(e){
+            if(mode != 'd') return;
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
             window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=368,width=600');
             return false;
         });
-        $('body').delegate('.tw-share', 'click', function(e){
+        $('body').delegate('.tw-share', ev, function(e){
+            if(mode != 'd') return;
             e.preventDefault();
             e.stopPropagation();
             var url = $(this).data('share-href');
             window.open(url,'','menubar=no,toolbar=no,resizable=yes,scrollbars=no,height=400,width=600');
             return false;
         });
-        $('.share-cover').bind('click', function(e){
-            e.preventDefault();
-            e.stopPropagation();
-            $(this).fadeOut();
-            if($(this).parents('#g2:first').length ==1){
-                g2.playsmoke= true;
-                setTimeout(g2.setImage, 300);
-            }
-            // else if($(this).parents('#g9:first').length ==1){
-            //     g9.playing= true;
-            //     setTimeout(g9.setImage, 300);
-            // }
-        });
+        // $('.share-cover').bind('click', function(e){
+        //     e.preventDefault();
+        //     e.stopPropagation();
+        //     // $(this).fadeOut();
+        //     if($(this).parents('#g2:first').length ==1){
+        //         g2.playsmoke= true;
+        //         setTimeout(g2.setImage, 300);
+        //     }
+        //     // else if($(this).parents('#g9:first').length ==1){
+        //     //     g9.playing= true;
+        //     //     setTimeout(g9.setImage, 300);
+        //     // }
+        // });
         $('.share-cover .close').on('click', function(e) {
             e.preventDefault();
             $(this).parents('.share-cover').fadeOut();
@@ -612,11 +614,12 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
                     .on('beforeChange', function(event, slick, currentSlide, nextSlide){
 
                         caption = $(slick.$slides[nextSlide]).data('caption')
-                        $('.g7_expandable h2').text('');
+                        title = $(slick.$slides[nextSlide]).data('title')
+                        $('.g7_expandable h2').text(title);
                         $('.g7_expandable h3').text(caption);
                     })
 
-                $('.g7_expandable h2').text('');
+                $('.g7_expandable h2').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('title') );
                 $('.g7_expandable h3').text( $($('.g7_expandable .slider').slick('getSlick').$slides[0]).data('caption') );
 
                 var play = function() {
@@ -698,13 +701,14 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
             // reset video
             $('.videog').each(function(){
+                var $g = $(this);
                 html = getIframe( $(this) ).replace('?autoplay=1','');
                 $(this).html( html ).addClass('iframe')
                 $(this).find('.iframe').removeClass('iframe').addClass('g-inner');
                     var link = document.createElement("a");
                     link.href = base_url;
                     var url = link.protocol+"//"+link.host+link.pathname+link.search+link.hash;
-                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share2.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share2.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
+                $(this).append('<div class="mobile-only share"><p class="title-yellow">分享</p><div><a href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a></div></div>');
             })
         }
         g7(mode);
@@ -767,7 +771,7 @@ define(["jquery", "xdomain", "md", "soundmanager.min", "jquery.scrollTo.min", "s
 
                     html += '<div class="expandableContent '+ className +' '+$g.attr('id')+'_expandable"><div class="wrapper cf"><div class="desc"><h3>';
 
-                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="#" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="#" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share2.html" target="_blank" class="round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
+                    html += title[0] + '</h3><h2 class="title-yellow">' + title[1] + '</h2><p>' + desc + '</p><div class="share" style="display:block"><p class="title-yellow">分享</p><a href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://www.facebook.com/sharer.php?s=100&u='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="fb-share round-btn"><span class="sp sp-fb">Share to facebook</span></a><a href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" data-share-href="https://twitter.com/share?text=12格遇上天藍&via=initiumnews&url='+ base_url +'share/share'+$g.attr('id').substr(1)+'.html" target="_blank" class="tw-share round-btn"><span class="sp sp-tt">Share to twitter</span></a> </div></div>';
                     html += content + '</div></div>';
 
                     expandHiddenContent( $g, html, callback )
