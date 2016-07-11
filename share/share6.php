@@ -3,7 +3,7 @@
 <meta name="description" content="<?php echo $tc_desc;?>">
 <meta property="og:title" content="<?php echo $tc_title;?> | 端傳媒 Initium Media">
 <meta property="og:type" content="article">
-<meta property="og:image" content="<?php echo $base_url;?>images/share/share6.jpg">
+<meta property="og:image" content="<?php echo $base_url;?>images/share/share6.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="<?php echo $base_url;?>share/share6.html">
 <meta name="twitter:title" content="<?php echo $tc_title;?> | 端傳媒 Initium Media">
