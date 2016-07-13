@@ -209,7 +209,7 @@
       </div>
     </div>
   </div><!-- g5 expandable  -->
-  <div class="g videog" id="g6" data-title="|明星打氣" data-desc="" data-vid="NCX0JKKgmeY">
+  <div class="g videog" id="g6" data-title="|明星打氣" data-desc="" data-vid="4MjMsIUXsMU">
     <div class="g-inner">
     <a href="#" class="play"><span class="sp sp-play">Play video</span></a>
     </div>
