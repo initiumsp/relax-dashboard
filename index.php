@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title><?php echo $tc_title;?></title>
-<link rel="shortcut icon" href="https://d3rhr7kgmtrq1v.cloudfront.net/static/img/favicon.ico">
+<link rel="shortcut icon" href="https://d3jl5c1btygfur.cloudfront.net/static/img/favicon.ico">
 <meta name="description" content="<?php echo $tc_desc;?>">
 <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +37,7 @@
     m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
   })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-  ga('create', 'UA-66625644-23', 'auto');
+  ga('create', 'UA-65642613-1', 'auto');
   ga('send', 'pageview');
 
 </script>
